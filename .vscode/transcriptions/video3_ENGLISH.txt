@@ -1,0 +1,26 @@
+ENGLISH TRANSLATION: video3.mp3
+============================================================
+
+[80:00 - 80:07] The average of both the numbers is going to be A plus B divided by 2.
+[80:08 - 80:09] This will be our average.
+[80:09 - 80:10] Let's run it.
+[80:11 - 80:19] Let's take the first number as 16.5 and let's take the second number as 3.5.
+[80:19 - 80:23] 16.5 plus 3.5, both the summations will be equal to 20.
+[80:24 - 80:25] 20 divided by 2 will be 10.
+[80:26 - 80:28] So, the average of both the numbers will be 10.
+[80:28 - 80:36] equal to 10.0. So this way we have completed our code. Next program which we will write
+[80:36 - 80:43] is write a program to input two integer numbers a and b. Print true if a is greater than or
+[80:43 - 80:49] equal to b. So if a is greater than or equal to b then in that case we should have true
+[80:49 - 80:56] print and if not then we should have false print. So simply we can do is we can input
+[80:56 - 81:03] we can input these two numbers and our expression a greater than equal to b we will simply print
+[81:03 - 81:24] this in our print statement So if this expression is true then we will have true print and if expression is not true then we will have false print So first of all let take our two numbers as input and type cast them to integer values and in our expression we simply have to print
+[81:24 - 81:33] a greater than equal to b. Let's save and execute. Our first number is let's suppose
+[81:33 - 81:41] 15 second number is 2. Now we know 15 is greater than equal to 2 so in that case we have true
+[81:41 - 81:47] and if we take opposite first number 2, a is equal to 2 and b is equal to 15 in that
+[81:47 - 81:53] case we have false return. So in this way we have covered our practice questions and
+[81:53 - 81:58] I hope that our lecture 1 in python would have taught us a lot of things about the basics
+[81:58 - 82:04] of python. So, here our chapter 1 finish up. The slides of chapter you will get in the
+[82:04 - 82:09] description box below. We can download them. By hope that in today's lecture we have learned
+[82:09 - 82:14] a lot about python and definitely in the coming lectures we are going to learn a lot about
+[82:14 - 82:17] python. So, that's all for today. See you in the next lecture. Till then keep learning
+[82:17 - 82:18] and keep exploring.

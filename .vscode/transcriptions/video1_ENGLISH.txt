@@ -1,0 +1,25 @@
+ENGLISH TRANSLATION: video1.mp3
+============================================================
+
+[40:00 - 40:07] count. For that we can use the count method of tuple. Let's try to recreate this tuple.
+[40:07 - 40:13] We will call it grade and to create tuple we will put parentheses. We will copy our
+[40:13 - 40:24] grades. First C is coming then D is coming. Then we have A, another A, B, another B and
+[40:24 - 40:34] finally A. We can simply print grade.count .
+[40:34 - 40:38] Save and run. In the answer we have the value 3k.
+[40:38 - 40:44] Next question is, store the above values in a list and sort them from A to D.
+[40:44 - 40:51] That means first we have to create the same values in the form of a list and then we have
+[40:51 - 40:55] we have to sort from A to D. What does A to D mean?
+[40:55 - 40:58] A to D means ascending order.
+[40:58 - 41:02] Means small character first and big character later.
+[41:02 - 41:07] So here we can create a list for this using our square brackets.
+[41:07 - 41:12] And we can write grade dot or simply grade dot sort.
+[41:12 - 41:17] And then we will print our grade.
+[41:17 - 41:20] Let's save it and run it.
+[41:20 - 41:21] What are the values?
+[41:21 - 41:25] The values are now arranged in sorted order from A to D.
+[41:25 - 41:30] So, in this way we work in Python with list and tuples.
+[41:30 - 41:34] So, I hope that in today's lecture we would have enjoyed reading more new concepts in Python.
+[41:34 - 41:39] And the notes of today's lecture, the slides, you will find them in the description box below.
+[41:39 - 41:41] We can access them from there.
+[41:41 - 41:42] See you in the next lecture.
+[41:42 - 41:44] Till then keep learning and keep practicing.

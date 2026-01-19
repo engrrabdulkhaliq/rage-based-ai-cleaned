@@ -1,0 +1,25 @@
+HINDI TRANSCRIPTION: video1.mp3
+============================================================
+
+[40:00 - 40:29] का count हमें लेकर आना है, तो उसके लिए हम tuple के count method को use कर सकते हैं, let's try to recreate this tuple, इसे हम grade बोलेंगे, and tuple को create करने के लिए parenthesis लगाएंगे, अपने grades को copy कर लेते हैं, पहले C आ रहा है, फिर D आ रहा है, then we have A, another A, B, another B, and finally A, हम simply print करवा सकते हैं,
+[40:30 - 40:44] grade.count of grade A, save किया, run किया, answer में आ गई हमारे पास value 3K equal, next सवाल हमें कह रहा है, store the above values in a list and sort them from A to D,
+[40:44 - 40:46] यानि पहले तो ये जो tuple था
+[40:46 - 40:49] इसी को same values को हम क्या करेंगे
+[40:49 - 40:50] list की form में हमें create करना है
+[40:50 - 40:53] और फिर इन्हें हमें sort करना है
+[40:53 - 40:54] a से d तक
+[40:54 - 40:55] a से d का क्या मतलब है
+[40:55 - 40:57] ascending order
+[40:57 - 41:01] यानि छोटा character पहले बड़ा character बाद में
+[41:01 - 41:02] तो यहां हम
+[41:02 - 41:06] इसी के लिए एक list create कर सकते हैं
+[41:06 - 41:07] using our square brackets
+[41:07 - 41:14] और हम लिख सकते हैं grade.sort
+[41:14 - 41:18] and फिर अपने grade को हम print करवा लेंगे
+[41:18 - 41:21] let's save it and run it
+[41:21 - 41:26] values क्या हो गई values अब a से d तक sorted order में हमारे पास arrange हो कर आ गई
+[41:26 - 41:31] तो इस तरीके से हम काम करते हैं python के अंदर list and tuples के साथ
+[41:31 - 41:35] तो I hope कि आज के इस lecture के अंदर हमें मज़ा आया होगा Python के अंदर और नई concepts को पढ़ने में,
+[41:36 - 41:40] and आज के lecture के जो notes हैं, slides हैं, वो आपको नीचे description box के अंदर मिल जाएंगे,
+[41:40 - 41:42] वहाँ से जाकर हम उन्हें access कर सकते हैं,
+[41:42 - 41:44] मिलते हैं next lecture के अंदर, till then keep learning and keep practicing.

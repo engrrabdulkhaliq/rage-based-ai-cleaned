@@ -1,0 +1,772 @@
+Transcription: video1.mp3
+============================================================
+
+[00:00 - 00:02] Hi everyone and welcome to the complete Python series
+[00:02 - 00:05] जिसके अंदर हम Python language के सारे important concepts को cover कर रहे होंगे
+[00:05 - 00:08] आज हम पढ़ने वाले हैं अपना chapter 3
+[00:08 - 00:12] यानि जिसके अंदर हम tuples and lists को cover कर रहे होंगे Python के अंदर
+[00:12 - 00:14] हम सिर्फ concepts को ही नहीं पढ़ेंगे
+[00:14 - 00:16] concepts से related हम अपना code लिख रहे होंगे
+[00:16 - 00:20] साथ के साथ concept से related हम different different practice questions को भी solve कर रहे होंगे
+[00:20 - 00:24] अब जो हमारे lecture के notes हैं वो नीचे description box के अंदर आपको मिल जाएंगे
+[00:24 - 00:26] वहाँ से जाकर हम उन्हें download कर सकते हैं
+[00:26 - 00:29] और python से related जो सारे के सारे different lectures हैं
+[00:29 - 00:33] वो आपको इसी channel के उपर इस playlist के अंदर available मिल जाएंगे
+[00:33 - 00:35] तो शिरुआत करते हैं अपने chapter 3 के साथ
+[00:35 - 00:45] हाइ विवर्न और अब हम स्टार्ट करने वाले Python के अंदर अपने chapter 3 के साथ
+[00:45 - 00:49] chapter 3 के अंदर हम cover करने वाले हैं lists and tuples के बारे में in Python
+[00:49 - 00:52] अब list की अगर सबसे पहले बात करें
+[00:52 - 00:55] आपने generally दूसरी अगर किसी programming language के अंदर code किया होगा
+[00:55 - 01:04] तो हमने arrays के बारे में सुना होगा, यानि एक data structure होता है arrays नाम से, अब arrays का ही python के अंदर sort of equivalent हमारे पास lists and tuples होते हैं,
+[01:04 - 01:13] अब list is a built in data type that stores set of values, for example हम teacher हैं किसी class के और हमें class के बहुत सारे students के mark store करवाने हैं,
+[01:13 - 01:43] अब एक तो तरीका होगा कि हम क्या करें, अपनी फाइल ने Python की, यहाँ पर हमने क्या किया है, अपने फोल्डर के अंदर एक फाइल बनाई है, lecture3.py नाम से, और इस फाइल के अंदर हमारे पास let's suppose 5 students हैं, और 5 students के हमें marks store करने हैं, तो एक तो है कि हम पहला variable बनाएं, marks1 is equal to 94.
+[01:43 - 01:46] 4 is equal to 66,
+[01:46 - 01:49] and marks 5 equals 45,
+[01:50 - 01:51] इस तरीके से हमने क्या किया,
+[01:51 - 01:53] इस तरीके से हमने 5 variables बना दिये,
+[01:53 - 01:56] in fact इनको भी हम convert कर देते हैं,
+[01:56 - 01:57] to floating values,
+[01:58 - 02:00] इस तरीके से हमने different different,
+[02:00 - 02:01] जो marks हैं वो store कर लिये,
+[02:01 - 02:03] अब अभी तो हमारी class का size limited है,
+[02:03 - 02:04] यानि सिर्फ 5 students,
+[02:05 - 02:07] कल को हो सकता है हमारी class के अंदर 50 students हो,
+[02:07 - 02:09] hundred students हो, अब हर किसी student के लिए
+[02:09 - 02:11] एक simple सी marks जैसी चीज के लिए
+[02:11 - 02:13] अगर हम नया variable बनाने लग गए
+[02:13 - 02:15] तो हमें बहुत सारी variables को track करना पड़ेगा
+[02:15 - 02:17] जब भी हम coding कर रहे हैं
+[02:17 - 02:19] तो इसी लिए, इसी काम को
+[02:19 - 02:21] simplify करने के लिए एक built-in
+[02:21 - 02:22] data type हमारी पास आया
+[02:22 - 02:36] built data type data type related methods method functions already Python implement marks list store
+[02:36 - 02:38] तो simply हम एक single variable बनाते हैं,
+[02:39 - 02:39] marks,
+[02:40 - 02:41] और जैसे हम simply लिख देते हैं,
+[02:41 - 02:42] marks.something,
+[02:42 - 02:58] तो इससे क्या हो जाता marks is equal to 12 का मतलब है कि हमारे पास ये जो marks है ये एक integer variable है वैसे ही मुझे अगर multiple lists of values store करानी है तो list बनाने के लिए सबसे पहले हम अपने square brackets को लिखते हैं और square brackets के अंदर फिर हम अपनी values को लिखना start कर देते हैं
+[02:58 - 03:03] हम जितनी मरजी उतनी values को एक single list के अंदर store कर सकते हैं,
+[03:03 - 03:06] और उन values को हमें comma से separate करके लिखना होता है,
+[03:07 - 03:09] जैसे सबसे पहली value हमारे पास होगी 94.4,
+[03:09 - 03:13] comma करके, हम चाहें तो spaces दे भी सकते हैं, नहीं भी देना,
+[03:13 - 03:16] it's up to us, 95.2,
+[03:17 - 03:19] 66.4,
+[03:19 - 03:22] and similarly, 45.1,
+[03:22 - 03:52] तो इस तरीके से ये जो हमारा built in data type बना, इसे हम एक list कहते हैं Python के अंदर, अब Python की ये जो list है हमारे पास, हम चाहें तो इसे print भी करवा सकते हैं, let us try to print our list, list को हमने नाम क्या दिया, बिलकुल variable की तरह है, जैसे कि इसे normal variable को कुछ नाम देते, वैसे हमने अपनी list को नाम दे द
+[03:52 - 04:03] save, and run, तो हमारे पास class क्या आ गई, class आ गई यह list, यानि यह जो type है इस structure का, इस data का, यह एक list type है,
+[04:03 - 04:12] अब list की काफी सारी properties हमें strings से similar लगेंगी, यानि जैसे strings के अंदर indexing का concept होता था, हम किसी particular index पर जाके एक character को निकाल सकते थे,
+[04:12 - 04:15] वैसे ही list के अंदर किसी particular index पर जाकर
+[04:15 - 04:18] हम एक particular element को access कर सकते हैं
+[04:18 - 04:21] जैसे for example अगर हमारे पास इस तरीकी की कुछ list है
+[04:21 - 04:23] तो अगर हमने लिख दिया marks of 0
+[04:23 - 04:26] तो हमारे पास 0th index वाले marks return होकर आ जाएंगे
+[04:26 - 04:28] 1 index वाले यह हो जाएंगे
+[04:28 - 04:31] 2 index, 3 index and 4 index
+[04:31 - 04:33] let's try to print our values
+[04:33 - 04:35] हम यहाँ print करवा सकते हैं
+[04:35 - 04:37] marks of 0
+[04:37 - 04:43] and let's try to print marks of 1
+[04:43 - 04:45] save कर लेते हैं and let's run it
+[04:45 - 04:47] तो यह हमारे marks at 0th index आ गई
+[04:47 - 04:49] यह हमारे marks at 1st index आ गई
+[04:49 - 04:53] and इस तरीके से सारे के सारे indices को हम access कर सकते हैं
+[04:53 - 05:08] list length print type LEN string length print marks length print save refresh 5
+[05:08 - 05:11] which is the length of this list, अब python की जो list होती है,
+[05:11 - 05:13] that is slightly different from the arrays
+[05:13 - 05:15] that we create in C++ or Java
+[05:15 - 05:18] यानि C++ or Java के अंदर
+[05:18 - 05:19] generally in languages के अंदर
+[05:19 - 05:22] programming languages के अंदर जो हम arrays पढ़ते हैं
+[05:22 - 05:23] उन arrays के अंदर जो हम
+[05:23 - 05:26] store करा सकते हैं data वो generally same type का होना चाहिए
+[05:26 - 05:28] पर python के अंदर list में
+[05:28 - 05:29] ऐसा कोई rule नहीं है
+[05:29 - 05:31] यानि हमारी जो python के list होती है
+[05:31 - 05:34] इसके अंदर we can store elements of different types
+[05:34 - 06:04] together, हम चाहें तो इस तरीके की student नाम की एक list बना सकते हैं, जिसमें एक particular student की details store करवा सकते हैं, यह उसका नाम हो गया, current, and यह क्या हो गया, यह string type का हो गया, यह हो सकता है marks हो, तो यह हमारे integer type के हो गये, यह हो सकता है location हो, place हो, state हो, कुछ भी हो सकता है, तो यह भी हमारा क्या हो
+[06:04 - 06:14] लिस्ट तो इसके अंदर हम student का नाम save कर सकते हैं, हम उसके marks save कर सकते हैं, हम उसकी age save कर सकते हैं,
+[06:14 - 06:20] and हम उनकी location save कर सकते हैं, save कर लिया and हम जाहें तो print करवा सकते हैं अपने student की information को,
+[06:21 - 06:28] and this is going to be a valid list in Python, अब मैंने ये तो कह दिया कि string and Python की list काफी similar होती हैं,
+[06:28 - 06:31] पर दोनों के बीच में एक बहुत बड़ा difference होता है,
+[06:31 - 06:35] and the difference is कि python के अंदर हमारे पास जो strings होती है,
+[06:35 - 06:38] strings are immutable in python,
+[06:38 - 06:40] this is a very important point,
+[06:40 - 06:43] and lists are mutable in python,
+[06:44 - 06:46] अब mutable, immutable होने का क्या मतलब होता है,
+[06:47 - 06:49] mutate करना होता है, change करना,
+[06:49 - 06:51] English में mutable का मतलब होता है,
+[06:51 - 06:52] ऐसी चीज जो change कर सकती है,
+[06:52 - 06:56] और immutable का मतलब होता है ऐसी चीज जो change नहीं कर सकती
+[06:56 - 06:58] जैसे हमारे पास mortal and immortal होता है
+[06:58 - 07:02] यानि जो जिन्दा रह सकता है, अमर रह सकता है और जो नहीं रह सकता है
+[07:02 - 07:04] वैसे हमारे पास mutable, immutable होते हैं
+[07:04 - 07:06] things that can change and that cannot change
+[07:06 - 07:09] तो python के अंदर, जैसे strings के अंदर
+[07:09 - 07:12] index पे value को access करना allowed था
+[07:12 - 07:15] पर वहाँ पे value को change करना,
+[07:15 - 07:17] यानि mutate करना allowed नहीं होता था,
+[07:18 - 07:20] पर list के अंदर ये भी allowed है,
+[07:20 - 07:21] और ये भी allowed है,
+[07:21 - 07:23] जैसे, for example,
+[07:23 - 07:24] अगर हम कोई string लेते,
+[07:24 - 07:37] let take an example of a string string hello hello print str of 0 str of 0 value assign
+[07:37 - 07:39] चाहती हूँ y की equal, इस operation
+[07:39 - 07:40] को python allow नहीं करता, क्योंकि
+[07:40 - 07:42] strings are immutable, change नहीं हो सकती,
+[07:43 - 07:44] यहाँ पे error आ जाएगा, string object does not
+[07:44 - 07:47] support item assignment, हम यह assignment
+[07:47 - 07:49] नहीं कर सकते, but यह same
+[07:49 - 07:51] चीज लिस्ट के अंदर possible है,
+[07:51 - 07:53] यानि हम चाहें तो print करवा सकते हैं
+[07:53 - 07:55] student of 0, और कल को हो सकता है कि
+[07:55 - 07:57] student का नाम जो है, उसने
+[07:57 - 07:59] नाम change करवा के, let's suppose
+[07:59 - 08:01] अर्जुन कर लिया, तो यह
+[08:01 - 08:03] चीज completely possible है Python
+[08:03 - 08:05] के अंदर, इस case में Python कोई error
+[08:05 - 08:10] हमें return करके नहीं देगा, और हम चाहें तो अपनी नई list को print करवा सकते हैं,
+[08:10 - 08:14] अपनी student list को, let's save it and run it, तो हमारे पास नई list आ गई,
+[08:14 - 08:18] जिसके अंदर value क्या हो गई, value change हो गई, क्योंकि list mutable होती हैं
+[08:18 - 08:22] Python के अंदर, also जैसे strings के अंदर एक limit होती है index की,
+[08:22 - 08:52] यानि अगर हमने यहाँ पर कोई list बनाई, let's take an example of this list, इसमें अगर index 0, 1 and 2 है, तो अगर हम index 3 को access करने की कोशिश करेंगे, तो वो हमें error दे देगा, जैसे यहाँ पर हमारी यह जो list है, इसके अंदर हमारे पास 4 indices possible है, this value is for index 0, यह index 1 है, यह index 2 है, यह index 3 है, तो यहाँ पर if I try to
+[08:52 - 08:56] इसकी range होती है, उसी के अंदर हम अपनी values को access कर सकते हैं.
+[08:56 - 09:00] अब जैसे strings के अंदर string slicing possible होती थी,
+[09:00 - 09:03] वैसे ही list के अंदर भी slicing possible है.
+[09:03 - 09:06] Slicing के पीछे फ़ड़ा क्या होता था, कि हमारे पास index होनी चाहिए.
+[09:06 - 09:09] अब जैसे strings के अंदर index होते थे, वैसे list के अंदर भी index है,
+[09:09 - 09:12] तो obviously यहाँ पर भी slicing possible होनी चाहिए
+[09:12 - 09:15] तो slicing करने के लिए same rules रहते हैं
+[09:15 - 09:16] जो हमने strings के time पर पढ़े थे
+[09:16 - 09:18] यानि हम अपनी list का नाम लिखते हैं
+[09:18 - 09:19] फिर हम starting index लिखते हैं
+[09:19 - 09:21] फिर हम ending index लिखते हैं
+[09:21 - 09:22] तो हमें क्या मिल जाता है
+[09:22 - 09:24] अपनी list का एक टुकड़ा मिल जाता है
+[09:24 - 09:27] जिसे हम अपनी एक sub list कह सकते हैं
+[09:27 - 09:29] sub list यानि list का तुकड़ा
+[09:29 - 09:31] sub string क्या होता था
+[09:31 - 09:33] sub string होता था string का तुकड़ा
+[09:33 - 09:34] तो वैसे ही sub list हो गया list का तुकड़ा
+[09:34 - 09:37] तो sub list के अंदर इस starting index से
+[09:37 - 09:38] इस ending index से
+[09:38 - 09:41] just पहले तक की सारी values हमारे पास आ जाती है
+[09:41 - 09:42] जैसे string slicing में हो दा था
+[09:42 - 09:59] वैसे ही list slicing के अंदर भी ending index is not included, for example हमारे पास अगर ये marks की list है, और इसमें अगर हम लिख देते हैं 1 to 4, हमें सारी की सारी sub list चाहिए, तो index एक बार देख लेते हैं, this will be index 0, this will be index 1, this will be index 2,
+[10:00 - 10:01] 2, 3 and 4,
+[10:02 - 10:03] तो 1 से लेके 4 तक का मतलब है,
+[10:04 - 10:06] कि 1 से लेके 3 तक जितनी भी values हैं,
+[10:06 - 10:08] वो सारी की सारी हमारे पास return होकर आ जाएंगी,
+[10:08 - 10:10] इसे test भी कर लेते हैं,
+[10:10 - 10:15] let's try to make another list called marks,
+[10:15 - 10:22] marks के अंदर हम 85, 94, 76, 63, 48,
+[10:23 - 10:26] इस तरीके से हमने different different marks store कर लिये हैं,
+[10:26 - 10:33] और अब अगर हमें एक sub list चाहिए marks of 1, 4, 1 से लेकर 4 तक,
+[10:33 - 10:36] तो हमारे पास 94 आएगा, 76 आएगा, 63 आएगा,
+[10:37 - 10:40] save कर लेते हैं, run करते हैं, तो हमारे पास ये तीनों values return हो कराएगी,
+[10:40 - 10:43] अब जैसे हमने जैसे string slicing में सीखा था,
+[10:43 - 10:45] कि अगर हम starting index को miss कर देते हैं,
+[10:45 - 10:47] तो automatically starting index 0 से count होगा,
+[10:47 - 10:48] refresh करेंगे,
+[10:48 - 10:49] तो 84 से values आ जाएगी,
+[10:50 - 10:51] और अगर हम starting index देते हैं,
+[10:51 - 10:53] पर ending index mix कर देते हैं,
+[10:53 - 10:56] तो automatically last index हमारा ending index बन जाएगा,
+[10:57 - 10:58] यानि 94 से values start होगी,
+[10:58 - 11:01] और 48 तक सारी की सारी values हमारे पास आ रही होगी,
+[11:01 - 11:03] अब यहाँ पर एक और important चीज,
+[11:03 - 11:06] कि जैसे string slicing के अंदर हमारे पास negative index होते थे
+[11:06 - 11:09] वैसे ही इस list के अंदर भी हमारे पास negative index है
+[11:09 - 11:12] यानि अगर हमने इस तरीके की कुछ list बनाई है
+[11:12 - 11:16] तो उसके अंदर negative index यहाँ पर भी minus 1 से start होंगे
+[11:16 - 11:19] then minus 2, then minus 3, then minus 4, then minus 5
+[11:19 - 11:23] तो हम चाहे तो negative index के basis पर भी slicing कर सकते हैं
+[11:23 - 11:44] जिसे for example, minus 3 से minus 1 अगर जाना चाहें, तो उसमें minus 3 include हो जाएगा, and minus 2 include हो जाएगा, यहाँ पर अगर हम minus 3 से minus 1 तक जाना चाहें, तो हमारे पास values आएंगी, 76 and 63, save कर लेते हैं, and refresh करते हैं, तो हमारे पास ये दोनों values print हो कर आएंगी,
+[11:44 - 11:50] अब magist ostrinks के अंदर हमने string के basics पढ़े थे. उसके बाद हमने slicing पढ़ी थी और उसके बाद हमने कुछ methods पढ़े थे
+[11:50 - 11:56] वैसे ही list के अंदर हमने basics पढ़ लिये है हमने slicing पढ़ लिया है और अब हम बात करने वाले है list के कुछ methods के बारे में
+[11:56 - 12:02] के बारे में, methods यानि functions, जैसे अभी तक हम अपना print function
+[12:02 - 12:05] use करते आएं, print function क्या है? print function सभी के लिए है,
+[12:05 - 12:07] हम कुछ भी print करवा सकते हैं अपने print function के अंदर,
+[12:08 - 12:11] वैसे ही हम अपना length function use करते आएं, length मतलब,
+[12:11 - 12:14] यह हमारी string की भी length print करवा देगा, यह हमारी list की भी
+[12:14 - 12:16] length print करवा देगा, और आगे जाकर जब हमें
+[12:16 - 12:18] एक और data structure पढ़ेंगे, tuple, यह हमारे
+[12:18 - 12:20] tuple की भी length print करवा देगा,
+[12:21 - 12:23] but methods क्या होते हैं, methods specific
+[12:23 - 12:36] method string same method list use list specific methods functions perform but list specific
+[12:36 - 12:39] लिस्ट के ऊपर कुछ काम हमें perform करके देंगे,
+[12:39 - 12:53] अब वैसे तो बाद में हम functions and methods को detail में पढ़ने ही वाले हैं, but पहले से अगर हमें थोड़ा सा basic basic idea इस तरीके से हम build करते हुए चलेंगे, practical knowledge क्योंकि already हम methods and functions को use करें, तो थोड़ा सा हमें basic basic पता होगा, तो हमें better feel होगा आगे जाकर,
+[12:53 - 12:57] for example हमारे पास ये list है
+[12:57 - 12:59] जिसमें values है हमारे पास 2, 1 and 3
+[12:59 - 13:01] तो इसमें हमारे पास सबसे पहला method
+[13:01 - 13:02] जिसे हम पढ़ रहे होंगे
+[13:02 - 13:03] this is the append method
+[13:03 - 13:05] append का English के अंदर मतलब होता है
+[13:05 - 13:07] किसी चीज को last में जोड देना
+[13:07 - 13:10] तो वही काम हमारा append method करता है
+[13:10 - 13:12] कि जो भी इसके अंदर हम value pass करते हैं
+[13:12 - 13:42] जो भी element पास करते हैं, एक ही element पास कर सकते हैं, उस element को ये हमारी list के अंदर last में जाके जोड़ देता है, तो अगर हमने list के अंदर append किया 4, तो last में जाकर हमारे पास list के अंदर 4 add हो जाएगा, इसे हम check भी कर सकते हैं, जैसे let's create a list, इसके अंदर values हम रखते हैं 2, 1 and 3, and अगर
+[13:42 - 14:12] value add हो गई होगी and our final output is 2, 1, 3 and 4, अब यहाँ पर एक और interesting चीज कि जैसे हमने ये element अपनी list के अंदर add कर दिया, इसी चीज को mutating the list कहते हैं, mutate करना यानि हमने अपनी list को change कर दिया, उसकी values change हो गई, तो ये जो mutation है, ये list के अंदर allowed होता है, second method हमारे पास होता है sort method, sort का काम होता
+[14:12 - 14:14] arrange कर देना, generally जब भी हम sorting की
+[14:14 - 14:16] बात करते हैं, उसका मतलब होता है कि
+[14:16 - 14:18] छोटे से बड़े तक हम चीजों को
+[14:18 - 14:20] सही order में arrange कर रहे हैं, यानि
+[14:20 - 14:22] दो तरीके की हमारे बाद sorting होती है, एक होती है
+[14:22 - 14:24] ascending, एक होती है
+[14:24 - 14:25] descending
+[14:25 - 14:28] ascending order यानि छोटी values
+[14:28 - 14:30] पहले आएंगे, उसके बाद बड़ी values, and उसके बाद
+[14:30 - 14:32] और बड़ी values, descending यानि,
+[14:32 - 14:34] पहले बड़ी values आएंगे, उसके बाद चोटी values,
+[14:34 - 14:36] and उसके बाद और चोटी values, जैसे
+[14:36 - 14:38] अगर कोई numbers है, तो numbers के अंदर, अगर हम
+[14:38 - 14:40] 0, 1, 2 लिखे, तो यह ascending order है,
+[14:40 - 14:43] और 210 लिखा तो यह हमारे पास descending order है
+[14:43 - 14:46] list के अंदर एक sort method होता है
+[14:46 - 14:47] अगर हम लिखे list.sort
+[14:47 - 14:49] तो हमारी list क्या करेगी
+[14:49 - 14:51] automatically ascending order के अंदर sort हो जाएगी
+[14:51 - 14:54] जैसे यहाँ पर
+[14:54 - 15:07] if we write list list sort and list sort
+[15:08 - 15:10] पर क्या पता यह sorted list return करता हो नहीं,
+[15:10 - 15:12] list.sort function कुछ return नहीं करता है,
+[15:12 - 15:14] यह none value return करता है,
+[15:14 - 15:16] यानि if I try to print
+[15:16 - 15:18] list.sort
+[15:18 - 15:22] इसे एक बार के लिए हटा देते हैं
+[15:22 - 15:23] तो हमारे पास क्या print होगा
+[15:23 - 15:25] हमारे पास none print होगा
+[15:25 - 15:26] none का मतलब है कुछ भी नहीं
+[15:26 - 15:28] हमने पहले भी discuss किया था
+[15:28 - 15:29] मतलब ये वाला जो function है
+[15:29 - 15:31] sort function, sort method
+[15:31 - 15:32] मुझे कुछ return नहीं कर रहा
+[15:32 - 15:35] यह क्या कर रहा है original string के अंदर जाके changes कर रहा है
+[15:35 - 15:37] तो इसलिए यहाँ पर हमारे पास none print हो गया
+[15:37 - 15:39] अब अगर हम none के बाद
+[15:39 - 15:41] अपनी list को print करवाना चाहें
+[15:41 - 15:42] तो हम इस तरीके से print करवा सकते हैं
+[15:42 - 15:45] let's rerun it तो हमारे पास हमारी list आ जाएगी
+[15:45 - 15:46] 1, 2, 3 तो क्या हो गया
+[15:46 - 15:48] यह ascending order के अंदर automatically
+[15:48 - 15:50] arrange हो गई, अच्छा अगर
+[15:50 - 15:52] यहाँ पर sort करने से बहले
+[15:52 - 15:54] हम list के अंदर append
+[15:54 - 15:56] करना चाहिए, value
+[15:56 - 15:58] 4, तो वो भी possible है, पर
+[15:58 - 16:00] जैसे ही हम list.append 4 को call करेंगे
+[16:00 - 16:02] यह क्या करेगा, 4 को तो list के अंदर
+[16:02 - 16:04] add कर देगा, पर यह append method कुछ
+[16:04 - 16:06] return नहीं करता, तो यहाँ पर भी क्या
+[16:06 - 16:08] print होगा मेरे पास, यहाँ पर भी मेरे पास
+[16:08 - 16:10] none print होने वाला है, इसे save कर लेते हैं
+[16:10 - 16:12] run करते हैं, तो पहले append हो गया
+[16:12 - 16:14] for, but function ने method
+[16:14 - 16:16] ने क्या return किया, none return किया, तो
+[16:16 - 16:18] यहाँ पर none हमारे पास print हो गया, कि कुछ भी value
+[16:18 - 16:21] नहीं थी उसके पास return करने के लिए, generally string के जो methods,
+[16:21 - 16:24] जिनको हम already पढ़ चुके हैं, वो methods क्या return करते थे,
+[16:24 - 16:27] वो methods नई updated string value को return करते थे,
+[16:29 - 16:31] फिर list ने sort कर दिया, पर कुछ return नहीं किया,
+[16:31 - 16:35] और finally अगर हम list को print करवाएंगे, तो it is a sorted list,
+[16:35 - 16:38] अब हम चाहें तो अपनी list को
+[16:38 - 16:40] descending order के अंदर भी sort करा सकते हैं
+[16:40 - 16:42] कैसे हमें बस अपने method के अंदर
+[16:42 - 16:44] लिखना होता है ये वाली statement
+[16:44 - 16:47] reverse equal to true
+[16:47 - 16:49] हमें अगर reverse
+[16:49 - 16:50] order में sorting करानी है तो simply
+[16:50 - 16:52] ये value हम लिखकर भेज सकते हैं
+[16:52 - 16:54] यहाँ पर अगर मैंने कर दिया reverse
+[16:54 - 16:56] equal to true
+[16:56 - 16:57] with a capital T
+[16:57 - 17:00] काफी सारे beginners जो होते हैं, यहाँ पे small t के साथ
+[17:00 - 17:03] लिखने की कोशिश करते हैं, true को, फिर हमारे पास error आता है
+[17:03 - 17:05] तो वो चीज नहीं करनी, इसे save कर लेते हैं
+[17:05 - 17:09] and let's run it, तो अब हमारी जो list है, वो descending order के अंदर
+[17:09 - 17:12] sort होकर आ गई है, अब जो sorting है, वो सिर्फ numbers पे
+[17:12 - 17:14] apply नहीं करती, यानि characters पे
+[17:14 - 17:16] strings पे भी sorting apply कर जाती है,
+[17:16 - 17:18] कैसे, अगर हमारे पास 213
+[17:18 - 17:20] की जगे, list के
+[17:20 - 17:21] अंदर values होती,
+[17:22 - 17:24] let's suppose we have banana,
+[17:26 - 17:35] we have lychee and we have mango simple apple save
+[17:35 - 17:36] and let's,
+[17:37 - 17:38] इसे comment out कर देते हैं,
+[17:38 - 17:40] and let's run it,
+[17:41 - 17:41] तो यहाँ पर,
+[17:41 - 17:44] अगर हमने descending order के अंदर sorting की,
+[17:44 - 17:44] तो क्या print हुआ,
+[17:44 - 17:45] पहले leachy print हुआ,
+[17:45 - 17:46] फिर banana,
+[17:46 - 17:46] फिर apple,
+[17:47 - 17:47] और यहीं पर,
+[17:47 - 17:53] अगर ascending order में sorting करते हैं। पहले Apple print होता है। फिर banana फिर ليची क्योंकि Apple के
+[17:53 - 17:58] अंदर स्ट्रिंग के अंदर sorting कैसे होगी। जो character पहले आता है वो generally पहले आएगा ascending order के
+[17:58 - 18:04] अंदर तो AB से पहले आता है तो Apple भी banana से पहले आएगा। अब BL से पहले आता है तो banana भी
+[18:04 - 18:06] लीची से पहले आएगा, तो इस तरीके से
+[18:06 - 18:08] strings के अंदर भी sorting possible है
+[18:08 - 18:10] हम चाहते हैं, तो इसे
+[18:10 - 18:12] और simple समझने के लिए, हम
+[18:12 - 18:15] कुछ characters लिख सकते हैं
+[18:15 - 18:16] D, E
+[18:16 - 18:20] F
+[18:20 - 18:22] and C
+[18:22 - 18:25] and B
+[18:25 - 18:26] इसे save कर लेते हैं, और जैसे ही
+[18:26 - 18:29] इस list को हम sort करेंगे, तो हमारे पास
+[18:29 - 18:31] सारी characters आ जाएंगे, A, B, C, D, E
+[18:31 - 18:35] तो इस तरीके से characters को, strings को भी sort करना possible है
+[18:35 - 18:38] next method जिसकी हम बात करेंगे, यह हमारा reverse method
+[18:38 - 18:41] reverse method क्या करता है, पूरी list को पलट देता है
+[18:41 - 18:44] और यह changes, यह जो पलटने वाला, reverse करने वाला change है
+[18:44 - 18:47] यह वो original string के अंदर ही करता है
+[18:47 - 18:49] जैसे for example, if I have this list
+[18:49 - 18:52] इस list को अगर मुझे completely opposite करना है
+[18:52 - 19:22] तो हम क्या करेंगे, हम कर सकते हैं, यहाँ पर कर सकते हैं list.reverse, तो उससे original list के अंदर सारी की सारी यह जो values होंगी, यह reverse हो जाएंगी, let's run it, तो last में अगर b था, अब हमारे पास पहले b आ गया, second last में c था, अब second पर c आ गया, third last में f था, तो अब third पर f आ गया, और इस तरी
+[19:22 - 19:24] very similar to append, but
+[19:24 - 19:27] ये किसी particular index पे add करते हैं
+[19:27 - 19:28] चीज़ों को, यानि अगर हमारे
+[19:28 - 19:30] पास ये list है, और middle में कहीं पे
+[19:30 - 19:33] हम कोई नई value को insert करना चाते हैं,
+[19:33 - 19:35] तो क्या करेंगे, हम insert method को use करेंगे,
+[19:35 - 19:37] इसके अंदर दो values पास करते हैं,
+[19:37 - 19:39] पहला हम कौन से index पे किसी
+[19:39 - 19:40] चीज़ को insert करना चाते हैं,
+[19:52 - 19:57] अगर मैं चाहती हूँ index 1 के उपर value आ जाए 5,
+[19:57 - 19:59] तो उसके लिए हम लिख सकते हैं.
+[20:00 - 20:02] list.insert
+[20:02 - 20:04] index1
+[20:04 - 20:05] पर मुझे value 5 चाहिए
+[20:05 - 20:07] तो list के अंदर क्या changes होंगे
+[20:07 - 20:08] 1 से पहला तो सब कुछ same रहेगा
+[20:08 - 20:11] यानि 0 वाले index पर अगर 2 था तो यहाँ पर भी 2 रहेगा
+[20:11 - 20:14] अब बस 1 वाले index पर value 5 आ जाएगी
+[20:14 - 20:15] तो हमारे पास 5 आ जाएगा
+[20:15 - 20:18] और उसके बाद जो भी values थी
+[20:18 - 20:21] including index 1, वो सारी बाद में आ जाएंगी, same order के अंदर,
+[20:21 - 20:26] यानि 1 भी यहीं आ जाएगा, 3 भी यहीं आ जाएगा, तो नई list हमारी कुछ ऐसी दिख रही होगी,
+[20:26 - 20:32] इसे try करके देखते हैं, for example, we have this list, 2, 1, 3,
+[20:33 - 20:39] इसके अंदर list में, अगर हम insert करें, index 1 पर value 5,
+[20:39 - 20:41] और अब print करवाएं अपनी list को
+[20:41 - 20:45] तो हमारी list हो जाएगी
+[20:45 - 20:47] 2, 5, 1 and 3 के equal
+[20:47 - 20:50] which is the same value as this list
+[20:50 - 20:52] next method जिसकी हम बात करेंगे
+[20:52 - 20:53] this is our remove method
+[20:53 - 20:55] remove method का काम होता है
+[20:55 - 20:57] to remove the first occurrence of an element
+[20:57 - 20:59] यानि अगर हमारे पास ये list है
+[20:59 - 21:00] 2, 1, 3, 1
+[21:00 - 21:03] इसके अंदर अगर हम 1 को remove करना चाते हैं
+[21:03 - 21:04] तो remove method क्या करेगा
+[21:04 - 21:06] इस list के अंदर ढूंढेगा पहला one कब आता है
+[21:06 - 21:08] और उसे list से हटा देगा
+[21:08 - 21:11] तो हमारे पास final list कुछ ऐसी निकल के आएगी
+[21:11 - 21:13] and remove से similar हमारे पास होता है
+[21:13 - 21:15] pop method, pop method का काम होता है
+[21:15 - 21:16] किसी एक particular index पे जाके
+[21:16 - 21:18] value को delete करना
+[21:18 - 21:20] जैसे अगर हमारे पास ये index है
+[21:20 - 21:21] 0, 1, 2 and 3
+[21:21 - 21:25] मुझे चाहिए कि index2 वाला जो element है वो completely delete हो जाए
+[21:25 - 21:28] तो final list क्या आएगी 211
+[21:28 - 21:31] जैसे यहाँ पर अगर हम कर दें list.pop
+[21:31 - 21:34] I want to pop the value at index2
+[21:34 - 21:39] save करेंगे refresh करेंगे तो list के अंदर बचेंगे elements 2, 1 and 1
+[21:39 - 21:42] तो यह तो हो गई python की list के अंदर काफी जादा frequently used methods
+[21:42 - 21:46] but इसके अलावा भी काफी सारे different different methods होते हैं
+[21:46 - 21:48] in fact if I write list and dot
+[21:48 - 21:52] तो visual studio code ही मुझे काफी सारे methods suggest कर देगा
+[21:52 - 21:53] append को हम already देख चुके हैं
+[21:53 - 21:56] clear, copy, count, extend
+[21:56 - 21:59] बहुत सारे different different methods और होते हैं हमारे पास
+[21:59 - 22:03] copy method का काम होता है कि वो एक list की copy बना के return कर देता है
+[22:03 - 22:05] जिसे हम किसी दूसरे variable के अंदर store कर आ सकते हैं
+[22:05 - 22:07] तो list के अंदर जितने elements थे
+[22:07 - 22:09] वही same elements दूसरे के अंदर आ जाते हैं
+[22:09 - 22:11] count method का काम होता है to count the occurrence
+[22:11 - 22:12] of a particular element
+[22:12 - 22:16] और इस तरीके से और भी different different हमारे पास methods होते हैं
+[22:16 - 22:18] तो हम चाहें तो python की documentation
+[22:18 - 22:19] search कर सकते हैं
+[22:19 - 22:21] we can search on google for python documentation
+[22:22 - 22:24] and जो python की
+[22:24 - 22:36] official documentation different different methods search day to day maximum programming related methods already cover and in general programming
+[22:36 - 22:39] अगर आप चाहे आप development कर रहे हैं चाहे आप machine learning कर रहे हैं
+[22:39 - 22:41] अगर हमारे पास ऐसा कुछ method होता है,
+[22:41 - 22:42] जिसका हमें logic पता है,
+[22:42 - 22:43] पर उसका exact नाम याद नहीं आ रहा है,
+[22:43 - 22:46] तो यातो हम visual code के suggestions की help ले सकते हैं,
+[22:46 - 22:48] नहीं तो practical development करते टाइम,
+[22:48 - 22:50] हम simply जाकर Google search भी कर सकते हैं,
+[22:50 - 22:52] तो हमारे सारे answers online available होते हैं,
+[22:52 - 22:54] अब ये तो हमने कर ली list की बात,
+[22:54 - 22:57] Python के अंदर ऐसा ही एक और built in data type होता है
+[22:57 - 22:59] जिसे हम कहते हैं tuples
+[22:59 - 23:01] tuples को हम इस तरीके से समझ सकते हैं
+[23:01 - 23:04] कि list का दूर का भाई है हमारे पास tuples
+[23:04 - 23:06] जिस तरीके से list काम करती है
+[23:06 - 23:09] almost वैसे ही तरीके से हमारे पास tuples काम करते हैं
+[23:09 - 23:12] in fact अगर हम कोई और दूसरी programming language पढ़ रहे होते हैं
+[23:12 - 23:14] तो उसके अंदर generally हम list को use करते,
+[23:14 - 23:16] शायद ऐसा भी हो सकता था,
+[23:16 - 23:17] कि मैं tutorial में आपको tuples नहीं पढ़ाती,
+[23:17 - 23:21] पर क्योंकि python के अंदर tuples इतने जादा use होते हैं,
+[23:21 - 23:22] practically काफी जादा use होते हैं,
+[23:23 - 23:24] day to day programming के अंदर,
+[23:24 - 23:26] तो इसीलिए हम tuples को भी cover कर रहे होंगे,
+[23:26 - 23:30] अब Python के अंदर tuple is a built in data type
+[23:30 - 23:34] that lets us create immutable sequence of values
+[23:34 - 23:37] तो ये सबसे बड़ा difference होता है list और tuple के बीच में
+[23:37 - 23:38] list क्या होती है?
+[23:39 - 23:42] हमने already बात की है list हमारे पास एक mutable data type होता है
+[23:42 - 23:44] जिसकी value change हो सकती है
+[23:44 - 23:45] बट tuple क्या होता है?
+[23:46 - 23:47] tuple immutable होता है
+[23:47 - 23:52] just like strings
+[23:52 - 23:55] strings भी क्या होती है? strings भी immutable होती है
+[23:55 - 23:57] यानि एक बार आपने tuple बना दिया
+[23:57 - 24:00] तो अब हम उसकी values को change नहीं कर सकते
+[24:00 - 24:02] उसके अंदर नए elements नहीं add कर सकते
+[24:02 - 24:05] उसके अंदर से पुराने elements को delete नहीं कर सकते
+[24:05 - 24:08] तो tuple बनाने के लिए हमें क्या करना पड़ता है
+[24:08 - 24:10] जैसे list बनाते हैं बिल्कुल वैसा ही process है
+[24:10 - 24:12] but square brackets की जगे
+[24:12 - 24:42] यहाँ पर क्या होता है, यहाँ पर हम parenthesis को use करते हैं, तो जैसे अगर इस list को मुझे convert करना है to some tuple, तो कुछ नहीं करना, सिर्फ यहाँ पर parenthesis लगा दो, तो यह क्या बन गया, यह मेरे पास tuple बन गया, इसे हम चाहें तो नाम भी tuple दे सकते हैं, let's give it a name tuple, and हम print करवाएंगे
+[24:42 - 24:50] जिसका type है tuple, अब tuple के अंदर भी list की तरह हम अपने index को access कर सकते हैं, यानि if I want I can print tuple of 0,
+[24:52 - 25:06] tuple of 1 values print list tuple of 0 equals 5 operation tuples allowed
+[25:06 - 25:08] क्योंकि tuples obviously immutable होते हैं,
+[25:08 - 25:12] तो उसके अंदर हमें assignment करना allowed नहीं है,
+[25:12 - 25:15] हम किसी भी index पे जाके value को change नहीं कर सकते हैं,
+[25:15 - 25:45] जैसे इस code को अगर हम run करने की कोशिश करेंगे हमारे पास error आएगा tuple object does not support item assignment, this error is very similar to the one that we got जब हम string के अंदर किसी index पर एक नई value assign करने की कोशिश कर रहे थे, अब हम चाहें तो different different types of tuple create कर सकते हैं, जैसे for example I can create an empty tuple, इस तरीके से अगर हमने सिर्फ parenthesis लगा दिये तो यह �
+[25:45 - 25:47] type भी print करवा सकते हैं
+[25:47 - 25:49] यह क्या है यह एक valid tuple है
+[25:49 - 25:50] यानि इसके अंदर कोई elements नहीं है
+[25:50 - 25:53] जब run करेंगे तो यह empty print होगा
+[25:53 - 25:54] and हमारे पास class print होगी tuple
+[25:54 - 25:57] जब भी एक tuple के अंदर हमारे पास
+[25:57 - 25:58] single element होता है जैसे यहाँ पर
+[25:58 - 26:00] हमारे पास element हो गया one
+[26:00 - 26:03] किसी single element को हम हमेशा
+[26:03 - 26:05] एक comma के साथ separate करके
+[26:05 - 26:07] अपने tuple को create करेंगे
+[26:07 - 26:09] तो यह सही तरीका है एक single value
+[26:09 - 26:11] वाले tuple को create करने का
+[26:11 - 26:13] जैसे इसे अगर हम save करके run करें
+[26:13 - 26:15] तो this is our single value
+[26:15 - 26:17] tuple and this is our type of this tuple
+[26:17 - 26:19] अब यहाँ पे हमारे पास दिमाग में सवाल
+[26:19 - 26:21] आ सकता है कि क्यों ना
+[26:21 - 26:23] मैं यहाँ से इस comma को हटा दू
+[26:23 - 26:53] तो उस case में मेरे पास क्या होगा, मैं आपको बता देती हूँ उस case में क्या होगा, उस case में इस चीज को, इस value को Python एक integer की तरह समझेगा, यानि ये क्या है, ये सिर्फ एक integer 1 है, जैसे हम Python के अंदर लिख नहीं देते, 1 plus 2, तो ऐसे हम parenthesis के अंदर value लिख सकते हैं, it is completely normal, वैसे
+[26:53 - 26:55] integer print हो जाएगा, उसी तरीके से
+[26:55 - 26:56] अगर यहाँ 1.0 होता,
+[26:58 - 26:59] तो इसे type float
+[26:59 - 27:01] ले लेता, और यहाँ पे कोई string होती,
+[27:02 - 27:02] hello,
+[27:04 - 27:05] तो उसे type string ले लेते,
+[27:05 - 27:06] but अगर हम चाहते हैं इसे
+[27:06 - 27:09] tuple की तरह ही perceive किया जाए, तो उसके लिए
+[27:09 - 27:11] single values के साथ comma लगाना
+[27:11 - 27:13] compulsory है python के अंदर,
+[27:13 - 27:16] अच्छे जब हमारे पास multiple values हो तब क्या करना चाहिए
+[27:16 - 27:18] multiple values के case में we have a choice
+[27:18 - 27:21] यानि अगर हम चाहें तो अपनी values को comma से
+[27:21 - 27:23] separate करके इस तरीके से लिख सकते हैं
+[27:23 - 27:36] but last comma this thing is completely optional error error tuple data
+[27:36 - 27:38] perceive किया जाएगा, तो इस तरीके से
+[27:38 - 27:40] multiple तरीके होते हैं, multiple types of tuples
+[27:40 - 27:42] को create करने के, अब जैसे
+[27:55 - 27:56] want, I can
+[27:56 - 27:58] print tuple of
+[27:58 - 28:00] अगर हम one से लेके
+[28:00 - 28:02] three तक values को print करें, तो हमारे पास
+[28:02 - 28:04] two and three आकर print होगा, save करेंगे, run
+[28:04 - 28:06] करेंगे, तो यह हमारे tuple का part
+[28:06 - 28:08] हमारे पास print होकर आ जाएगा
+[28:08 - 28:11] next हम बात करने वाले हैं tuple के अंदर
+[28:11 - 28:12] methods के बारे में, तो tuple के अंदर हम
+[28:12 - 28:14] two important methods को cover करेंगे
+[28:14 - 28:17] इन में से सबसे पहला method है index method
+[28:17 - 28:20] अगर हम किसी tuple के अंदर किसी element को find करना चाहते हैं
+[28:20 - 28:22] कि first time वो element कब आया
+[28:22 - 28:25] तो उसके लिए हम अपने index method को use कर सकते हैं
+[28:25 - 28:27] जैसे इस tuple के अंदर अगर हम indices लिखें
+[28:27 - 28:29] this will be 0, 1, 2 and 3
+[28:29 - 28:32] अगर हम चाहते हैं कि हम element 1 को डूंडे
+[28:32 - 28:34] हमने tuple.index1 किया
+[28:34 - 28:37] तो हमारे पास आ गया value is equal to 1
+[28:37 - 28:40] यानि element 1 index 1 पे first time आ रहा है
+[28:40 - 28:44] जैसे इस tuple के अंदर अगर हम डूनना चाहे element 2 को
+[28:44 - 28:48] हम लिख सकते हैं tuple.index of element 2
+[28:48 - 28:51] save and run तो हमारे पास value आ जाएगी 1 के equal
+[28:51 - 28:54] यानि यह 1 क्या है यह 1 index है यह 2 क्या है
+[28:54 - 28:57] यह 2 element है जिसके लिए हम search करना चाते हैं
+[28:57 - 28:59] वैसे ही हमारे पास count method होता है,
+[28:59 - 29:01] tuple.count के अंदर,
+[29:01 - 29:02] हम जो भी element पास करते हैं,
+[29:03 - 29:05] वो element कितनी बार उस tuple के अंदर exist करता है,
+[29:05 - 29:07] उसका count हमारे पास return होकर आ जाता है,
+[29:07 - 29:10] जैसे यहाँ पर अगर मैंने pass किया tuple.count,
+[29:10 - 29:12] तो टू कितनी बार आता है,
+[29:12 - 29:13] टू एक बार आता है,
+[29:13 - 29:15] तो मेरे पास print होगा 1
+[29:15 - 29:18] पर यहीं पर 2 अगर 3 बार आ रहा होता है
+[29:18 - 29:21] तो हमारे पास print हो जाती value equals 3
+[29:21 - 29:24] तो इस तरीके से हमारे lists and tuples काम करते हैं
+[29:24 - 29:25] Python के अंदर
+[29:25 - 29:28] तो यह तो हो गए हमारे concepts जिनको हमने पढ़ लिया
+[29:28 - 29:30] अब हम solve करने वाले हैं कुछ practice questions को
+[29:30 - 29:32] based upon the same concepts
+[29:32 - 29:34] सबसे पहले, सवाल की तरफ देखते है
+[29:34 - 29:35] और सबसे पहलेess г tan भी सवाल है
+[29:35 - 29:36] में सबसे पहली narrow है
+[29:36 - 29:38] sendedab останов ask sabse kept
+[29:38 - 29:39] सबसेपहले question kumSomething
+[29:39 - 29:41] gaime horas ki
+[29:41 - 29:43] teacher को पॉस करना बधा कि
+[29:43 - 29:58] jar सबसे पेछली यह कोई आन्सर
+[29:58 - 29:59] सारी के और adres
+[30:00 - 30:01] हम हो सकता है Google भी करें answer को,
+[30:01 - 30:02] तब भी हमसे solve ना हो,
+[30:02 - 30:04] और finally हमें solution देखना पड़ जाए,
+[30:04 - 30:05] lecture के अंदर,
+[30:05 - 30:06] but that is not a problem,
+[30:07 - 30:08] जब हम किसी चीज के बारे में सोचते हैं,
+[30:08 - 30:09] हो सकता है,
+[30:09 - 30:11] हम question को solve पूरी तरीके से ना कर पाएं,
+[30:11 - 30:13] पर फिर भी हमारा logic जरूर build होता है,
+[30:13 - 30:16] क्योंकि हम coding की terms में सोचना सीख जाते हैं
+[30:16 - 30:18] तो as a beginner चीजों को खुद से solve करने की
+[30:18 - 30:20] नई नई चीजें try करने की एक अच्छी habit होती है
+[30:20 - 30:22] जिसे हमें साथ के साथ build करते हुए चलना है
+[30:22 - 30:24] सबसे पहला सवाल हमें कह रहा है
+[30:24 - 30:26] write a program to ask the user to enter
+[30:26 - 30:28] names of their three favorite movies
+[30:28 - 30:30] and store them in a list
+[30:30 - 30:32] यानि हमें क्या करना है
+[30:32 - 30:34] user से 3 movies
+[30:34 - 30:37] enter करानी है number 1, number 2, number 3
+[30:37 - 30:39] और ये जो 3 movies होगी
+[30:39 - 30:41] ये क्या होगी ये एक तरीके से strings होगी
+[30:41 - 30:43] इन 3 strings को जोड़ कर
+[30:43 - 30:44] हमें एक list बनानी है
+[30:44 - 30:47] तो इसको solve करने का तरीका हम को जिस तरीके से
+[30:47 - 30:49] सोच सकते हैं कि हम पहली movie input करा लेंगे
+[30:49 - 30:51] second input करा लेंगे, third input करा लेंगे
+[30:51 - 30:53] और फिर हम तीनों को क्या करेंगे
+[30:53 - 30:55] फिर हम तीनों को कर देंगे append
+[30:55 - 30:57] अपनी list के अंदर
+[30:57 - 30:59] तो इस चीज को करके देखते हैं
+[30:59 - 31:01] let's
+[31:01 - 31:03] input enter
+[31:03 - 31:04] first movie
+[31:04 - 31:06] इस तरीके से
+[31:06 - 31:09] यहाँ पर एक
+[31:09 - 31:11] movie1 नाम के variable के अंदर
+[31:11 - 31:13] हम value को store करा सकते हैं
+[31:13 - 31:15] फिर क्या करेंगे, एक और list भी बना लेते हैं,
+[31:16 - 31:18] movies नाम से, शुरुवात में list क्या होगी,
+[31:18 - 31:20] शुरुवात में list एक empty list बन जाएगी,
+[31:21 - 31:23] हम क्या कर सकते हैं, movies के अंदर,
+[31:23 - 31:27] या in fact एक साथ सारी values को एक बार input ले लेते हैं,
+[31:27 - 31:28] this will be movie 1,
+[31:29 - 31:31] this will be movie 2,
+[31:33 - 31:34] हमारी second movie हो जाएगी,
+[31:35 - 31:37] and this will be movie 3,
+[31:43 - 31:45] अपनी movie 1 को,
+[31:46 - 31:48] फिर movies के अंदर append कर देंगे,
+[31:48 - 31:49] अपनी movie 2 को,
+[31:49 - 31:51] फिर movies के अंदर append कर देंगे,
+[31:51 - 31:53] अपनी movie 3 को,
+[31:53 - 31:54] इसको save कर लेते हैं,
+[31:54 - 31:55] let's run it,
+[31:55 - 31:57] कोई भी अपनी 3 favorite movies,
+[31:57 - 31:57] हम add कर देते हैं,
+[31:58 - 32:00] I'll write Shutter Island,
+[32:01 - 32:03] and Lucy,
+[32:04 - 32:09] and probably Primer,
+[32:10 - 32:10] इस तरीके से,
+[32:10 - 32:11] ओके,
+[32:11 - 32:12] last में हम
+[32:12 - 32:15] अपनी list को print करवाना भूल गए
+[32:15 - 32:17] let's try to
+[32:17 - 32:18] print our
+[32:18 - 32:20] movies की list
+[32:20 - 32:24] let's rerun our code
+[32:24 - 32:35] and same movies add list create code
+[32:35 - 32:36] अंदर हम एक दो changes और कर सकते थे,
+[32:37 - 32:38] जैसे for example, यहाँ पे
+[32:38 - 32:41] हम अपनी movie को append करा लेते,
+[32:41 - 32:43] and
+[32:43 - 32:45] फिर अलग अलग variables बनाने की जगे
+[32:45 - 32:47] हम क्या करते, इसी same variable के अंदर
+[32:47 - 32:51] बार बार value को assign करते हैं, यहाँ पर भी same value,
+[32:51 - 32:56] and यहाँ पर भी same value, save and run,
+[32:57 - 33:03] तो हमारा जो output है, वो same हमारे पास return हो कराता,
+[33:03 - 33:07] कुछ इस तरीके से, या फिर हम directly भी append करा सकते थे,
+[33:07 - 33:10] directly append कराने का मतलब है, हमें यह movie variable चाहिए ही नहीं होता,
+[33:11 - 33:14] हम simply लिख सकते थे movies.append,
+[33:14 - 33:19] और उसी के अंदर हम अपना input add कर देते हैं
+[33:19 - 33:24] तो यह तरीका होता है directly movies को append कराने का
+[33:24 - 33:26] फिर हमें यह extra line नहीं लिखनी पड़ती
+[33:26 - 33:28] यह मैं बस आपको extra बता रही हूँ
+[33:28 - 33:30] अगर आपने खुद से question को solve किया है
+[33:30 - 33:32] और हमने इसी तरीके से lines लिखी हुए है
+[33:32 - 33:34] तो उसमें कोई भी problem की बात नहीं है
+[33:34 - 33:37] मतलब वो बिलकुल सही code है
+[33:37 - 33:38] there is no issue at all
+[33:38 - 33:40] यहाँ पर हम इस तरीके से
+[33:40 - 33:42] इन values को delete कर सकते हैं
+[33:43 - 33:44] and then
+[33:44 - 33:46] let's try to print our movies
+[33:46 - 33:48] सबसे बहले
+[33:48 - 33:49] enter first movie
+[33:49 - 33:51] इसे हम enter कर देंगे
+[33:51 - 33:53] second movie को enter कर देंगे
+[33:53 - 33:56] अच्छा third movie के आगे हमने
+[33:56 - 33:58] input ही नहीं लिखा but I hope you get
+[33:58 - 34:28] the gist कि इस तरीके से हम अपनी सारी की सारी movies को add कर सकते हैं अपनी list के अंदर, next सवाल की तरफ आते हैं और इस सवाल के अंदर हम कुछ interesting करने वाले हैं, सवाल में हमसे पूछा जा रहा है, write a program to check if a list contains a palindrome of elements or not, a palindrome शब्द हो सकता है अगर हम programming में first time programming कर रहे हैं तो पहली बा
+[34:28 - 34:30] same होती है, जैसे for example
+[34:30 - 34:32] if I talk about
+[34:32 - 34:34] a string, ये मेरे पास string है
+[34:34 - 34:35] M A A
+[34:35 - 34:38] M, ये क्या है, ये एक palindrome है
+[34:38 - 34:40] इसमें शुरू से पढ़ेंगे तो भी
+[34:40 - 34:42] ma'am पढ़ेंगे, last से पढ़ेंगे तो भी ma'am पढ़ेंगे
+[34:42 - 34:44] अगर मैं एक string ले लूँ
+[34:44 - 34:45] race car
+[34:45 - 34:48] इसमें
+[34:48 - 34:50] शुरू से पढ़ेंगे तो भी race car पढ़ेंगे,
+[34:50 - 34:52] last से पढ़ेंगे तो भी race car पढ़ेंगे,
+[34:52 - 35:25] R palindromes list palindromic list for example 12321 last 12321 1 ABC last
+[35:25 - 35:27] को करनी के लिए there is a hint that is given to us
+[35:27 - 35:29] कि हम अपने copy method को
+[35:29 - 35:31] use कर सकते हैं list के अंदर
+[35:31 - 35:33] copy method क्या होता है list के अंदर
+[35:33 - 35:35] हम चाहें तो VS code में भी
+[35:35 - 35:37] जाके search कर सकते हैं if I create
+[35:37 - 35:39] a list of elements 1, 2, 3
+[35:39 - 35:41] तो list.copy
+[35:41 - 35:43] इस arrow पर हम click कर सकते हैं
+[35:43 - 35:44] और list.copy method क्या करता है
+[35:44 - 35:47] returns a shallow copy of the list
+[35:47 - 35:49] यानि हमारे पास हमारी
+[35:49 - 35:51] list की shallow copy return होकर आ जाएगी
+[35:51 - 35:53] shallow copy क्या होती है
+[35:53 - 35:55] deep copy क्या होती है इसको बाद में पढ़ रहे होंगे
+[35:55 - 35:56] पर अभी के लिए हम इसको सोच सकते हैं
+[35:56 - 35:59] कि already अगर कोई list थी 1,2,3
+[35:59 - 36:01] तो अब इसी का एक duplicate बन जाएगा
+[36:01 - 36:02] memory के अंदर 1,2,3
+[36:02 - 36:04] यह हमारे पास return होकर आ जाएगा
+[36:04 - 36:08] तो हमें चेक करना है कि एक list palindromic है या नहीं है
+[36:08 - 36:11] अब कोई भी चीज पलिंडरोम होती है या नहीं होती
+[36:11 - 36:14] उसको चेक करने का programming के अंदर एक simple सा तरीका होता है
+[36:14 - 36:19] कोई भी चीज अगर starting से शुरू से अगर हम पढ़ रहे हैं तो भी वैसी है
+[36:19 - 36:21] और last से पढ़ रहे हैं तो भी वैसी है
+[36:21 - 36:23] तो मतलब वो क्या है एक palindrome है
+[36:23 - 36:25] वो एक palindromic चीज है यह हमें already पता है
+[36:25 - 36:26] पर मैं क्या कहती हूँ
+[36:26 - 36:29] मैं कहती हूँ कि for example this is a list that we have
+[36:29 - 36:32] इस list की अगर हम एक copy बना ले
+[36:32 - 36:34] यह original तो वैसे की वैसी है
+[36:34 - 36:35] इसकी हमने copy बना ली
+[36:35 - 36:37] copy में हमारे पास पहले 1 आ गया,
+[36:37 - 36:38] फिर हमारे पास 2 आ गया,
+[36:38 - 36:39] फिर हमारे पास 3 आ गया,
+[36:39 - 36:40] फिर हमारे पास 2 आ गया,
+[36:40 - 36:41] फिर हमारे पास 1 आ गया,
+[36:41 - 36:44] और इस copy को अगर हम reverse कर ले,
+[36:44 - 36:45] copy को reverse किया,
+[36:46 - 36:48] तो यह जो last वाली value थी,
+[36:48 - 36:49] यह पहले आ गया,
+[36:49 - 36:50] फिर 2 आ गया,
+[36:51 - 36:52] फिर 3 आ गया,
+[36:52 - 36:53] फिर 2 आ गया
+[36:53 - 36:56] इस तरीके से
+[36:56 - 36:57] and last में हमारे पास 1 आ गया
+[36:57 - 37:00] मेरा कहना है कि अगर ये original value
+[37:00 - 37:03] और copy करके reverse करने के बाद
+[37:03 - 37:04] जो अगर value आती है
+[37:04 - 37:05] ये दोनो values अगर same है
+[37:05 - 37:08] तो कोई भी value palindrome हो जाती है
+[37:08 - 37:11] and this is the way that we solve
+[37:11 - 37:12] for palindromes in programming
+[37:12 - 37:15] ऐसे ही हम palindrome के लिए generally check करते हैं
+[37:15 - 37:37] example for example list palindrome 1 2 3 1 2 3 palindrome 1 2 3 last 3 2 1 copy 1 2 3 reverse reverse 3 2 1 1 2 3 3 2 1
+[37:37 - 37:40] कभी same हो सकते हैं, बिलकुल भी same नहीं हो सकते, तो यह क्या है,
+[37:40 - 37:42] यह palindrome नहीं है, पर यहीं पर अगर
+[37:42 - 37:44] one to one होता, तो यहाँ पे भी one to one
+[37:44 - 37:46] होता, यहाँ पे भी one to one होता,
+[37:46 - 37:48] यह दोनों same होते, और यह एक palindrome
+[37:48 - 37:50] हो जाता, तो copy बना के
+[37:50 - 37:52] reverse करने का मतलब basically वही होता है,
+[37:52 - 37:54] कि हम अब एक तरीके से last
+[37:54 - 38:24] इसे चीजों को पढ़ना सीख रहे हैं, तो हम क्या कर सकते हैं, किसी भी list की copy बना लेंगे, फिर उसे reverse कर लेंगे, फिर check कर लेंगे, original और वो जो copy list है, वो same है या नहीं है, अगर same है तो palindrome है, अगर same नहीं है तो palindrome नहीं है, इसी same logic के लिए हम code लिखने वाले हैं, let's create this list 1
+[38:24 - 38:26] list1.copy,
+[38:27 - 38:30] इस function से, इस method से हमारी पास copy आ जाएगी,
+[38:30 - 38:33] फिर हम इस list को reverse कर देंगे, copy list को,
+[38:33 - 38:36] copy of list1.reverse हो जाएगा,
+[38:37 - 38:38] इस तरीके से,
+[38:38 - 38:39] और हम check कर लेंगे,
+[38:40 - 38:42] कि अगर list1 की copy,
+[38:42 - 38:45] यानि copy of list1 is equal to my list1,
+[38:46 - 38:47] अगर दोनों value same है,
+[38:47 - 38:48] तो उस case में हमें क्या करना है,
+[38:48 - 38:51] उस case में हम print करवा सकते हैं
+[38:51 - 38:53] palindrome
+[38:53 - 38:56] and else वाले case में
+[38:56 - 38:58] हम क्या करेंगे
+[38:58 - 38:59] हम print करवा देंगे
+[38:59 - 39:00] not
+[39:00 - 39:03] palindrome
+[39:03 - 39:05] इसे save कर लेते हैं
+[39:05 - 39:06] run करते हैं
+[39:06 - 39:08] तो हमारे पास print होकर आ गया palindrome
+[39:08 - 39:09] क्योंकि 1 to 1 क्या है
+[39:09 - 39:10] एक palindrome है
+[39:10 - 39:11] पर यही same value
+[39:11 - 39:13] अगर मैं list 1 के अंदर कर दू
+[39:13 - 39:15] यानि list 1 को अगर हम 1, 2, 3 कर दें
+[39:15 - 39:16] तो उस case में क्या print होकर आएगा
+[39:16 - 39:19] उस case में print होकर आएगा not palindrome
+[39:19 - 39:21] एक और palindrome रिखते हैं
+[39:21 - 39:22] जैसे यहाँ पर अगर मैं लिखो
+[39:22 - 39:27] M, A, A, M
+[39:27 - 39:29] run किया
+[39:29 - 39:30] तो this is a palindrome
+[39:30 - 39:33] यह क्या है एक palindromic list हमारे पास
+[39:33 - 39:34] available है पर इसी के अंदर
+[39:34 - 39:38] यहाँ पे एक और P, let's suppose कोई letter आ जाता,
+[39:38 - 39:40] तो फिर ये not palindrome बन जाता,
+[39:41 - 39:44] तो इस तरीके से हम अपने palindrome वाले सवालों के लिए
+[39:44 - 39:45] solve कर सकते हैं for our list,
+[39:46 - 39:47] next सवाल की तरफ बढ़ते हैं,
+[39:47 - 39:48] next सवाल हमें कह रहा है,
+[39:48 - 39:51] write a program to count the number of students
+[39:51 - 39:53] with grade A in the following tuple,
+[39:53 - 39:59] यह क्या है, यह हमारे पास एक tuple होने वाली है, इसे हम grades नाम दे सकते हैं, इसके अंदर जितने भी students ने A score किया है,
+[40:00 - 40:29] का count हमें लेकर आना है, तो उसके लिए हम tuple के count method को use कर सकते हैं, let's try to recreate this tuple, इसे हम grade बोलेंगे, and tuple को create करने के लिए parenthesis लगाएंगे, अपने grades को copy कर लेते हैं, पहले C आ रहा है, फिर D आ रहा है, then we have A, another A, B, another B, and finally A, हम simply print करवा सकते हैं,
+[40:30 - 40:44] grade.count of grade A, save किया, run किया, answer में आ गई हमारे पास value 3K equal, next सवाल हमें कह रहा है, store the above values in a list and sort them from A to D,
+[40:44 - 40:46] यानि पहले तो ये जो tuple था
+[40:46 - 40:49] इसी को same values को हम क्या करेंगे
+[40:49 - 40:50] list की form में हमें create करना है
+[40:50 - 40:53] और फिर इन्हें हमें sort करना है
+[40:53 - 40:54] a से d तक
+[40:54 - 40:55] a से d का क्या मतलब है
+[40:55 - 40:57] ascending order
+[40:57 - 41:01] यानि छोटा character पहले बड़ा character बाद में
+[41:01 - 41:02] तो यहां हम
+[41:02 - 41:06] इसी के लिए एक list create कर सकते हैं
+[41:06 - 41:07] using our square brackets
+[41:07 - 41:14] और हम लिख सकते हैं grade.sort
+[41:14 - 41:18] and फिर अपने grade को हम print करवा लेंगे
+[41:18 - 41:21] let's save it and run it
+[41:21 - 41:26] values क्या हो गई values अब a से d तक sorted order में हमारे पास arrange हो कर आ गई
+[41:26 - 41:31] तो इस तरीके से हम काम करते हैं python के अंदर list and tuples के साथ
+[41:31 - 41:35] तो I hope कि आज के इस lecture के अंदर हमें मज़ा आया होगा Python के अंदर और नई concepts को पढ़ने में,
+[41:36 - 41:40] and आज के lecture के जो notes हैं, slides हैं, वो आपको नीचे description box के अंदर मिल जाएंगे,
+[41:40 - 41:42] वहाँ से जाकर हम उन्हें access कर सकते हैं,
+[41:42 - 41:44] मिलते हैं next lecture के अंदर, till then keep learning and keep practicing.
