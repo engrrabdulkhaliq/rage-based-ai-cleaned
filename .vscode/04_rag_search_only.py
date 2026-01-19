@@ -7,12 +7,15 @@ import ast
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from openai import OpenAI
+import os
+import os
+
 
 app = Flask(__name__)
 CORS(app)
 
 model = SentenceTransformer('BAAI/bge-small-en-v1.5')
-openai_client = OpenAI(api_key="sk-AfX0rModIomRG94i_uu6EmTxDke-lTJjrd-ypIa0mVT3BlbkFJGWF5LOwnni53vOR9uvHv2FU_H98V4-DHOqp87EP1gA")
+openai_client = OpenAI(api_key=os.environ.get('sk-AfX0rModIomRG94i_uu6EmTxDke-lTJjrd-ypIa0mVT3BlbkFJGWF5LOwnni53vOR9uvHv2FU_H98V4-DHOqp87EP1gA'))
 df = pd.read_pickle("embeddings.pkl")
 
 def create_embedding(text):
@@ -94,6 +97,7 @@ def chat():
         }), 500
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
     app.run(debug=True, port=5000, host='0.0.0.0')
     
 # df = pd.read_csv("embeddings.csv")
