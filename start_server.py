@@ -1,53 +1,56 @@
-from flask import Flask, request, jsonify, Response
-from flask_cors import CORS
-import numpy as np
-import pandas as pd
+#!/usr/bin/env python
+"""
+Lightweight RAG server wrapper that starts Flask ASAP
+"""
+import sys
 import os
-import time
-from collections import defaultdict
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-from google import genai
-from google.genai import types
+
+# Add vscode dir to path for embeddings
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.vscode'))
+
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-# Lazy-load resources to speed up startup
-model = None
-gemini_client = None
-df = None
+# Lazy load heavy dependencies
+_resources = {
+    'model': None,
+    'gemini_client': None,
+    'df': None
+}
 
 def load_resources():
-    global model, gemini_client, df
-    if model is None:
-        print("Loading SentenceTransformer model...")
-        model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+    if _resources['model'] is None:
+        print("⏳ Loading SentenceTransformer model...")
+        from sentence_transformers import SentenceTransformer
+        _resources['model'] = SentenceTransformer("BAAI/bge-small-en-v1.5")
     
-    if gemini_client is None:
-        print("Initializing Gemini client...")
-        gemini_client = genai.Client(api_key="AIzaSyDBTB1DDHMvT2ZlWaGlsPJlsaZlsGXIulk")
+    if _resources['gemini_client'] is None:
+        print("⏳ Initializing Gemini client...")
+        from google import genai
+        _resources['gemini_client'] = genai.Client(api_key="AIzaSyDBTB1DDHMvT2ZlWaGlsPJlsaZlsGXIulk")
     
-    if df is None:
-        file_path = os.path.join(os.path.dirname(__file__), "embeddings.pkl")
-        print(f"Loading embeddings from: {file_path}")
-        if not os.path.exists(file_path):
-            print(f"ERROR: embeddings.pkl not found at {file_path}")
-            df = pd.DataFrame()
+    if _resources['df'] is None:
+        print("⏳ Loading embeddings...")
+        import pandas as pd
+        file_path = os.path.join(os.path.dirname(__file__), ".vscode", "embeddings.pkl")
+        if os.path.exists(file_path):
+            _resources['df'] = pd.read_pickle(file_path)
+            print(f"✅ Loaded {len(_resources['df'])} embeddings")
         else:
-            print("Embeddings file found, loading...")
-            df = pd.read_pickle(file_path)
-            print(f"Loaded {len(df)} embeddings")
+            import pandas as pd
+            _resources['df'] = pd.DataFrame()
+            print(f"⚠️  No embeddings found")
 
-# Load on first request
 @app.before_request
-def initialize():
-    global model, gemini_client, df
-    if model is None:
+def init_resources():
+    if _resources['model'] is None:
         load_resources()
 
 def create_embedding(text):
-    return model.encode(text).tolist()
+    return _resources['model'].encode(text).tolist()
 
 def detect_language(text):
     hindi_chars = sum(1 for c in text if '\u0900' <= c <= '\u097F')
@@ -57,6 +60,14 @@ def detect_language(text):
     return "hindi" if hindi_chars / total_chars > 0.3 else "english"
 
 def get_rag_response(incoming_query):
+    import numpy as np
+    from sklearn.metrics.pairwise import cosine_similarity
+    from google.genai import types
+    
+    df = _resources['df']
+    model = _resources['model']
+    gemini_client = _resources['gemini_client']
+    
     query_lang = detect_language(incoming_query)
     filtered_df = df[df["language"] == query_lang].reset_index(drop=True)
     
@@ -106,7 +117,6 @@ Instructions:
     
     full_prompt = f"{system_instruction}\n\n{prompt}"
     
-    # Gemini API call (NEW API)
     response = gemini_client.models.generate_content(
         model='gemini-1.5-flash-8b',
         contents=full_prompt,
@@ -117,6 +127,10 @@ Instructions:
     )
     
     return response.text.strip()
+
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok"})
 
 @app.route("/chat", methods=["POST", "OPTIONS"])
 def chat():
@@ -137,23 +151,11 @@ def chat():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    print("\n" + "="*50)
-    print("🚀 RAG AI Server Starting...")
-    print("="*50)
-    print("Server will be available at http://localhost:5000")
-    print("Lazy loading enabled - models load on first request")
-    print("="*50 + "\n")
-    app.run(debug=False, host="0.0.0.0", port=5000, use_reloader=False)
-    
-# df = pd.read_csv("embeddings.csv")
-# def fix_embedding(x):
-#     if isinstance(x, str):
-#         return ast.literal_eval(x)
-#     return x
-# df['embedding'] = df['embedding'].apply(fix_embedding)
-# df['embedding'] = df['embedding'].apply(lambda x: np.array(x, dtype=np.float32))
-# joblib.dump(df, "embeddings.joblib")
-# print("✅ Embeddings successfully stored in joblib")
-# df_test = joblib.load("embeddings.joblib")
-# print(type(df_test['embedding'][0]))
-# print(df_test['embedding'][0].shape)
+    print("\n" + "="*60)
+    print("🚀 RAG AI Teaching Assistant Server")
+    print("="*60)
+    print("🔗 Server: http://localhost:5000")
+    print("📍 Health Check: http://localhost:5000/health")
+    print("💬 Chat API: POST http://localhost:5000/chat")
+    print("="*60 + "\n")
+    app.run(debug=False, host="0.0.0.0", port=5000, use_reloader=False, threaded=True)

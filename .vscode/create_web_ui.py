@@ -27,14 +27,29 @@
 # create_structure(".", structure)
 
 # print("✅ Web UI folder structure created successfully")
-from openai import OpenAI
+# from openai import OpenAI
 
 
-client = OpenAI(api_key="sk-LIuVw2lEkw5dNauQ7c9NgotRcXg1og4YV1vZvXCQK2XMa9ze")
+# client = OpenAI(api_key="AIzaSyDBTB1DDHMvT2ZlWaGlsPJlsaZlsGXIulk")
 
-response = client.responses.create(
-    model="gpt-4.1-mini",
-    input="Hello, are you working?"
+# response = client.responses.create(
+#     model="gpt-4.1-mini",
+#     input="Hello, are you working?"
+# )
+
+# print(response.output_text)
+
+import google.generativeai as genai
+
+# 🔑 Your API key
+genai.configure(api_key="AIzaSyDBTB1DDHMvT2ZlWaGlsPJlsaZlsGXIulk")
+
+# Choose the model
+model = genai.GenerativeModel("gemini-3-flash-preview")
+
+# Generate text
+response = model.generate_content(
+    "Explain Python decorators in simple words"
 )
 
-print(response.output_text)
+print(response.text)

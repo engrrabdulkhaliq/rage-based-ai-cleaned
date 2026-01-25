@@ -1,0 +1,8 @@
+{
+  "projectId": "bd562732-88af-41a5-930f-35b974a48175",
+  "createdAt": 1769322791255,
+  "version": "1.0",
+  "startupCommands": [
+    "pip install -r .vscode/transcriptions/requirements.txt; python start_server.py"
+  ]
+}
