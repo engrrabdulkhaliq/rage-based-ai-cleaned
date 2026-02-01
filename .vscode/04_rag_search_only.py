@@ -13,7 +13,7 @@ CORS(app)
 model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
 groq_client = Groq(
-    api_key="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"
+    api_key="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"
 )
 
 file_path = os.path.join(os.path.dirname(__file__), "embeddings.pkl")
