@@ -13,7 +13,11 @@ CORS(app)
 model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
 groq_client = Groq(
+<<<<<<< HEAD
     api_key="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"
+=======
+    api_key="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"
+>>>>>>> f9d0857720bb38dc8b38a3a5eabf7c60fb708b27
 )
 
 file_path = os.path.join(os.path.dirname(__file__), "embeddings.pkl")
@@ -119,4 +123,8 @@ def chat():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run(debug=True, host="0.0.0.0", port=5000)
+=======
+    app.run(debug=True, host="0.0.0.0", port=5000)
+>>>>>>> f9d0857720bb38dc8b38a3a5eabf7c60fb708b27
