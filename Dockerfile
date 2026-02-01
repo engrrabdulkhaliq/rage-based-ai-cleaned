@@ -1,4 +1,4 @@
-Set-Content -Path Dockerfile -Value "FROM python:3.11-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 8501
 
-CMD [""streamlit"", ""run"", ""04_rag_search_only.py"", ""--server.port=8501"", ""--server.address=0.0.0.0"", ""--server.headless=true""]"
+CMD ["streamlit", "run", "04_rag_search_only.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
