@@ -1,5 +1,5 @@
 streamlit==1.28.0
-groq==1.0.0
+groq==0.4.3
 sentence-transformers==2.2.2
 pandas==2.1.0
 numpy==1.24.3
