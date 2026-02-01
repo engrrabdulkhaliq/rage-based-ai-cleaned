@@ -1,0 +1,962 @@
+Transcription: video3.mp3
+============================================================
+
+[00:00 - 00:04] Hi Coders and welcome to the complete Python series, जिसके अंदर हम Python language को cover कर रहे होंगे.
+[00:05 - 00:11] इस series को complete करने के बाद, अगर हमारा interest artificial intelligence, machine learning, data science की field की तरफ है,
+[00:11 - 00:14] तो जाकर हम machine learning सीखने के लिए सक्षम होंगे,
+[00:14 - 00:17] या फिर अगर हम web development की domain में बाद में जाना चाहते हैं,
+[00:17 - 00:19] हम Django जैसे frameworks के ऊपर काम करना चाते हैं
+[00:19 - 00:20] websites बनाना चाते हैं
+[00:20 - 00:22] तो फिर हम उसे भी जाकर सीख पाएंगे
+[00:22 - 00:24] इस series के अंदर हम इस तरीके से पढ़ रहे होंगे
+[00:24 - 00:27] कि आज हो सकता है कि हमें एक भी line of code लिखनी ना आती हो
+[00:27 - 00:29] पर series को complete करने के बाद
+[00:29 - 00:31] हम अच्छे खासे programs लिख पाएंगे
+[00:31 - 00:34] प्लस programming के बहुत सारे ऐसे concepts होते हैं
+[00:34 - 00:37] जिनको हम सीख चुके होंगे और उनको हम apply कर चुके होंगे
+[00:37 - 00:39] अब जब भी हम Python की बात करते हैं
+[00:39 - 00:43] पिछले कई सालों से Python has been the most loved language in the tech industry
+[00:43 - 00:46] कई सारे ऐसे अच्छे programmers होते हैं
+[00:46 - 00:49] जो अपनी programming journey, coding journey की शुरुवात Python के साथ करते हैं,
+[00:49 - 00:52] and it is also one of the easiest language to start coding with,
+[00:53 - 00:56] and इसलिए हम भी अपनी coding journey की शुरुवात Python के साथ कर रहे होंगे,
+[00:56 - 00:59] इस Python series को start करने के लिए there are no prerequisites,
+[00:59 - 01:03] यानि अगर आज से पहले हमने किसी और coding language के अंदर कोई code नहीं लिखा,
+[01:03 - 01:04] then it's absolutely fine
+[01:04 - 01:07] हम बिलकुल zero level के साथ चीजों को start कर रहे होंगे
+[01:07 - 01:10] और programming के अंदर gradually अपना level up करते जा रहे होंगे
+[01:10 - 01:13] अपनी series के अंदर, lectures के अंदर हम theory concepts को तो पढ़ेंगी
+[01:13 - 01:16] पर उसके साथ में हम बहुत सारा code लिखने वाले हैं
+[01:16 - 01:19] चीजों को practice करने के लिए, hands on practical experience लेने के लिए
+[01:19 - 01:24] और उसके साथ में हर important topics से related हम practice questions को solve कर रहे होंगे
+[01:24 - 01:30] और इसके साथ में series के जितने भी slides है, notes है, उनके link आपको नीचे description box के अंदर मिल रहे होंगे
+[01:30 - 01:35] तो शिरुवात करते हैं अपनी python series के lecture 1 के साथ जिसमें हम cover करेंगे introduction to python
+[01:35 - 01:37] इसके अंदर Python के अंदर input output लेना
+[01:37 - 01:39] variables क्या होते हैं, data types क्या होते हैं
+[01:39 - 01:41] और operators क्या होते हैं
+[01:41 - 01:44] इन सारे concepts को हम अपने lecture 1 के अंदर
+[01:44 - 01:44] cover कर रहे होंगे
+[01:44 - 01:47] अब सबसे पहले बात करते हैं कि programming होती क्या है
+[01:47 - 01:50] programming के अंदर दो major components
+[01:50 - 01:51] involved होते हैं, यानि एक हमारे पास
+[01:51 - 01:53] मेरी machine होती है, ये machine हमारा laptop
+[01:53 - 01:55] भी हो सकता है, हमारा computer भी हो सकता है
+[01:55 - 01:57] और दूसरी जीज़ जो हमारे पास होती है, वो होता है
+[01:57 - 01:59] code, और हम क्या करते हैं, हम
+[01:59 - 02:01] code लिख कर एक machine को
+[02:01 - 02:03] instructions देते हैं, जिसको हम एक program
+[02:03 - 02:05] कह देते हैं, यानि अगर मुझे अपने
+[02:05 - 02:07] laptop से, अपने computer से कुछ करवाना है,
+[02:07 - 02:09] तो मैं उसको instructions दूँगी,
+[02:09 - 02:11] अब computer को हमारी तरह Hindi, English,
+[02:11 - 02:13] Nepali, Marathi ये सारी भाषाएं
+[02:13 - 02:15] तो समझ में नहीं आती, तो इसलिए
+[02:15 - 02:17] हम उसको Python, Java, C++,
+[02:17 - 02:19] JavaScript इस तरीके की भाषाओं में
+[02:19 - 02:21] अपना जो काम करवाना होता है,
+[02:21 - 03:03] riddle
+[03:03 - 03:05] ले अपनी machine से काम करवाने के लिए,
+[03:05 - 03:07] वो सारा का सारा code हमारा python में होने वाला है,
+[03:08 - 03:09] लेकिन इसमें भी छोटा सा twist है,
+[03:10 - 03:13] अब machine को directly Hindi, English, Marathi,
+[03:13 - 03:14] यह सब तो समझ नहीं आती,
+[03:14 - 03:16] computer को directly python भी समझ में नहीं आती,
+[03:16 - 03:17] क्योंकि python क्या है,
+[03:17 - 03:18] बहुत असान language है,
+[03:18 - 03:20] java क्या है, c++ क्या है,
+[03:20 - 03:22] C क्या है? बहुत असान languages हैं,
+[03:22 - 03:24] जो हमें as human समझ में आती है,
+[03:24 - 03:27] computers को या machine को भाषा समझ में आती है,
+[03:27 - 03:28] 0 और 1 की,
+[03:28 - 03:30] यानि machine सिर्फ numbers को समझता है,
+[03:30 - 03:32] numbers को कैसे समझ पाता है?
+[03:32 - 03:33] numbers में भी सिर्फ 0 और 1 को,
+[03:33 - 03:36] high voltage and low voltage की form में,
+[03:36 - 03:38] यानि machine के अंदर high current आप pass कर दोगे,
+[03:38 - 03:39] उसको वो 1 की तरह समझेगा
+[03:39 - 03:42] and machine के अंदर कोई current pass नहीं होगा
+[03:42 - 03:43] उसको वो 0 की तरह समझेगा
+[03:43 - 03:45] बिलकुल basic electronics है
+[03:45 - 03:47] तो इसलिए हमने तो अपना code python के अंदर लिख दिया
+[03:47 - 03:49] जो बिलकुल English जैसी ही लगती है
+[03:49 - 03:51] लेकिन उस code को machine को समझाने के लिए
+[03:51 - 03:53] बीच में हमारे पास translators होते हैं
+[03:53 - 03:55] जैसे अगर मैं फ्रांस गूमने जाओं और मुझे
+[03:55 - 03:57] French बोलनी नहीं आती तो अपने साथ मैं एक translator
+[03:57 - 03:59] या guide लेकर गूमूंगी जो क्या करेगा
+[03:59 - 04:01] मेरी English को या मेरी Hindi को
+[04:01 - 04:03] translate कर देंगे French के अंदर
+[04:03 - 04:05] ऐसे computers को जो 01 की भाषा
+[04:05 - 04:07] समझ में आती है translator का काम होता है
+[04:07 - 04:09] कि हमारी Python लेगा और translate
+[04:09 - 04:11] कर देगा उस Python को machine की
+[04:11 - 04:13] language में. इसीलिए Python को
+[04:13 - 04:15] हम एक high level language कहते हैं.
+[04:15 - 04:17] तो translators का काम होता है high level language
+[04:17 - 04:19] को directly low level languages
+[04:19 - 04:21] या फिर machine level languages के अंदर convert
+[04:21 - 04:23] करना. यह हमारी translator
+[04:23 - 04:25] compilers भी हो सकते हैं, interpreters भी हो सकते हैं
+[04:25 - 04:27] तो Python के अंदर interpreter होता है
+[04:27 - 04:32] जो हमारे Python के code को translate करता है machine की form में
+[04:32 - 04:35] तो यहां से हमें ये clear हो गया कि जब भी मुझे अपने computer से
+[04:35 - 04:39] अपनी machine से कुछ काम करवाना होगा मुझे उसको Python का code लिखकर देना पड़ेगा
+[04:39 - 04:41] अब बात करते है Python क्या होती है?
+[04:41 - 05:05] to start with programming to start with coding as a beginner beginners Python start coding English simple easy to understand
+[05:05 - 05:06] दूसरा बोला जाता है,
+[05:06 - 05:08] Python free और open source है,
+[05:08 - 05:10] मतलब Python को कोई भी use कर सकता है,
+[05:11 - 05:11] अब वैसे तो in general,
+[05:11 - 05:14] बहुत सारी programming languages free भी होती है,
+[05:14 - 05:16] पर बहुत सारी programming languages paid भी होते हैं
+[05:16 - 05:18] पर python क्या है python free language है
+[05:18 - 05:19] इसको कोई भी इस्तेमाल कर सकता है
+[05:19 - 05:22] आप भी कर सकते है free में मैं भी use कर सकती हूँ
+[05:22 - 05:24] और तीसरा python एक high level languages है
+[05:24 - 05:25] यानि कुछ ऐसे changes होते हैं
+[05:25 - 05:28] जो directly वो machine level पर जाकर नहीं कर सकती
+[05:28 - 05:30] पर humans के लिए easy to understand होती है
+[05:30 - 05:32] अब Python को develop किया था इन engineer ने
+[05:32 - 05:35] Guido van Rosum पहले Google के अंदर काम करते थे
+[05:35 - 05:38] अब ये मेरी ex company Microsoft के अंदर engineer है
+[05:38 - 05:41] distinguished engineer मतलब बहुत special दर्जा इनको दिया गया है
+[05:41 - 05:43] तो इन्होंने Python को बनाया था
+[05:43 - 05:45] और इसके साथ साथ Python एक portable language है
+[05:45 - 05:48] मतलब जो Python का code आप अपने Windows में लिख सकते हैं
+[05:48 - 05:51] वो Python का code आपका दोस्त अपने Mac OS के अंदर भी चला सकता है,
+[05:52 - 05:53] मतलब Apple के computer के अंदर,
+[05:53 - 05:58] and वही same Python का code आपका दूसरा दोस्त अपने Linux सिस्टम के अंदर भी run कर सकता है,
+[05:58 - 06:01] तो Python different operating systems के इसाब से same रहती है,
+[06:01 - 06:02] वो code भी same रहता है,
+[06:02 - 06:05] और वो code सारे के सारे different operating systems में run कर सकता है,
+[06:05 - 06:35] इसके अलावा Python को use करके हम बहुत सारी different branches of programming को explore कर सकते हैं, मतलब Python को use करके मैं अपने data science में भी जा सकती हूँ, मतलब मैं machine learning सीख सकती हूँ, मैं AI सीख सकती हूँ, उसके साथ साथ मैं web development भी कर सकती हूँ, मतलब मैं websites को बना सकती हूँ, तो जो back end होता है, उसमें Python का एक framework Django �
+[06:35 - 06:41] programming को explore करते हैं और उन पर काम कर रहे होते हैं तो अब शुरुवात करते हैं python के अंदर अपने पहले
+[06:41 - 06:47] program की हमने बहुत बात कर ली कि python में code होता है python versatile language है python open source language है और
+[06:47 - 06:53] coding और machine की बात कर ली पर code actually दिखता क्या है क्या मतलब होता है जब मैं कह रही हूँ कि हम code लिखते हैं
+[06:53 - 06:55] Python में, तो वो समझने के लिए हम
+[06:55 - 06:57] लिखने वाले हैं, Python के अंदर अपना पहला
+[06:57 - 06:59] program या पहला code
+[06:59 - 07:01] अब Python का code लिखने से पहले हमें
+[07:01 - 07:03] अपने system के अंदर दो चीजों को download
+[07:03 - 07:05] करना पड़ेगा. सबसे पहले हमें
+[07:05 - 07:07] Python को अपने system के अंदर download करना
+[07:07 - 07:09] पड़ेगा और उसके बाद हमें Visual Studio
+[07:09 - 07:14] code को अपने system के अंदर download करना पड़ेगा. Python definitely हमें इसलिए चाहिए क्योंकि हम चाहते हैं कि
+[07:14 - 07:19] हमारा system है, हमारा computer है, उसके अंदर जब हम Python का code लिखें तो वो Python के code को पहचान सके,
+[07:20 - 07:35] run execute And visual studio code download because it is going to be notebook abhi school college notebooks code paper pen
+[07:35 - 07:37] code को लिखने का सही तरीका,
+[07:37 - 07:38] उसे run करने का सही तरीका है,
+[07:38 - 07:40] कि हम उसे अपने code editors के अंदर लिखें
+[07:40 - 07:42] and visual studio code is one of the best
+[07:42 - 07:44] freely available editors out there
+[07:44 - 07:46] तो इसलिए हम VS code को use कर रहे होंगे
+[07:46 - 07:48] अब सबसे पहले installation के अंदर
+[07:48 - 07:51] हम Windows के लिए Python का installation देख रहे होंगे
+[07:51 - 07:53] उसके बाद हम Mac OS के लिए
+[07:53 - 07:54] Python का installation देख रहे होंगे
+[07:54 - 07:56] और फिर finally हम visual studio code को
+[07:56 - 07:59] download करेंगे for both Mac and Windows
+[07:59 - 08:03] अब Windows पर Python के installation के लिए
+[08:03 - 08:05] सबसे पहले हम अपने browser पर जा सकते हैं
+[08:05 - 08:07] we can go to Chrome and we can search for
+[08:07 - 08:09] download Python for Windows
+[08:09 - 08:11] हमारे पास जो सबसे top पर link आएगा
+[08:11 - 08:13] उस link पर हमें जाना है उस पर हमें click करना है
+[08:13 - 08:16] ये link होगा python.org का
+[08:16 - 08:17] जब हम इस link पर जाएंगे
+[08:17 - 08:20] तो हमारे पास एक बड़ा सा yellow color का button होगा
+[08:20 - 08:23] जिस पर download python 3.1, 2.1 आ रहा है
+[08:23 - 08:25] अगर हम इस lecture को बाद में कभी देख रहे हैं
+[08:25 - 08:28] तो हो सकता है हमारे पास python का version update हो गया हो
+[08:28 - 08:30] और कोई latest version वहाँ पर available हो
+[08:30 - 08:32] तो हम चाहें तो हम कोई different version भी download कर सकते हैं
+[08:32 - 08:35] तब भी हमारे lecture को हम पूरी तरीके से follow कर पाएंगे
+[08:35 - 08:40] चाहे तो हम इस download button पर click कर सकते हैं नहीं तो उपर जो downloads लिखा आ रहा है
+[08:40 - 08:44] वहाँ पर जाने के बाद हमारे पास python का option आएगा इस पर हम click कर देंगे
+[08:44 - 08:46] और हमारा python download start हो जाएगा
+[08:46 - 08:51] जैसे हमारा download complete हो जाता है अपनी exe file पर हम चाहे तो double click कर सकते हैं
+[08:51 - 08:53] हमारे पास कुछ इस तरीके की window आईगी,
+[08:53 - 08:54] जिसमें हम run पर click करेंगे,
+[08:55 - 08:57] and हमारा installation start हो जाएगा,
+[08:57 - 08:59] अब installation start करने से पहले,
+[08:59 - 09:01] हमारे पास window के उपर,
+[09:01 - 09:02] दो check boxes होते हैं,
+[09:02 - 09:03] जिनने हमें हमेशा check करना है,
+[09:04 - 09:06] इसमें सबसे पहला है admin privileges के लिए,
+[09:06 - 09:07] जिसे हम tick करेंगे,
+[09:07 - 09:09] and दूसरा है python.exe के लिए
+[09:09 - 09:11] जिसे भी हमें tick करना है
+[09:11 - 09:14] tick करने के बाद हम अपने install now पर click करेंगे
+[09:14 - 09:16] and हमारा installation start हो जाएगा
+[09:16 - 09:21] installation complete होने के बाद हमारे पास आ जाएगा
+[09:21 - 09:25] setup was successful and हम simply अपनी इस window को कर सकते हैं close
+[09:25 - 09:29] अब next हम download करने वाले हैं python for macOS
+[09:29 - 09:32] macOS के अंदर अपने browser पर हम जा सकते हैं
+[09:37 - 09:40] डाउनलोड करने के लिए उस पर हमारे पास latest version आ रहा होगा python का,
+[09:40 - 09:43] यहाँ पर हम click कर सकते हैं और अपने python download को start कर सकते हैं,
+[09:44 - 09:45] अगर आप lecture को कभी बाद में देखने हैं,
+[09:45 - 09:47] तो हो सकता है आपके पास और भी updated version हो,
+[09:48 - 09:49] और latest version available हो,
+[09:49 - 09:51] तो हम चाहें तो उस latest version को भी download कर सकते हैं,
+[09:51 - 09:54] पूरे lecture को follow करने में हमें कोई problem नहीं आएगी
+[09:54 - 09:56] हमें download कर लेना है
+[09:56 - 09:59] हम चाहें तो downloads के अंदर अपने baggage को save कर सकते हैं
+[10:00 - 10:30] जैसे डाउनलोड हो जाएगा अपने package के ऊपर हम double click कर देंगे and हमारे पास हमारी installation window आ जाएगी, install करने के लिए we can click on continue, continue करने के बाद हम agree कर देंगे, फिर हमारे पासवर्ड को enter करने वाली window आएगी, इसमें हम अपना password enter करेंगे and we are going to install the software and जैसे python install हो गई हम इस window को कर सकते ह
+[10:30 - 10:31] हम अपने terminal को open कर सकते हैं
+[10:31 - 10:34] and terminal के अंदर we can type this command
+[10:34 - 10:35] python3 dash dash
+[10:35 - 10:37] version इससे जैसे ही हम
+[10:37 - 10:39] enter करेंगे तो हमारे पास python का
+[10:39 - 10:42] जो भी currently installed version है वो print होकर
+[10:42 - 10:44] आ जाएगा जिससे verify हो गया कि successfully
+[10:44 - 10:46] python हमारे system के अंदर install हो चुकी है
+[10:46 - 10:48] यह same command mac के अंदर
+[10:48 - 10:50] भी work करेगी and इस same command को
+[10:50 - 10:51] हम Windows के अंदर भी run कर सकते हैं
+[10:51 - 10:54] अब next हम install करने वाले है Visual Studio
+[10:54 - 10:55] Code को अपने system के अंदर
+[10:55 - 10:58] तो सबसे पहले
+[10:58 - 11:00] इसको download करने के लिए हम search
+[11:00 - 11:01] करेंगे internet पर download
+[11:01 - 11:03] VS Code
+[11:03 - 11:06] तो यह first जो
+[11:06 - 11:07] link आएगा इस पर हमें चले जाना है
+[11:07 - 11:10] यहाँ पर site भी मैं बता देती हूँ
+[11:10 - 11:12] code.visualstudio.com
+[11:12 - 11:13] slash download
+[11:13 - 11:15] अब इसमें काफी सारे option आ गए हैं
+[11:15 - 11:17] अब आप Windows machine पर हैं
+[11:17 - 11:19] Windows 7, 8, 10, 11 पर
+[11:19 - 11:22] तो यहाँ पर आप अपने system के हिसाब से
+[11:22 - 11:24] कि 64 bit system है तो कौन सा download करना है
+[11:24 - 11:26] 32 bit है तो कौन सा download करना है
+[11:26 - 11:29] mostly लोगों का 64 bit system होता है
+[11:29 - 11:31] तो इसको आप यहाँ पर click करके download कर सकते हैं
+[11:31 - 11:33] अगर आप Linux पर हैं
+[11:33 - 12:03] तो उसके हिसाब से आप download कर सकते हैं, या फिर Mac पर हैं, तो उसके हिसाब से download कर सकते हैं, अब जब भी आप Windows के लिए download करेंगे, तो बीच में काफी सारे ना check boxes हमारे लिए आएंगे, हमें क्या करना है, इन सारे के सारे check boxes को tick कर देना है, जैसे ही tick करेंगे, हमारा Visual Studio Code पूरी �
+[12:03 - 12:04] Windows operating system पर हैं,
+[12:05 - 12:06] या फिर आप Linux operating system है,
+[12:06 - 12:08] तो भी आपकी window कुछ ऐसी देखेगी,
+[12:08 - 12:10] मतलब जैसे आप click करेंगे,
+[12:10 - 12:11] Visual Studio Code के उपर,
+[12:11 - 12:14] ऐसी सी कुछ screen आपके लिए appear होगी,
+[12:14 - 12:16] यह recent वाला section आपके पास नहीं होगा,
+[12:16 - 12:19] क्योंकि मेरे पास बहुत time से Visual Studio Code installed है,
+[12:19 - 12:23] बट आपने नया नया install किया है तो आपके पास सिर्फ ये start वाली window दिख रही होगी
+[12:23 - 12:35] macOS windows same steps follow python code run Mac OS Windows Python
+[12:35 - 12:36] सबसे पहले,
+[12:36 - 12:40] मैं new file पर click करूँगी, new file पर जाकर मैं text file को click कर दूँगी,
+[12:40 - 12:45] तो मेरे लिए क्या हुआ, एक text file बन गई है, मतलब जैसे कि हमारे system के अंदर file बनती है,
+[12:45 - 12:49] इसको मैं cross कर देती हूँ, यहाँ पर यह file का symbol होता है, explorer,
+[12:49 - 12:52] explorer पर click करके मुझे पता चल जाएगा
+[12:52 - 12:53] कि मैं कौन से folder पर हूँ
+[12:53 - 12:55] यहाँ पर मुझे दिख रहा है कि अभी तक मैंने किसी
+[12:55 - 12:57] folder को नहीं बनाया है यहाँ folder कहने का
+[12:57 - 12:59] मतलब है कि मेरी जो file है वो कहां save हो रही है
+[12:59 - 13:01] and इसी पर explorer पर आप दुबारा
+[13:01 - 13:05] click कर देंगे, तो यह बंद भी हो जाएगा, मैं क्या करने वाली हूँ, सबसे पहले तो इस file को save करूँगी,
+[13:05 - 13:12] save करने के लिए मैं दबाती हूँ, command s या control s आप click कर सकते हैं, save करने के लिए मैं यहाँ पर save as में file का नाम देने वाली हूँ,
+[13:12 - 13:17] इसको मैं नाम दूँगी first program.py
+[13:17 - 13:19] अब जितनी भी python की file हम बनाते हैं
+[13:19 - 13:22] उनके last में हमें .py लिखना पड़ता है
+[13:22 - 13:23] ये first program मेरी file का नाम है
+[13:23 - 13:27] and .py क्या है? .py extension है
+[13:27 - 13:28] जैसे अगर मुझे text file बनानी होती है
+[13:28 - 13:30] तो मैं .txt लिखती हूँ
+[13:30 - 13:31] मुझे java file बनानी होती है
+[13:31 - 13:33] तो मैं .java लिखती हूँ, मुझे C++ की
+[13:33 - 13:35] फाइल बनानी होती है, मैं .cpp लिखती हूँ
+[13:35 - 13:37] वैसे अगर मुझे प्रोग्रामिंग के अंदर
+[13:37 - 13:39] Python की फाइल बनानी है, तो मैं लास्ट मैं
+[13:39 - 13:41] .py लिखूँगी, .py करके
+[13:41 - 13:43] आप या तो नया फोल्डर बना सकते हैं, नहीं तो
+[13:43 - 14:13] किसी भी folder के अंदर save कर सकते हैं, मैं इस python नाम के folder के अंदर इसको save करने वाली हूँ, तो यहाँ पर क्या हुआ, उपर मुझे दिखने लग जाएगा, मेरी file का नाम है firstprogram.py, यह file कहाँ पर है, Shraddha Kapra नाम का folder है, उसके अंदर एक python नाम का folder है, उसके अंदर मेरी firstprogram.py नाम की file
+[14:13 - 14:15] so, ये मैंने यहाँ पर कर दिया है,
+[14:16 - 14:16] file को save,
+[14:17 - 14:19] और ये right side में आपको ये run का button दिख रहा होगा,
+[14:19 - 14:20] run python file,
+[14:20 - 14:21] इस पर मैं click करूँगी,
+[14:22 - 14:23] जैसे ही मैंने click किया,
+[14:23 - 14:25] नीचे एक window सी appear होने लग गई मेरे पास,
+[14:25 - 14:27] जिसमें मेरे पास ये line,
+[14:27 - 14:28] hello world,
+[14:28 - 14:29] वैसे की वैसी print होकर आ गई,
+[14:29 - 14:31] यह basically मैंने क्या किया
+[14:31 - 14:33] एक python का code लिख दिया है
+[14:33 - 14:35] यानि python के अंदर screen के उपर
+[14:35 - 14:38] कौन सी नीचे वाली है जो मेरी output screen है
+[14:38 - 14:40] इसके उपर मुझे कुछ भी print करवाना होता है
+[14:40 - 14:42] उसके लिए मैं इस line को लिख सकती हूँ
+[14:42 - 14:43] and double quotes के अंदर
+[14:43 - 14:46] जो भी चीज मुझे print करवानी है उसको मैं लिख सकती हूँ,
+[14:46 - 14:47] usually जब हम किसी programming,
+[14:47 - 14:49] नई programming language के साथ start करते हैं,
+[14:49 - 14:51] तो हम hello world लिखते हैं,
+[14:51 - 14:53] तो hello world लिखना थोड़ा सा custom है,
+[14:53 - 15:25] java program c language hello world hello world code run
+[15:25 - 15:27] अंदर जो अपना first program लिखा, उसमें हमने
+[15:27 - 15:28] लिखा print hello world, अब यह
+[15:28 - 15:30] जो print होता है, यह print python के
+[15:30 - 15:32] अंदर एक function का नाम होता है,
+[15:33 - 15:34] अभी functions क्या होते हैं, उनको
+[15:34 - 15:36] implement कैसे करते हैं, उसकी हमें detail में नहीं जाना,
+[15:37 - 15:38] basically मुझे यह समझ लेना है,
+[15:38 - 15:40] कि मैंने कुछ command दे दिया इसको,
+[15:40 - 15:44] functions का purpose होता है किसी काम को complete कराना
+[15:44 - 15:47] तो इस print function का काम है screen के ऊपर कुछ भी print करना
+[15:47 - 15:50] आप print लिखकर यहाँ पर ये parenthesis लगा देंगे
+[15:50 - 15:52] and double quotes लगा देंगे
+[15:52 - 15:56] तो अंदर आप जो भी लिखेंगे वो वैसे का वैसा हमारी screen के ऊपर print होकर आ जाएगा
+[15:56 - 16:01] अगर मैं चाहूं तो इस पूरे Hello World को काट कर मैं यहाँ पर अपना college लिख सकती हूँ
+[16:01 - 16:04] तो पूरी screen के उपर अपना college print होकर आ जाएगा
+[16:04 - 16:07] and इसी तरीके से आप क्या कर सकते हैं अपना नाम भी लिख सकते हैं
+[16:07 - 16:09] तो आपका नाम भी screen के उपर print होकर आ जाएगा
+[16:09 - 16:39] और इसी को हम Python के अंदर output कहते हैं, output यानि जो print होकर मेरी screen के उपर लिखकर मुझे दिखाई देने लग जाए, अब किसी भी code के, अगर हम fundamental समझने निकले, तो कोई भी code क्या करता है, मान लेते हैं यह मेंने कोई भी code लिखा है, यहाँ पर तो हम हमेशा Python का code लिखने वाले है
+[16:39 - 17:09] आपको टाइप कर देते मान लेते हैं मुझे news search करनी है तो मैं news type कर दूँगी, अब यहाँ पर Google search के अंदर जो भी चीज मुझे search करनी है वो एक तरीके से Google search को मैंने input दिया है और जो result मुझे वो लाकर देगा वो मेरे लिए output होगा, तो Google search ने Google ने अपना कुछ code लिखा होग
+[17:09 - 17:17] पाइथन के अंदर different different characters को हम use कर सकते हैं, जैसे English के अंदर मुझे पता होता है कि A से लेकर Z तक and small a से लेकर small z तक मेरे पास alphabet होता है,
+[17:17 - 17:34] letters python character set extra characters use Punjabi letter type
+[17:35 - 17:36] या फिर हम Marathi का कोई letter ले आएंगे,
+[17:36 - 17:38] तो इस तरीके से different languages के letters नहीं
+[17:38 - 17:41] चलते Python का fixed character set होता है
+[17:41 - 17:43] Python के अंदर English का capital A
+[17:43 - 17:44] से capital Z हम use कर सकते हैं
+[17:44 - 17:46] small a से small z हम use कर सकते हैं
+[17:46 - 17:48] उसके अरावा letters में हम 0 से लेकर 9
+[17:48 - 17:50] तक सारे digits को use कर सकते हैं
+[17:50 - 17:52] special symbols में हमारे पास minus, plus
+[17:52 - 17:55] hyphen, multiply, divide
+[17:55 - 17:56] percentage बहुत सारे जो हमारे special
+[17:56 - 17:58] characters हमारे keyboard पर present होते हैं
+[17:58 - 18:00] उनको हम use कर सकते हैं white spaces
+[18:00 - 18:02] भी हम use कर सकते हैं, यानि अगर मुझे कोई blank
+[18:02 - 18:04] space देनी है, कोई tab space देनी है, तो उनको
+[18:04 - 18:06] हम use कर सकते हैं, and उसके अलावा
+[18:06 - 18:08] ASCA and Unicode characters के अंदर
+[18:08 - 18:10] जितने भी हमारे data या literals
+[18:10 - 18:12] होते हैं, उनको हम use कर सकते हैं, इसके हम इतना
+[18:12 - 18:14] जादा detail में नहीं जाएंगे, basic
+[18:14 - 18:16] जो हमारे keyboard पर present जितनी भी keys होती हैं,
+[18:17 - 18:18] और English के अंदर जितनी characters use करते हैं,
+[18:18 - 18:19] और numbers use करते हैं,
+[18:19 - 18:21] वो सारे के सारे Python के अंदर valid होते हैं,
+[18:21 - 18:23] तो इसलिए Python को कहा जाता है,
+[18:23 - 18:25] कि English के बहुत ही करीब language है,
+[18:25 - 18:27] and इसके अंदर आप instructions भी देखोगे न,
+[18:27 - 18:57] तो सारी की सारा जो हम code लिख रहे होंगे, वो बहुत simple and easy to understand होगा, अभी जैसे मैंने print statement लिखी, तो यह print statement को देख कर ही समझ आ रहा है, चाहे किसी को code लिखना ना आता हो, कि इसका काम क्या है, इसका काम है print करवाना जो भी इसके अंदर लिखा हुआ है, इसलिए python is very simple and easy to understand, �
+[18:57 - 19:00] से मैं sentence भी print करवा सकती हूँ, next line में मैं
+[19:00 - 19:04] लिख सकती हूँ, my age is 23, तो इस तरीके से आप भी अपना
+[19:04 - 19:07] नाम print करवाईए, और next line के अंदर अपनी age print करवाईए,
+[19:07 - 19:10] तो इसको कर लेते हैं, save and now run, तो मेरी screen के ऊपर
+[19:10 - 19:13] पहले print होकर आया, Shraddha's name, उसके बाद print होकर आया,
+[19:13 - 19:15] my age is 23, अब ये जो दोनों
+[19:15 - 19:17] चीजे हैं, इनको हम same line के अंदर
+[19:17 - 19:19] भी print करवा सकते हैं, मतलब अगर ये
+[19:19 - 19:21] same output मुझे इसी उपर वाली line
+[19:21 - 19:23] के अंदर print करवाना है, तो इस part को मैं कर लेती हूँ
+[19:23 - 19:25] copy, मैं क्या करूँगी, first वाली
+[19:25 - 19:26] line में, यहाँ पर दे दूँगी comma
+[19:26 - 19:28] and उसके बाद मैं second line को
+[19:28 - 19:29] लिखने वाली हूँ
+[19:29 - 19:33] तो यह मेरी first line print होगी यह मेरी second line
+[19:33 - 19:34] print होगी बट यहाँ पर एक twist होने वाला है
+[19:34 - 19:36] जैसे ही मैं इसको save करके
+[19:36 - 19:38] run करूँगी वैसे इस बार क्या हुआ
+[19:38 - 19:40] पहले तो यह दोनों चीज़ें अलग अलग लाइन
+[19:40 - 19:43] पर print हो रही थी, पर इस बार दोनों के दोनों sentences
+[19:43 - 19:44] same line के ऊपर print हुए,
+[19:44 - 19:46] तो जब हम print statement लिखते हैं, और उसमें
+[19:46 - 19:48] comma से, इस वाले comma से
+[19:48 - 19:50] separate करके multiple चीज़ें लिख देते हैं,
+[19:50 - 19:52] तो वो सारी same line पर print होती है,
+[19:52 - 19:54] अगर मुझे next line पर लेके जाना है, तो मुझे
+[19:54 - 19:56] different print statements को use करना पड़ता है
+[19:56 - 19:58] अब इसके अलावा python के अंदर हम
+[19:58 - 20:00] numbers को भी print करवा सकते हैं
+[20:00 - 20:19] numbers क्यों यानि अगर यहां मैं simply बिना double quotes लिखे हुए लिखू 23 और इसको मैं कर दू save and run तो इसके इसमें क्या हुआ 23 मेरी screen पर print होकर आ जाएगा उसी तरीके से मैं print करवा सकती हूँ 25 या 35 इसको दुबारा करते हैं save and run तो इस बार मेरे लिए 23 and 35 दोनों print होकर आ जाएगे
+[20:19 - 20:23] and इसके साथ साथ मैं numbers को plus और minus करके भी print करवा सकती हूँ
+[20:23 - 20:26] यानि 35 plus 23 अगर मुझे print करवाना है
+[20:26 - 20:28] तो इसको मैं कर सकती हूँ save and run
+[20:28 - 20:32] तो first line में मेरे पास 23 print हुआ है वैसे का वैसा
+[20:32 - 20:35] second line में इन दोनों का sum मेरे पास print होगा जाएगा
+[20:35 - 20:35] which is 58
+[20:35 - 20:39] तो इस तरीके से different different sum, multiply, divide
+[20:39 - 20:42] इस सारे operations करना भी allowed होता है Python के अंदर
+[20:42 - 20:45] अब ये तो मैंने सीख लिया कि Python के अंदर basic चीजे print कैसे करवाती है
+[20:45 - 20:48] अब बात करते हैं Python के अंदर variables के बारे में
+[20:48 - 20:52] जैसे programming के अंदर variable is a name given to a memory location in a program
+[20:52 - 20:54] अब अगर यहाँ पर मैं math की बात करूँ
+[20:54 - 21:24] तो math के अंदर हम बहुत सारी चीज़ें पढ़ते थे जब छोटे होते थे, मान लेते हैं मुझे एक rectangle दिया हुआ है, इसकी एक length है A के बराबर and दूसरी side है B के बराबर, अब अगर मुझे इस rectangle का area निकालना है, तो मैं क्या करती थी, मैं A multiplied by B करती थी, अगर मुझे इसका perimeter �
+[21:24 - 21:26] हो सकता है square किसी भी size का हो,
+[21:26 - 21:28] मतलब a की value 5 भी हो सकती है,
+[21:28 - 21:30] तो a की value 10 भी हो सकती है,
+[21:30 - 21:31] a की value 50 भी हो सकती है,
+[21:31 - 21:33] a की value 100 भी हो सकती है,
+[21:33 - 21:35] वैसे ही जैसे-जैसे math के सवाल होते थे,
+[21:35 - 21:37] rectangle की length और breadth change होती रहती थी,
+[21:37 - 21:39] उसे असाब से मेरे पास एक fixed formula था,
+[21:39 - 21:41] जिसमें मैं values को change कर सकती थी
+[21:41 - 21:43] तो math के अंदर ये जो A है
+[21:43 - 21:45] ये जो B है ये वाला जो A है
+[21:45 - 21:47] इन सब को हम variables कहते हैं
+[21:47 - 21:49] variables यानि जिसकी value चेंज
+[21:49 - 21:51] हो जाए variable का मतलब ही English के अंदर
+[21:51 - 21:53] होता है जो vary करता है जिसकी value
+[21:53 - 21:55] change हो सकती है तो जैसे हम math के अंदर
+[21:55 - 21:57] variables को use करते थे वैसे हम programming
+[21:57 - 22:11] के अंदर भी variables को use कर सकते हैं, जैसे अगर मैं यहाँ पर लिख दू, name is equal to श्रद्धा, तो मैंने क्या किया, एक variable बनाया है, जिसका नाम है name, और उसके अंदर श्रद्धा वाली value को मैंने store कर दिया है, तो ये तो मेरे variable का नाम है,
+[22:11 - 22:20] and ये उसकी value है, हम हमेशा लिखते हैं variable is equal to my value, जैसे मैंने लिखा age is equal to 23,
+[22:20 - 22:55] age variable and value 23 age obviously age 23 24 age variable changes 2 24 26 age variable changes value store
+[22:55 - 22:56] location, यानि अगर मैं imagine करूँ
+[22:56 - 22:58] तो मेरे computer की memory कुछ इस तरीके
+[22:58 - 23:00] के दिखती होगी, जैसे हमारे खाली plot होते हैं
+[23:00 - 23:02] अब variable store कराने का
+[23:02 - 23:04] मतलब है, उन खाली plot में से
+[23:04 - 23:06] आपने एक plot उठाया और उस पर घर बना दिया
+[23:06 - 23:09] जैसे computer के अंदर इस तरीके
+[23:09 - 23:11] से हम अपनी memory को visualize कर सकते हैं
+[23:11 - 23:41] जिसमें काफी सारी खाली जग है, अब जैसे ही मैं एक variable बनाती हूँ, मान लेते हैं मैंने एक variable बनाया name जिसके अंदर value stored है श्रद्धा, तो कोई भी एक random memory computer के अंदर save हो गई, जिसका नाम मैंने दे दिया name और इसके अंदर मैंने अपनी value store करवा दी, क्या value store करवा दी, श्र
+[23:41 - 24:11] प्रोग्राम को पता होगा कि मैं कौन से name की बात कर रही हूँ, name का मतलब है कि उसके अंदर value श्रद्धा stored है, तो अगर मुझे अब अपना नाम print करवाना है, तो मैं simply print करवा सकती हूँ, name, अगर मैं print करवाकर इस तरीके से name लिखूँगी, तो क्या होगा, मेरे लिए श्रद
+[24:11 - 24:13] कोई एक random जगे है, जहां
+[24:13 - 24:15] पर age उस जगे
+[24:15 - 24:17] का नाम हो गया है, and उसके अंदर
+[24:17 - 24:19] value 23 अब जाकर store हो गयी है,
+[24:19 - 24:20] and same तरीके से, अगर मैंने price
+[24:20 - 24:22] is equal to 25.99 लिखा है, तो
+[24:22 - 24:24] मतलब memory के अंदर एक random जगे है, जिसका
+[24:24 - 24:27] नाम price हो गया है, and उसके अंदर
+[24:27 - 24:29] value 25.99
+[24:29 - 24:30] जाकर store हो गयी है,
+[24:30 - 24:33] तो इस तरीके से मेरे variables use होते हैं memory के अंदर
+[24:33 - 24:36] अब कल को हो सकता है कि मैं variable की value change कर दू
+[24:36 - 24:39] मतलब अगर मैंने age को कर दिया 24 के equal
+[24:39 - 24:42] तो क्या होगा age variable तो वहीं रहेगा
+[24:42 - 24:45] बस अंदर जो value है वो 23 हटकर
+[24:45 - 24:47] अब ये value हो जाएगी 24 के equal
+[24:47 - 24:50] तो अगली बार जब हम age की बात कर रहे होंगे
+[25:00 - 25:06] variables code actually code use python file file variables define name equal to
+[25:06 - 25:09] और फिर मैं लिखने वाली हूँ double quotes
+[25:09 - 25:11] double quotes के अंदर मैंने लिख दिया अपना नाम
+[25:11 - 25:14] next line मैं लिखूँगी age equal to
+[25:14 - 25:15] फिर मैंने अपनी age लिख दी
+[25:15 - 25:16] उससे अगली line मैं लिखने वाली हूँ
+[25:16 - 25:19] price is equal to 25.99
+[25:19 - 25:21] तो इस तरीके से ये name is equal to
+[25:21 - 25:23] शरदा करके मैंने एक name नाम का
+[25:23 - 25:25] variable बनाया है, जिसके अंदर value stored है,
+[25:25 - 25:27] श्रद्धा, age is equal to 23 करके age
+[25:27 - 25:29] मेरा variable है, price is equal to 25.99
+[25:29 - 25:30] करके price मेरा variable है,
+[25:31 - 25:33] यहाँ पर मुझे दिख रहा होगा, इसके अंदर तो मैंने
+[25:33 - 25:35] string store करवाई है, क्या बोला
+[25:35 - 25:36] मैंने, इसको बोला मैंने string,
+[25:37 - 25:39] string क्या होती है, string होता है
+[25:39 - 25:41] कि आप किसी word को, या किसी sentence
+[25:41 - 25:43] को, या फिर mix of words
+[25:43 - 25:45] को, multiple words को, अगर program के अंदर
+[25:45 - 25:47] लिखना चाते हैं, तो उसको हम double
+[25:47 - 25:49] quotes के अंदर लिखते हैं, अब चाहें तो
+[25:49 - 25:51] हम single quotes भी यूज़ कर सकते हैं, triple quotes
+[25:51 - 25:52] भी यूज़ कर सकते हैं, पर usually by convention
+[25:52 - 25:54] हम double quotes को यूज़ कर रहे होंगे, तो
+[25:54 - 25:56] double quotes के अंदर हम जो चीजे लिखते हैं,
+[25:56 - 25:58] वो वैसी की वैसी रहती है,
+[25:58 - 25:59] तो यहाँ मैंने शद्दा लिख दिया,
+[25:59 - 26:00] तो शद्दा वैसे का वैसा रहेगा,
+[26:01 - 26:02] अगर मैं सोचूं कि नहीं,
+[26:02 - 26:04] मैं तो शद्दा को उठा कर यह double quotes हटा दू,
+[26:04 - 26:05] तो वो गलत हो जाएगा,
+[26:05 - 26:07] यह Python के syntax के हिसाब से
+[26:07 - 26:09] मतलब Python के rules के हिसाब से गलत हो जाएगा
+[26:09 - 26:11] इसलिए string को लिखना है
+[26:11 - 26:13] किसी word sentence को लिखना है
+[26:13 - 26:14] तो double quotes के अंदर ही हमें लिखना पड़ेगा
+[26:14 - 26:17] वैसे 23 एक normal number है
+[26:17 - 26:18] integer number है
+[26:18 - 26:20] 25.99 एक floating value है
+[26:20 - 26:22] मतलब इसके अंदर decimal आ गया
+[26:22 - 26:24] हम यहाँ पर 26.99 भी कर सकते थे
+[26:24 - 26:54] 26.2 भी कर सकते थे, 25.00 भी कर सकते थे, तो इस तरीके से multiple variables मैंने अपने program के अंदर define कर लिये हैं, अब इन variables को print कैसे करूँ, usually जब हम print करते थे, तो मैं कहती थी कि हम double quotes लिख देंगे और name लिख देंगे, तो एक बार यह जो हमने code लिखा है, इसको हम run करते हैं, run करने के बा�
+[26:54 - 27:01] भी चीज लिखते हैं ना प्रिंट में तो वह वैसे की वैसी प्रिंट हो जाएगी यहाँ नेम लिखें यहाँ पर हमारा एज्ट लिखकर अगर मैं सेव
+[27:01 - 27:35] age print age value print value print double quotes age code run age 23 print name simply variable double quotes single quotes quotes use
+[27:35 - 27:37] क्योंकि quotes strings के लिए use होते हैं,
+[27:38 - 27:38] अब क्या करते हैं,
+[27:38 - 27:42] सारे के सारे variables को एक sentence की form में print करते हैं,
+[27:42 - 27:44] मतलब मैं print करने वाली हूँ my name is
+[27:44 - 27:46] यहाँ पर मैंने लगाया colon
+[27:46 - 27:47] and उसके बाद मैं लिखूँगी
+[27:47 - 27:49] comma, comma करके मैं Shadda को
+[27:49 - 27:51] same line पे print करवाना चाती हूँ तो मैं लिख दूँगी
+[27:51 - 27:53] name, उसी तरीके से next line पे मैं
+[27:53 - 27:55] लिखूँगी my age
+[27:55 - 27:57] is
+[27:57 - 27:59] colon and दुबारा से comma करके
+[27:59 - 28:03] मैंने यहाँ print करवा दिया age, price को हम अभी के लिए skip कर देते हैं,
+[28:04 - 28:07] इसको करते हैं एक बार save and now run, run करके output में आया,
+[28:07 - 28:11] my name is colon, यह वाला जो part है, यह वाला जो sentence है,
+[28:11 - 28:14] यह तो वैसे का वैसा print हो गया, उसके बाद मैंने comma करके name लिख दिया,
+[28:14 - 28:17] तो name के अंदर जो value थी वो मेरे पास print होकर आ गई
+[28:17 - 28:22] उसी तरीके से next line के अंदर my age is तो वैसे का वैसा print हो गया
+[28:22 - 28:26] और उसके बाद age जो है वो 23 मेरे पास value की form में print होकर आ गई
+[28:26 - 28:30] तो इस तरीके से हमारे variables को use कर सकते हैं अपने python code के अंदर
+[28:30 - 28:32] अब variables के बारे में एक और चीज
+[28:32 - 28:34] math के अंदर अगर मैं लिखती हूँ
+[28:34 - 28:35] a is equal to b
+[28:35 - 28:38] तो इसका मतलब होता है a और b दोनों बराबर है
+[28:38 - 28:39] पर python के अंदर ऐसा नहीं होता
+[28:39 - 28:42] python के अंदर अगर मैंने age is equal to 23
+[28:42 - 28:44] लिखा है इसका मतलब मैं right side से
+[28:44 - 28:47] value उठा कर left side ले जाने की कोशिश कर रही हूँ
+[28:47 - 28:49] मतलब right में 23 की value
+[28:49 - 28:51] जाकर age के अंदर store हो रही है
+[28:51 - 28:53] उसी तरीके से अगर मैं यहाँ लिखू
+[28:53 - 28:56] age is equal to 25 तो right side
+[28:56 - 28:58] की value उठकर left side की तरफ
+[28:58 - 28:59] जाकर store होती है तो इसको
+[28:59 - 29:02] कहते है assignment rule यह equal
+[29:02 - 29:04] to का जो sign होता है इसको हम assignment
+[29:04 - 29:06] operator कहते हैं या assignment कहते है
+[29:06 - 29:08] assign होना यानि value जाकर store हो जाना
+[29:08 - 29:09] तो age is equal to 25
+[29:09 - 29:14] लिखने का मतलब होता है 25 value value जाकर age नाम के variable के अंदर store हो गई,
+[29:14 - 29:16] अब python के अंदर एक तो है कि मैं variable लिख दू,
+[29:17 - 29:18] is equal to something लिख दू,
+[29:18 - 29:21] उसके अलावा अगर मैं एक दूसरा variable बनाती हूँ age2,
+[29:21 - 29:25] तो इसके अंदर मैं एक variable की value यह assign कर सकती हूँ,
+[29:25 - 29:27] मतलब अगर मैंने age2 is equal to age लिग गया
+[29:27 - 29:29] तो इसका मतलब age के अंदर जो भी value है
+[29:29 - 29:31] अब वो जाकर age2 के अंदर store हो जाएगी
+[29:31 - 29:34] तो age2 को अगर मैं print करवा हूँ
+[29:34 - 29:37] यहाँ पर इस statement को हटा देते हैं
+[29:37 - 29:39] और first line में मैं सिर्फ print करूँगी age2 को
+[29:39 - 29:42] इसको मैंने किया run
+[29:42 - 29:44] तो age2 में print हुआ 25
+[29:55 - 29:59] आया 25 अब पाइथन के अंदर वेरियोबल्स के जो नाम होते हैं उनके कुछ रूल्स होते हैं
+[40:00 - 40:02] words होते हैं, जैसे English के अंदर हमारे पास dictionary होती है,
+[40:02 - 40:04] dictionary के अंदर कुछ fixed word होते हैं,
+[40:04 - 40:06] जिनका fixed मतलब होता है, अब मुझे पता है
+[40:06 - 40:08] dictionary के अंदर अगर apple लिखा हुआ है,
+[40:08 - 40:09] तो उसका एक fixed meaning होगा,
+[40:09 - 40:11] वैसे Python के एक चूटी सी dictionary है,
+[40:11 - 40:14] जिसमें कुछ reserved words हैं, जिनको store कर लिया गया है,
+[40:30 - 40:36] word होता है यानि ये false, ये none, ये true ये सारे के सारे keywords हैं, keywords का एक और meaning भी होता है कि keywords
+[40:36 - 40:42] को आप identifier का नाम नहीं बना सकते मतलब कलको आप अपने variable का नाम lambda नहीं रख सकते कलको हम अपने variable का
+[40:42 - 40:44] नाम return या variable का नाम true नहीं
+[40:44 - 40:46] रख सकते, ये जो words हैं
+[40:46 - 40:48] ये सिर्फ जो इनका meaning है python के अंदर
+[40:48 - 40:50] उसी meaning के लिए use हो सकते हैं किसी और
+[40:50 - 40:52] काम के लिए हम इन words को python
+[40:52 - 40:54] के अंदर use नहीं कर सकते हैं, मतलब
+[40:54 - 40:56] true का काम या false का काम या none का
+[40:56 - 40:59] काम सिर्फ वही रहेगा जिस काम के लिए python
+[40:59 - 41:29] ने इनको reserve किया है, अब यहाँ पर काफी सारे एक साथ हमें keywords दिख रहे होंगे, पर इनकी tension नहीं लेनी कि हम इन सारो को कैसे याद रखेंगे, जैसे जैसे हम जितना जादा python के parts cover करेंगे, इन सारे keywords को हम एक एक करके cover कर लेंगे, जैसे अभी हमें याद करने की ज़रूरत न
+[41:29 - 41:35] के साथ यह हमें अपने आप याद होने वाले हैं, अब एक और चीज हमें ध्यान रखनी है कि Python हमारी एक case sensitive language होती है,
+[41:36 - 41:40] काफी सारी languages होती हैं जो case sensitive नहीं होती, कुछ languages होती हैं जो case sensitive होती है,
+[41:40 - 41:47] case sensitive कहने का क्या मतलब है, कि Python के अंदर capital A और small a अलग-अलग हैं, जिसे SQL होती है,
+[41:59 - 42:01] इसके अंदर आप capital A लिखो या small A लिखो,
+[42:01 - 42:01] सब बराबर है,
+[42:02 - 42:03] but Python वैसी language नहीं है,
+[42:03 - 42:06] Python के अंदर अगर आपने लिखा capital Apple,
+[42:07 - 42:08] and लिखा small Apple,
+[42:08 - 42:09] तो यह अलग variable है,
+[42:10 - 42:11] and यह अलग variable है,
+[42:11 - 42:12] दोनों variable same नहीं है,
+[42:12 - 42:14] तो यहाँ पर capital क्या है,
+[42:14 - 42:15] मतलब upper case क्या है,
+[42:15 - 42:16] और small क्या है,
+[42:16 - 42:18] lower case क्या है वो दोनों चीजे अलग-अलग होती है
+[42:18 - 42:21] तो इसलिए जब भी हम keywords को लिखते हैं
+[42:21 - 42:22] Python के अंदर तो हमें यह याद रखना है
+[42:22 - 42:24] कि Python case sensitive है
+[42:24 - 42:36] true letter capital false f capital none n capital
+[42:36 - 42:38] error दे देगा, तो इसलिए जब हम first time
+[42:38 - 42:40] output print करें, हम first time data types
+[42:40 - 42:42] को use करें, तो हमेशा याद रखना है कि
+[42:42 - 42:44] जैसी चीजे मैं लिखवारी हूँ code के अंदर
+[42:44 - 42:46] वैसी एक एक letter same होना चाहिए
+[42:46 - 42:48] नहीं तो हमारे पास errors आ सकते हैं
+[42:48 - 42:50] अब next हम एक छोटा सा problem
+[42:50 - 42:54] solve करने वाले हैं, हमें क्या करना है, Python के अंदर print करना है sum of two numbers,
+[42:54 - 42:57] यानि इसके लिए मुझे code लिखना है, अब अगर मुझे two numbers के अंदर
+[42:57 - 43:01] कोई value assign करनी है, फिर उनका sum print करना है, तो उसके लिए logic क्या रहेगा,
+[43:01 - 43:03] logic रहेगा कि पहले तो मैं दो numbers बना लूँ
+[43:03 - 43:06] मान लेते हैं मेरा पहला number है a और मेरा दूसरा number है b
+[43:06 - 43:09] a के अंदर मैं value store कर सकती हूँ 2 के equal
+[43:09 - 43:12] b के अंदर मैं value store कर सकती हूँ 5 के equal
+[43:12 - 43:14] तो यह मेरी first line होगी यह मेरी second line होगी
+[43:14 - 43:17] कि मेरे पास दो variables हैं a और b जिसके अंदर value 2 and 5 है
+[43:17 - 43:19] अब मुझे अगर इनका sum store करवाना है
+[43:19 - 43:21] तो पहले तो मैं इनका sum calculate कर सकती हूँ
+[43:21 - 43:23] तो जैसे math के अंदर calculation हो दिया है
+[43:23 - 43:25] वैसे यह python के अंदर calculation हो दिया है
+[43:25 - 43:27] यानि मैं यहाँ पर एक और variable बना सकती हूँ
+[43:27 - 43:30] sum is equal to a plus b के equal
+[43:30 - 43:32] तो directly क्या करेगा python
+[43:32 - 43:34] पहले तो a की value ले लेगा 2
+[43:34 - 43:36] and फिर b की value ले लेगा 5
+[43:36 - 43:37] दोनों को add करेगा 7
+[43:37 - 43:39] and sum के अंदर value store करवा देगा
+[43:39 - 43:40] 7 के equal
+[43:40 - 43:43] and उसके बाद अगर मुझे sum को print करवाना है
+[43:43 - 43:45] तो मैं लिख सकती हूँ print sum को
+[43:45 - 43:48] तो ये 4 line का मेरा पूरा का पूरा
+[43:48 - 43:49] program हो जाएगा
+[43:49 - 43:51] जिस program में मेरे पास 2 variables है
+[43:51 - 43:52] a and b
+[43:52 - 43:54] and इन दोनों का मैं sum calculate कर रही हूँ
+[43:54 - 43:55] and उसको मैं print करवा रही हूँ
+[43:55 - 43:58] तो इसको एक बार python के code के अंदर लिखते हैं
+[43:58 - 44:00] ये मेरी file है जिसके अंदर मैंने एक variable
+[44:00 - 44:02] बनाया है a is equal to 2 दूसरा variable
+[44:02 - 44:04] मैंने बनाया है b is equal to 5
+[44:04 - 44:06] तीसरा variable मैं बना रही हूँ sum is equal to
+[44:06 - 44:08] a plus b and उसके बाद
+[44:08 - 44:10] next line में मैं print करवाने वाली हूँ
+[44:10 - 44:12] अपने sum को इसको कर लेते है save
+[44:12 - 44:14] and now run तो मेरे पास
+[44:14 - 44:16] print होकर आया है 7 तो python
+[44:16 - 44:18] ने क्या किया directly 2 plus 5
+[44:18 - 44:20] यानि sum के अंदर store करवा दिया है 7 को
+[44:20 - 44:22] and उसी चीज को हमने कर दिया है print
+[44:22 - 44:24] यही पर अगर मेरे पास 1000
+[44:24 - 44:25] होता और b के अंदर मेरे पास
+[44:25 - 44:28] 500 होता, तो उस case में मेरे पास
+[44:28 - 44:30] अलग sum print होकर आता, इस बाद
+[44:30 - 44:31] print होकर आया 1500, मतलब
+[44:31 - 44:33] 1000 plus 500 is equal to 1500
+[44:33 - 44:36] और यही पर अगर मुझे sum
+[44:36 - 44:37] नहीं calculate करने को बोलते, difference बोलते
+[44:37 - 44:40] कि a minus b calculate करो
+[44:40 - 44:42] तो मैं simply यहाँ पर लिख सकती थी a minus b
+[44:42 - 44:44] और उसके बाद मैं इसको run करवाती
+[44:44 - 44:49] तो मेरे पास print हो जाता 500, मतलब 1000 minus 500 is equal to 500,
+[44:49 - 44:52] तो sum की जगह इस variable को मैं नाम दे देती difference,
+[44:53 - 45:06] basically print difference which is equal to 500 Python basic code variables define perform
+[45:07 - 45:09] और इस तरीके से हम अपने output को print करवा सकते हैं,
+[45:10 - 45:12] अब next time बात करने वाले हैं Python के अंदर comments के बारे में,
+[45:12 - 45:15] comments हमारे program का वो हिस्सा होते हैं
+[45:15 - 45:16] जो कभी execute नहीं होता
+[45:16 - 45:19] इन्ही for example अगर हमें अपने code को explain करने के लिए
+[45:19 - 45:21] अपने code के अंदर कुछ English लिखनी है
+[45:21 - 45:24] या कुछ और लिखना है तो उसे हम comments की form में लिख रहे होंगे
+[45:24 - 45:27] comments को generally हम अपने hash के साथ start करते हैं
+[45:27 - 45:30] हैश को लिखकर हम अपने single comments को लिख सकते हैं,
+[45:30 - 45:31] और triple quotes को use करके,
+[45:32 - 45:34] हम उसके अंदर अपने multi-line comments को लिख सकते हैं,
+[45:35 - 45:37] एक बार देखते हैं कि comments exactly work कैसे करते हैं,
+[45:37 - 45:41] for example, मैंने अपनी screen पर लिखा print hello world,
+[45:42 - 45:45] अब ये जो line है, मुझे पता है कि ये मेरे code का एक normal सा हिस्सा है,
+[45:45 - 45:47] जो execute हो जाएगा, अब इसी line को
+[45:47 - 45:49] अगर copy करके, मैंने
+[45:49 - 45:51] दो बार लिखा, बस second line के आगे अगर
+[45:51 - 45:53] मैं hash लगा दू, तो ये क्या बन जाएगा, ये comment
+[45:53 - 45:55] बन जाएगा, comments को visual studio
+[45:55 - 45:57] code green color से generally highlight करता है
+[45:57 - 45:58] और अब मुझे पता जल रहा है कि
+[45:58 - 46:01] ये ऐसा हिस्सा है जो execute नहीं होगा
+[46:01 - 46:03] जिसे अगर save करके हम अपने code को run करें
+[46:03 - 46:06] तो output में हमारे पास hello world सिर्फ एक बार print होकर आएगा
+[46:06 - 46:10] हम चाहते तो comments के अंदर कुछ भी normal English भी लिख सकते हैं
+[46:10 - 46:13] जैसे hi, I am a comment
+[46:13 - 46:17] अब हम चाहते तो अपने program के अंदर एक multi-line comment भी लिख सकते थे
+[46:17 - 46:21] जैसे हम लिख सकते हैं multi-line comment
+[46:21 - 46:24] इस तरीके से 3 lines के अंदर
+[46:24 - 46:25] या 2 lines के अंदर
+[46:25 - 46:28] और इसे अगर हम comment out करेंगे
+[46:28 - 46:30] तो एक तो तरीका है कि हम
+[46:30 - 46:32] 2 hash को use करें और दूसरा तरीका है
+[46:32 - 46:34] कि हम triple quotes को इस तरीके से
+[46:34 - 46:35] use कर सकते हैं
+[46:35 - 46:37] so this becomes a multi line comment
+[46:37 - 46:40] जो हमारे code के execution को बिलकुल भी effect नहीं करेगा
+[46:40 - 46:43] और दुबारा से हमारे पास hello world जो है वो print होकर आएगा
+[46:43 - 46:46] अब visual studio code के अंदर lines को comment करने का एक shortcut होता है
+[46:46 - 46:51] जैसे for example मेरे पास काफी सारे print hello world है
+[46:51 - 46:54] and अगर इन में से इन तीन lines को मुझे comment out करना है
+[46:54 - 46:57] तो I can just press command and forward slash
+[46:57 - 47:00] command and forward slash या windows के अंदर control and forward slash को
+[47:00 - 47:02] जैसे हम press करते हैं, हम multiple
+[47:02 - 47:04] चीजों को एक साथ comment out कर सकते हैं, इसी
+[47:04 - 47:06] तरीके से multiple चीजों को एक साथ
+[47:06 - 47:08] uncomment भी कर सकते हैं, so
+[47:08 - 47:10] this is how comments work in our code
+[47:10 - 47:12] अब next python के अंदर हम बात करने
+[47:12 - 47:14] वाले हैं operators के बारे में
+[47:14 - 47:16] operator क्या होता है, operator हमारे पास
+[47:16 - 47:18] एक ऐसा symbol होता है, जिसका काम होता है to perform
+[47:18 - 47:34] some operation math A plus B A plus B A and B generally operations plus plus operator
+[47:35 - 47:36] operator का काम होता है,
+[47:36 - 47:38] कोई भी operation को perform करना है,
+[47:38 - 47:41] यहां पर plus क्या करता है,
+[47:41 - 47:42] plus का काम perform करता है,
+[47:42 - 47:44] वहीं पर हमारे पास minus भी होता है,
+[47:44 - 47:47] minus एक value मेंो dedicate,
+[47:47 - 47:49] perform करता ए multiply क्या करता venar
+[47:49 - 47:50] typo Joe numbers को multiply करने का
+[47:50 - 47:53] काम tut dhawab to यह हमारे पास
+[47:53 - 47:54] operators होते हैं जिनको हम नहीं
+[47:54 - 47:56] math मे भी कई बार देखा है और जिन
+[47:56 - 47:58] values के ऊपर काम but i've
+[47:58 - 48:00] operationIS performed उहे हम
+[48:00 - 48:01] appearance �X गहते हैं तो एक
+[48:01 - 48:03] operator as a symbol होता है जो
+[48:03 - 48:04] operators के ऊपर operations को
+[48:04 - 48:06] perform करते हैं अब हमारे पास
+[48:06 - 48:07] operators different types की होते
+[48:07 - 48:11] होते हैं, इन में से कुछ operators हमने math के अंदर already बच्चपन में पढ़े होंगे, और कुछ
+[48:11 - 48:16] ऐसे हैं, जो programming के अंदर नए होते हैं, जिनने हम programming करते टाइम पढ़ते हैं, सबसे पहले
+[48:16 - 48:22] बात करते हैं, अपने arithmetic operators के बारे में, arithmetic operators generally mathematical
+[48:22 - 48:24] operations को perform करने के लिए use होते हैं
+[48:24 - 48:25] सबसे पहले हम बात करेंगे
+[48:25 - 48:27] अपने arithmetic operators के बारे में
+[48:27 - 48:30] उसके लिए heading लिख लेते है arithmetic operators
+[48:30 - 48:32] एक number हम create कर लेते है
+[48:32 - 48:34] a जिसे हम value assign कर देंगे
+[48:34 - 48:35] 5 and दूसरा number ले लेते है
+[48:35 - 48:36] b is equal to 2
+[48:36 - 48:39] अब a and b के उपर हम अपने जो सबसे basic
+[48:39 - 48:41] arithmetic operations होते हैं यानि plus
+[48:41 - 48:44] minus multiply and divide उन्हें perform करेंगे
+[48:44 - 48:46] अब python के अंदर दो numbers को plus करने के लिए
+[48:46 - 48:50] हम लिख रखते हैं sum is equal to a plus b
+[48:50 - 48:52] इसका मतलब है a plus b को calculate करके
+[48:52 - 48:54] हम अपने sum variable के अंदर store कर रहे हैं
+[48:54 - 48:56] और इस value को print करवा सकते हैं
+[48:56 - 48:58] यानि हम अपने sum को print करवा सकते हैं
+[48:58 - 49:00] let's save it and execute
+[49:00 - 49:01] तो हमारे पास value print होकर आएगी
+[49:01 - 49:03] 5 plus 2 is equal to 7
+[49:03 - 49:06] हम चाहें तो इसे directly B print करवा सकते हैं
+[49:06 - 49:07] यानि directly हम A
+[49:07 - 49:09] plus B का
+[49:09 - 49:11] sum जो है उसे print करवा के
+[49:11 - 49:14] execute करवा सकते हैं within our print function
+[49:14 - 49:16] जैसे हमारे पास plus होता है
+[49:16 - 49:18] वैसे ही हमारे पास minus होता है
+[49:18 - 49:20] वैसे ही हमारे पास divide and multiply होते हैं
+[49:20 - 49:22] तो minus करने के लिए हम लिख सकते हैं
+[49:22 - 49:24] a minus b multiply करने के लिए हम लिख सकते हैं
+[49:24 - 49:26] a asterisk b तो यह star वाला
+[49:26 - 49:28] symbol होता है जो multiplication के लिए use होता है
+[49:28 - 49:30] divide के लिए हम
+[49:30 - 49:32] forward slash को use करते हैं and यह हो गया
+[49:32 - 49:33] हमारे पास a divided by b
+[49:33 - 49:36] इसको save कर लेते हैं execute करते हैं तो हमारे पास
+[49:36 - 49:38] आ गया a plus b is equal to
+[49:38 - 49:40] 7 यानि 5 plus 2 is equal
+[49:40 - 49:41] to 7 5 minus 2 is equal to 3
+[49:41 - 49:44] 5 multiplied by 2 is equal to 10 and 5
+[49:44 - 49:45] divided by 2 is equal to 2.5
+[49:45 - 49:47] अच्छे यहाँ पे एक और interesting चीज
+[49:47 - 49:49] कि जब भी हम एक number को दूसरे number से
+[49:49 - 49:51] divide करते हैं python के अंदर तो answer
+[49:51 - 49:53] हमेशा एक floating value आता है बले
+[49:53 - 49:55] ही हमारा answer integer value हो सकता था
+[49:55 - 49:57] but वो हमेशा floating value की form में आएगा
+[49:57 - 49:59] यानि अगर यहाँ पर एकी
+[50:00 - 50:01] value 5 की जगह हमारे पास 4 होता,
+[50:02 - 50:03] तो 4 divided by 2 हमारे पास answer
+[50:03 - 50:05] आना चीए था 2, पर हमारे पास answer
+[50:05 - 50:08] आएगा 2.0, इसे अगर re-execute
+[50:08 - 50:09] करें, तो answer में हमारे पास value आएगी
+[50:09 - 50:11] 2.0 के equal, अब ये
+[50:11 - 50:13] तो हो गए normal वो arithmetic operators
+[50:13 - 50:15] जिनको हमने already अपने math
+[50:15 - 50:19] के अंदर पढ़ा हुआ है इनके अलवा हमारे पास एक और operator होता है
+[50:19 - 50:24] जिसे हम कहते हैं अपना modulo operator जो हम generally math के अंदर
+[50:24 - 50:27] नहीं पढ़ते यह हमारा remainder find out करने के लिए use होता है
+[50:27 - 50:31] यानि अगर हमने लिख दिया a modulo modulo को हम percentage sign से
+[50:31 - 50:36] denote करते हैं a modulo b का मतलब होता है कि अगर हम a और b को
+[50:36 - 50:39] divide करें तो हम उन दोनों के बीच का remainder find out करना चाते हैं
+[50:39 - 50:42] for example हमारे पास 2 numbers है 5 and 2
+[50:42 - 50:47] 5 को जब हम 2 से divide करेंगे तो हमारे पास remainder में आएगी value equal to 1
+[50:47 - 50:50] तो यही 1 हमें हमारा modulo return करके देता है
+[50:50 - 50:55] save करके अगर हम execute करें तो हमारे पास answer में आएगी value 1 के equal
+[50:55 - 50:58] जैसे हमारे पास module होता है ऐसे एक और operator होता है
+[50:58 - 51:01] जिसे हम कहते हैं अपना power operator
+[51:01 - 51:05] यानि अगर हम a double star b को लिखते हैं
+[51:05 - 51:10] तो इसका मतलब होता है कि हम a to the power b calculate करने की कोशिश कर रहे हैं
+[51:10 - 51:15] a to the power b यहाँ पर होगा 5 to the power 2 which is equal to 25
+[51:15 - 51:19] हमारे answer में भी हमारे पास value return होकर आईगी 25 के equal
+[51:19 - 51:22] तो ये हो गए हमारे सारे के सारे arithmetic operators
+[51:22 - 51:25] next type of operator जिने हम पढ़ने वाले हैं
+[51:25 - 51:29] इने हम अपने comparison या फिर इने relational operators भी कह सकते हैं
+[51:29 - 51:31] relational operators का काम होता है
+[51:31 - 51:33] दो values को compare करने का
+[51:33 - 51:35] इने generally हमने math के अंदर भी देखा होगा
+[51:35 - 51:38] अब math के अंदर अगर हमें दो numbers को compare करना है
+[51:38 - 51:41] जैसे अगर हम check करना चाहते हैं क्या a, b के equal है
+[51:41 - 51:43] तो उसके लिए हम single equal to लिखते हैं
+[51:43 - 51:47] पर python के अंदर equality check करने के लिए हम double equal to लिखते हैं
+[51:47 - 51:50] math के अंदर a not equal to b हम इस तरीके से लिखते हैं
+[51:50 - 51:55] पर python के अंदर हम exclamation equal to को not equal to की तरह लिखते हैं
+[51:55 - 51:58] In fact, जब भी generally programming के अंदर हमें exclamation दिखे,
+[51:58 - 52:01] तो वो generally होता है कि हम not कहने की कोशिश कर रहे हैं,
+[52:01 - 52:03] यानि किसी भी चीज को negate करने की कोशिश कर रहे हैं,
+[52:03 - 52:07] तो यह हमारा equal to operator होता है, यह हमारा not equal to operator होता है,
+[52:08 - 52:11] for example, अपनी कुछ नई values हम ले लेते हैं,
+[52:11 - 52:19] and अब बात करते हैं अपने relational operators के बारे में, सबसे पहले हम अपनी एक value ले सकते हैं,
+[52:19 - 52:55] a is equal to 50 and b is equal to 20 check a b equal simply print is a equal to equal to b relational operators expression value true value false relational operators output true return false return which is a Boolean value expression
+[52:55 - 53:25] कर लेते हैं and execute करते हैं तो हमारे पास answer में आएगा false, उसी तरीके से अगर हम यहाँ पर लिख दें a not equal to b, तो उसका answer हमारे पास आएगा equal to true, यानि 50 not equal to 20 true है या false है, उसका answer हमारे पास हमेशा true आएगा, save कर लेते हैं and हमारे पास answer में आएगा value equal to true, in fact यह उपर वाला जो part ह
+[53:25 - 53:36] तो इसे जैसे लेस्ट थें जैसे इस Anything भी होते जैसे यहां पर अगर हम लिखना चाहिए ग्रेटर नीकों करते हैं 82 करें Co face उसके बाद हम क्रीमें आई
+[53:36 - 53:46] तो इस case में हमारे पास print होकर आएगा $ या in fact अगर हम print करना चाहें क्या a greater than equal to b है इस case में भी हमारे पास value print होकर आएगी $
+[53:46 - 54:00] इसे execute करते हैं हमारे पास $ print होकर आएगी $ 27 Japanese
+[54:00 - 54:04] answer आएगा false और हमारे पास answer आएगा false
+[54:04 - 54:06] से save कर लेते हैं execute करते हैं
+[54:06 - 54:08] last में हमारे पास print होंगे 2 false
+[54:08 - 54:09] अब जो relational operators हैं
+[54:09 - 54:11] इन्हें हमें as such याद करने की ज़रूरत नहीं है
+[54:11 - 54:13] हम बस एक नजर इस पर डाल सकते हैं
+[54:13 - 54:16] relational operators को बाद में conditional statements
+[54:16 - 54:18] हमारा एक topic होगा काफी important topic है
+[54:18 - 54:20] जिससे जब हम पढ़ेंगे तो हम इन्हें
+[54:20 - 54:21] अपने आप बहुत बार use कर लेंगे,
+[54:21 - 54:23] और यह हम यह खुद बखुद याद हो जाएंगे,
+[54:24 - 54:25] relational operators के बाद,
+[54:25 - 54:26] next type of operators,
+[54:26 - 54:27] जिसे हम पढ़ने वाले हैं,
+[54:27 - 54:29] यह होते हैं हमारे assignment operators,
+[54:29 - 54:32] and एक assignment operator को हम already पढ़ चुके हैं,
+[54:32 - 54:33] जब भी हम लिखते हैं,
+[54:33 - 54:35] a is equal to something,
+[54:35 - 54:37] यानि a is equal to 50 अगर हमने लिख दिया
+[54:37 - 54:38] तो यह जो equal to है
+[54:38 - 54:41] इसी को हम अपना assignment operator
+[54:41 - 54:42] कहते हैं this is our equal to assignment
+[54:42 - 54:44] operator assignment operators का
+[54:44 - 54:46] काम होता है किसी value को assign करना
+[54:46 - 54:49] तो जब हम a equal to 50 लिख रहे हैं
+[54:49 - 54:51] तो इसका मतलब है हमारी जो 50 value है
+[54:51 - 54:53] इसे हम इस variable a के अंदर assign
+[54:53 - 54:54] कर रहे हैं यह हमारा assignment operator
+[54:54 - 55:25] assignment operators for example number num num initialize 10 number 10 add value number plus 10 number plus 10 10 plus 10 which is going to be equal to 20 num variable
+[55:25 - 55:41] तो हमारे पास value आईगी 20 के equal, यहाँ पर हम in fact लिख सकते हैं num की value को save and this num is going to be equal to 20, यह उपर वाली values को कर देते हैं, comment out,
+[55:41 - 55:46] तो यहाँ पर यह जो statement 10 num is equal to num plus 10
+[55:46 - 55:48] इसी को short में लिखने का तरीका होता है
+[55:48 - 55:50] num plus equal to 10
+[55:50 - 55:52] यानि हमारे पास python के अंदर
+[55:52 - 55:54] एक special assignment operator है
+[55:54 - 55:56] जो उसी number के अंदर किसी भी
+[55:56 - 55:58] नई value को add करने का काम करता है
+[55:58 - 56:00] इस statement and इस statement
+[56:00 - 56:01] दोनों का ही same मतलब है
+[56:01 - 56:04] तो अगर हम इस statement को यहाँ से हटा दे
+[56:04 - 56:06] तो भी हमारे पास output में
+[56:06 - 56:08] 20 ही return होके आएगा
+[56:08 - 56:08] इस तरीके से
+[56:08 - 56:11] हमारे पास plus equal to operator होता है
+[56:11 - 56:14] जो उसी number में किसी नई value को add करने का काम करता है
+[56:14 - 56:15] जैसे हमारे पास plus equal to होता है
+[56:15 - 56:17] वैसे ही हमारे पास minus equal to भी होता है
+[56:17 - 56:19] तो इसका मतलब हो जाएगा num की value
+[56:19 - 56:20] अपने को 10 return होकर आएगी
+[56:20 - 56:24] 0 के equal, यानि 10 minus 10, execute करेंगे, answer में
+[56:24 - 56:29] आएगा 0, ऐसे ही हमारे पास multiply equal to होता है,
+[56:29 - 56:33] multiply equal to क्या करेगा, 10 को 10 value से multiply
+[56:33 - 56:36] कर देगा, या अगर हम यहाँ पर 5 लिख दे, तो 10 को वो 5 से multiply कर देगा,
+[56:37 - 56:41] answer में हमारे पास 50 आएगा, save कर लेते हैं, execute किया, answer में आगे 50,
+[56:41 - 56:44] and इसी तरीके से हमारे पास divide equal to होता है
+[56:44 - 56:47] 10 को 5 से जब हम divide करेंगे answer में आएगा 2
+[56:47 - 56:49] तो the answer is going to be 2
+[56:49 - 56:54] इसी तरीके से हम modulo भी calculate कर सकते हैं
+[56:54 - 56:57] यानि हमारा remainder 10 को जब 5 से divide करेंगे
+[56:57 - 56:59] तो remainder में हमारे पास आएगी 0 value
+[56:59 - 57:01] तो answer में num will be equal to 0
+[57:01 - 57:04] and ऐसे ही हमारे पास power operator होता है
+[57:04 - 57:07] power क्या करेगा 10 to the power 5
+[57:07 - 57:09] 10 to the power 5 हमारे पास हो जाएगा
+[57:09 - 57:10] 1 lakh के equal
+[57:10 - 57:13] तो answer में वही value हमारे पास आने वाली है
+[57:13 - 57:15] save
+[57:15 - 57:17] refresh तो यह हो गया हमारे पास
+[57:17 - 57:19] 1 lakh तो इस तरीके से
+[57:19 - 57:21] हम अपने assignment operators
+[57:21 - 57:24] को different different assignment operators को use करते हैं
+[57:24 - 57:35] assignment operators next type of operator discuss logical operators logical operators boolean values
+[57:35 - 57:37] तीन logical operators होते हैं
+[57:37 - 57:39] python के अंदर, not, and, and
+[57:39 - 57:41] or, तीनों ही बहुत simple
+[57:41 - 57:43] होते हैं, and in fact इनके मतलब भी काफ़े
+[57:43 - 57:45] simple है, जैसे सबसे पहले शुरुआत
+[57:45 - 57:47] करते हैं not operator के साथ, अगर
+[57:47 - 58:17] हम किसी भी Boolean value को लें, तो not operator क्या करता है, not operator हमें उसका opposite return करता है, अगर हमने कहीं भी Python के अंदर लिख दिया true, तो उसके आगे अगर हम not operator को लिखते हैं, तो हमारे पास value return हो कर आईगी, false के equal, and vice versa, जैसे इस part को हम कर देते हैं, comment out, and अब next हम discuss करेंगे अपने logical operators को, logical operators के अं
+[58:17 - 58:19] होकर आएगा और हम print करवाना चाहे not of true
+[58:19 - 58:21] तो हमारे पास false return होकर आएगा
+[58:21 - 58:22] इसे execute करेंगे
+[58:22 - 58:25] तो not of false क्या है not of false है true
+[58:25 - 58:27] and not of true क्या है not of true है false
+[58:27 - 58:29] यानि जो भी हमने boolean value लिखी थी
+[58:29 - 58:31] उसका opposite in fact हम यहाँ
+[58:31 - 58:33] कोई expression भी use कर सकते हैं
+[58:33 - 58:35] जैसे for example a की value हमारे पास
+[58:35 - 58:36] हो गई है 50 के equal
+[58:36 - 58:38] and b की value हो गई है 30 के equal
+[58:38 - 58:40] तो अगर मैं लिखना चाहूँ
+[58:40 - 58:42] a greater than b तो वो value क्या होगी
+[58:42 - 58:45] 50 greater than 30 यानि true value होगी
+[58:45 - 58:46] तो यहाँ पर
+[58:46 - 58:49] अगर हम लिखे a greater than b
+[58:49 - 58:51] and इसे एक parenthesis के अंदर
+[58:51 - 58:53] add कर लेते हैं तो a greater than b
+[58:53 - 58:54] हमारे पास true होगा and इसी का
+[58:54 - 58:56] not हमारे पास आएगा false के equal
+[58:56 - 58:59] इसे re-execute कर लेते हैं
+[58:59 - 59:00] हमारे पास true value थी
+[59:00 - 59:02] next में हमारे पास false value आई
+[59:02 - 59:03] यानि यह जो expression है
+[59:03 - 59:05] single expression हमें boolean value return कर रहा है
+[59:05 - 59:08] उसी का opposite answer हमें not return करके देता है
+[59:08 - 59:10] जैसे हमारे पास not होता है
+[59:10 - 59:12] वैसे ही हमारे पास next operator होता है
+[59:12 - 59:13] जिसको हम and operator कहते हैं
+[59:13 - 59:16] and operator दो values के उपर काम करता है
+[59:16 - 59:45] यानि let's suppose हमारे पास 2 values हैं, value 1 is equal to true and value 2 is equal to true, तो हम print करवा सकते हैं अपना and operator का answer, जिसमें हम लिखेंगे value 1 and value 2, तो जो हमारा not operator है, वो single operator के ऊपर काम करता है, जबकि and and or operator हमारे 2 values के ऊपर काम करते हैं,
+[59:45 - 59:48] value1 and value2 कहने का मतलब है basically
+[59:48 - 59:52] कि हम value1 और हिंदी वाला और value2 को
+[59:52 - 59:54] evaluate करने की कोशिश कर रहे हैं
+[59:54 - 59:57] and operator true answer सिर्फ तभी देता है
+[59:57 - 59:58] जब दोनों values सच होती है
+[59:58 - 59:59] and operator कहता है
+[80:00 - 80:09] जो average होगा दोनो numbers का, that is going to be a plus b divided by 2, यह हमारे पास average हो जाएगा,
+[80:09 - 80:19] इसे run करते हैं, let's take the first number as 16.5 and let's take the second number as 3.5,
+[80:19 - 80:25] 16.5 plus 3.5 दोनों का submission हमारे पास 20 के equal होगा, 20 divided by 2, 10 हो जाएगा,
+[80:25 - 80:28] तो दोनों numbers का average हमारे पास होगा 10 के equal
+[80:28 - 80:32] जैसे हम average को print करवाएंगे हमारे पास value आएगी 10.0
+[80:32 - 80:34] तो इस तरीके से हमने अपने code को complete कर लिया है
+[80:34 - 80:36] next program जिसे हम लिखेंगे
+[80:36 - 80:40] यह कहे रहा है write a program to input two integer numbers a and b
+[80:40 - 80:44] print true if a is greater than or equal to b
+[80:44 - 80:48] यानि अगर a greater than or equal to b है
+[80:48 - 80:50] तो उस case में हमारे पास true print होना चाहिए
+[80:50 - 80:52] और अगर नहीं है तो उस case में हमारे पास
+[80:52 - 80:54] false print होना चाहिए
+[80:54 - 80:56] तो simply हम क्या कर सकते हैं
+[80:56 - 80:58] दो integer numbers को हम input करा सकते हैं
+[80:58 - 81:00] और हमारा यह जो expression है
+[81:00 - 81:01] a greater than equal to b
+[81:01 - 81:03] इसे हम simply print करवा देंगे
+[81:03 - 81:14] print statement expression true print expression false print numbers input
+[81:14 - 81:16] ले लेते हैं, and इन्हें type cast कर देते हैं
+[81:16 - 81:17] to integer values
+[81:17 - 81:20] और अपने
+[81:20 - 81:22] expression के अंदर, हमें
+[81:22 - 81:23] simply print करवाना है
+[81:23 - 81:26] a greater than
+[81:26 - 81:28] equal to b को save कर लेते हैं
+[81:28 - 81:31] and execute करेंगे
+[81:31 - 81:33] हमारा first number है let's suppose 15
+[81:33 - 81:35] second number है हमारे पास 2
+[81:35 - 81:38] अब हमें पता है 15 greater than
+[81:38 - 81:40] equal to 2 तो होता ही है तो उस case में
+[81:40 - 81:42] हमारे पास true आ गया और वहीं पर
+[81:42 - 81:44] अगर हम opposite ले लेते हैं यानि first number
+[81:44 - 81:46] को हम 2 ले लेते a is equal to 2
+[81:46 - 81:48] and b is equal to 15 उस case में
+[81:48 - 81:50] हमारे पास false return हो कर आ गया
+[81:50 - 81:53] तो इस तरीके से हमने अपने practice questions को भी cover कर लिया है
+[81:53 - 81:56] and I hope कि Python के अंदर जो हमारा lecture 1 था
+[81:56 - 81:59] उसने हमें काफी सारी चीज़े सिखाई होंगे about the basics of Python
+[81:59 - 82:02] तो यहीं बर हमारा chapter 1 finish up होता है
+[82:02 - 82:05] chapter के जो slides हैं वो आपको नीचे description box के अंदर मिल जाएंगे
+[82:05 - 82:07] उन्हें जाकर हम download कर सकते हैं
+[82:07 - 82:14] I hope that in today's lecture we have learned a lot about Python and definitely in the coming lectures we are going to learn a lot about Python.
+[82:15 - 82:18] So that's it for today, see you in the next lecture, till then keep learning and keep exploring.

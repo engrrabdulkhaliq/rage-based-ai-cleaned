@@ -1,0 +1,230 @@
+Transcription: video4.mp3
+============================================================
+
+[30:00 - 30:02] string values को भी store करा सकते हैं
+[30:02 - 30:03] save किया run किया
+[30:03 - 30:06] string values भी साथ में आ गई set में
+[30:06 - 30:08] पर अगर हम चाहें कि हम
+[30:08 - 30:10] एकी value को दो बार store करा देंगे
+[30:10 - 30:12] इस तरीके से हम
+[30:12 - 30:13] 3 बार 2 store करा देंगे
+[30:13 - 30:15] या हम world को
+[30:15 - 30:17] दो बार store करा देंगे
+[30:17 - 30:18] तो set क्या करता है
+[30:18 - 30:21] set उस case में duplicate values को ignore करता है
+[30:21 - 30:24] कोई error नहीं आएगा, बस duplicate values ignore हो जाएगी,
+[30:24 - 30:26] यानि जब set को हम print करवाएंगे,
+[30:26 - 30:27] या कहीं भी use करेंगे,
+[30:27 - 30:28] अपने collection को,
+[30:29 - 30:29] तो यहाँ पर क्या आएगा,
+[30:29 - 30:30] world एक बार आ रहा है,
+[30:30 - 30:31] hello एक बार आ रहा है,
+[30:31 - 30:32] one एक बार आ रहा है,
+[30:32 - 30:33] two एक बार आ रहा है,
+[30:33 - 30:35] और एक interesting चीज आप notice करोगे
+[30:35 - 30:37] even though world को यहाँ मैंने last में लिखा है
+[30:37 - 30:40] ऐसा नहीं है world यहाँ पे last में आएगा
+[30:40 - 30:41] world पहले आ गया
+[30:41 - 30:42] या फिर अगर मैं यहाँ पर
+[30:42 - 30:44] if I write 4 randomly
+[30:44 - 30:45] तो 4 कहां आ गया
+[30:45 - 30:47] इस बार जो set print हुआ है
+[30:47 - 30:48] this is completely different
+[30:48 - 30:50] यानि 1 to 4 इसमें पहले आ गये
+[30:50 - 30:51] इससे पहले 1 to
+[30:51 - 30:53] बीच में print हुए थे, यहाँ hello
+[30:53 - 30:55] और world साथ में आ गए, तो इसलिए set को
+[30:55 - 30:58] हम unordered कहते हैं, कोई order नहीं है
+[30:58 - 30:59] ऐसा नहीं है जो चीज पहले लिखी थी
+[30:59 - 31:01] हमने जो code में पहले लिखी थी, वो पहले आएगी
+[31:01 - 31:03] जो हमने बाद में लिखी थी, वो बाद में आएगी
+[31:03 - 31:05] इस तरीके का कोई order follow नहीं होता
+[31:05 - 31:08] and secondly duplicate values ignore हो जाती है
+[31:08 - 31:10] in fact अगर हम print करवाना चाहे
+[31:10 - 31:12] length of collection
+[31:12 - 31:13] तो length भी print हो सकती है
+[31:13 - 31:15] length यहाँ पे होगा हमारे
+[31:15 - 31:18] total number of
+[31:18 - 31:19] items
+[31:19 - 31:22] save करके अगर हम run करें
+[31:22 - 31:24] तो length आ जाएगी 5k
+[31:24 - 31:26] length ने भी क्या किया duplicate
+[31:26 - 31:27] items को ignore कर दिया
+[31:27 - 31:29] even though हमने यहाँ पर 4
+[31:29 - 31:32] 4 plus 3 7 8 items को include किया
+[31:32 - 31:34] पर final length में सिर्फ 5 items आएंगे
+[31:34 - 31:35] क्योंकि duplicate values
+[31:35 - 31:37] sets के अंदर allowed नहीं होती
+[31:37 - 31:39] इस चीज़ को हमें गाट बान लेनी है
+[31:39 - 31:40] यह बहुत important है
+[31:40 - 31:43] sets चाहे हम python के अंदर बनाए
+[31:43 - 31:44] चाहे हम किसी दूसरी language के अंदर बनाए
+[31:44 - 31:45] जैसे java हो गई
+[31:45 - 31:48] तो वहाँ पर भी हमेशा unique values होती है
+[31:48 - 31:49] sets के अंदर
+[31:49 - 31:51] अब ये हमने देख लिया कि set को create कैसे करते हैं,
+[31:51 - 31:54] कि duplicate या repeated elements को set क्या करता है,
+[31:54 - 31:55] सिफ एक ही बास store करता है,
+[31:56 - 32:00] अब हम जानते हैं कि एक empty set को हम कैसे create कर सकते हैं,
+[32:00 - 32:01] अगर हम सोचें,
+[32:02 - 32:03] कि set के अंदर,
+[32:04 - 32:06] कुछ इस तरीके का लिखके,
+[32:06 - 32:08] हम एक empty set को create कर देंगे,
+[32:08 - 32:11] तो यहाँ पे हमें याद आना चाहिए कि यह जो syntax होता है
+[32:11 - 32:15] यह तो एक empty dictionary का syntax होता है
+[32:15 - 32:18] this is not an empty set, this is an empty dictionary
+[32:18 - 32:21] in fact इसको हम print भी करा सकते हैं
+[32:21 - 32:23] if I type, type of collection
+[32:23 - 32:36] this is a dictionary this is not a set empty set create set and parenthesis syntax syntax
+[32:36 - 32:38] code को लिखने का सही तरीका.
+[32:38 - 32:42] तो मुझे अगर empty set को create करना है तो हम इस syntax को लिखेंगे.
+[32:42 - 32:48] जैसे हम ये चीज लिखेंगे ये जो हमारा collection है एक empty set के अंदर convert हो जाएगा let's run it
+[32:48 - 32:52] तो इस बार class में क्या है इस बार type में हमारे पास set print हो करा है
+[32:52 - 32:56] अब next हम बात करने वाले हैं sets के कुछ methods के बारे में
+[32:56 - 32:59] सबसे पहला method होता है हमारे पास add method
+[32:59 - 33:06] ओर जैसे add होता है वैसे remove method होता है
+[33:06 - 33:08] set.remove करके हम जो भी element लिखते हैं
+[33:08 - 33:10] वो हमारी set से remove हो जाता है
+[33:10 - 33:12] अच्छा एक चीज यहाँ पे notice करनी है
+[33:12 - 33:14] एक important difference
+[33:14 - 33:16] sets क्या होते हैं
+[33:16 - 33:19] sets mutable होते हैं
+[33:19 - 33:21] mutable यानि set के अंदर
+[33:21 - 33:24] नया element add और remove किया जा सकता है
+[33:24 - 33:25] पर set के
+[33:25 - 33:28] जो elements होते हैं
+[33:28 - 33:38] वो elements immutable होते हैं, there is a difference, क्योंकि कई बार हम definition के अंदर पढ़ते हैं, each element in the set must be immutable,
+[33:38 - 33:43] तो कई बार हमसे कोई interview में पूछेगा, set mutable होता है या immutable, तो गलती से हम immutable बोलते हैं,
+[33:43 - 33:46] set तो mutable ही होता है, mutable है कोई चीज
+[33:46 - 33:48] मतलब change हो सकती है, तबी तो
+[33:48 - 33:50] उसके अंदर हम element को add कर पा रहे हैं, remove कर पा रहे हैं
+[33:50 - 33:52] पर उसके जो elements है
+[33:52 - 33:54] उनकी value को हम change ना कर पाएं
+[33:54 - 33:56] तो इसलिए set के elements
+[33:56 - 33:57] immutable होते हैं, तो इसलिए
+[33:57 - 34:00] .add के अंदर हम tuple को pass कर सकते हैं
+[34:00 - 34:02] पर हम list को और dictionary को
+[34:02 - 34:04] pass नहीं कर सकते, तो set
+[34:04 - 34:06] तो mutable है, पर उसके elements immutable है,
+[34:07 - 34:08] अब methods को देखते हैं
+[34:08 - 34:10] set के, let's suppose we created an
+[34:10 - 34:12] empty set, यह हमारा empty
+[34:12 - 34:14] set हो गया collection, अब collection
+[34:14 - 34:16] के अंदर अगर हम कुछ values को add करना चाहें
+[34:16 - 34:18] तो, जिसे यहाँ पर
+[34:18 - 34:20] अपनी collection को print करवा देते हैं,
+[34:20 - 34:22] और अपनी कुछ values को add करना start करते हैं,
+[34:22 - 34:26] let's suppose I add some value collection.add1
+[34:26 - 34:30] collection.add value 2 हो गई
+[34:30 - 34:34] let's suppose अगर मैंने दुबारा लिखा collection.add value 2
+[34:34 - 34:35] तो उस case में क्या print होगा
+[34:35 - 34:38] उस case में हमारे पास सिर्फ 1 or 2 ही आएंगे
+[34:38 - 34:41] क्योंकि यह जो duplicate value है इसे हमारा set ignore कर देगा
+[34:41 - 34:45] इसी तरीके से हम जाएं तो values को remove भी कर सकते हैं
+[34:45 - 35:05] remove collection 1 remove set single value which is equal to 2 value remove set exist set 7 exist case
+[35:05 - 35:07] तो उस case में हमारे पास error आ जाएगा
+[35:07 - 35:10] it is basically the same key error
+[35:10 - 35:11] key error यानि जैसे dictionary के अंदर
+[35:11 - 35:13] key error आता था कि वो key exist नहीं करती
+[35:13 - 35:16] यहाँ पर एक तरीके से वो value ही वो key है
+[35:16 - 35:18] यानि key value pair के अंदर
+[35:18 - 35:20] key भी वही है, value भी वही है
+[35:20 - 35:22] यानि हमारा single element
+[35:22 - 35:24] तो वो element exist ही नहीं करता
+[35:24 - 35:26] तो फिर हमारे पास यहाँ पर error आ जाएगा
+[35:26 - 35:28] अब अपने collection के अंदर हम different different
+[35:28 - 35:30] types of values को store कर सकते हैं
+[35:30 - 35:32] हम चाहें तो यहाँ पर किसी string को भी
+[35:32 - 35:50] पास कर सकते हैं अगर हम रन करें। तो कोई प्रॉब्लम नहीं आयी हमारे पास हमारा सेट क्रिएट हो गया पर इसी तरीके से अगर मां
+[35:50 - 35:57] आपके लिस्ट बना के पास करने की कोशिश करते तो 200 तो ताएं � service हो सकते हैं उस में ना गए ऐड हो सकतें रिमों
+[35:57 - 35:59] सकते हैं, जैसे ही हम ये line
+[35:59 - 36:01] लिखेंगे, इसके अंदर क्या होगा, error आएगा,
+[36:02 - 36:03] let's save it and run, error क्या
+[36:03 - 36:05] आया, unhashable type list,
+[36:06 - 36:07] कि हम list को add करने की
+[36:07 - 36:10] कोशिश कर रहे हैं, जो कि क्या है, एक unhashable
+[36:10 - 36:12] type है, अब ये unhashable
+[36:12 - 36:14] type का क्या मतलब है, बहुत
+[36:14 - 36:15] मैं चोटा सा overview दूँगी आपको,
+[36:15 - 36:19] basically जो भी values immutable होती है
+[36:19 - 36:21] immutable यानि
+[36:21 - 36:22] जो change नहीं हो सकती
+[36:22 - 36:24] उन्हें हम set के अंदर add कर सकते हैं
+[36:24 - 36:25] कोई problem नहीं आएगी क्यूं
+[36:25 - 36:29] क्योंकि इन values की एक hash value बन सकती है
+[36:29 - 36:30] hashing basically
+[36:30 - 36:32] एक specific तरीका होता है
+[36:32 - 36:34] एक specific algorithm होती है
+[36:34 - 36:36] जिसमें हम original value को change करके
+[36:36 - 36:37] किसी और चीज में convert कर देते हैं
+[36:37 - 36:39] जैसे अगर मेरे पास कोई value है 1
+[36:39 - 36:41] और दूसरी value भी है 1
+[36:41 - 36:43] तो दोनों की जो final hashing value आएगी
+[36:43 - 36:44] वो same होगी
+[36:44 - 36:46] तो इसलिए python क्या करता है
+[36:46 - 36:48] इने same चीज की तरह detect करता है
+[36:48 - 36:50] पर अगर हम किसी list का example ले लें
+[36:50 - 36:51] ये मेरी list है 1,2
+[36:51 - 36:53] ये दूसरी list है 1,2
+[36:53 - 36:58] अब इसके अंदर हो सकता है कल को कोई change आ जाए ये 1, 2, 3 हो जाए तो इसकी hash value different हो जाएगी
+[36:58 - 37:00] तो ये क्या हो गई एक mutable चीज हो गई
+[37:00 - 37:04] अब mutation के case में जैसे ही original value में change आएगा उसकी hash value change हो जाएगी
+[37:04 - 37:08] तो इससे क्या होगा इससे हमारे set का implementation है वो बिगड़ जाएगा
+[37:08 - 37:16] तो इसी लिए set के अंदर जो values आती हैं, वो सारी ऐसी hashable values होती हैं, hashable values यानि immutable values,
+[37:17 - 37:23] जो अपने lifetime के अंदर, जो एक बार उनको जो value assign हो गई, जैसे tuple है, tuple को एक बार जो value assign हो गई,
+[37:23 - 37:35] variable lifetime value change possible hash value change python sets implemented unhashable
+[37:35 - 37:38] unhashable का मतलब है जो values change हो जाएं
+[37:38 - 37:41] mutate हो जाएं जिनकी hashing value different आ जाएं बाद में जाके
+[37:41 - 37:44] तो इसके अंदर generally हम अपनी dictionaries की बात कर रहे होते हैं
+[37:44 - 37:47] या फिर हम अपनी list की बात कर रहे होते हैं
+[37:47 - 37:49] या फिर in fact sets की भी बात करते हैं
+[37:49 - 37:51] क्योंकि set भी क्या होते है set भी immutable होता है
+[37:51 - 37:53] next हमारे पास एक और method होता है clear method
+[37:53 - 37:56] जो set को empty करने के काम आता है
+[37:56 - 37:58] जैसे for example
+[37:58 - 37:59] यहाँ पर
+[37:59 - 38:04] if I try to print the length of my set
+[38:04 - 38:06] save कर लेते हैं, run करते हैं
+[38:06 - 38:08] length will turn out to be 4
+[38:08 - 38:10] क्योंकि इसके अंदर 4 elements है
+[38:10 - 38:13] 1, 2, फिर एक string आ गई तीसरा element
+[38:13 - 38:15] and फिर एक tuple आ गया, fourth element
+[38:15 - 38:18] अब इसके अंदर, if I want to clear this set
+[38:18 - 38:20] तो हम simply लिख सकते हैं collection.clear
+[38:20 - 38:22] उससे हमारे set पूरा खाली हो जाएगा
+[38:22 - 38:25] and the length में, next time print होके आएगा 0
+[38:25 - 38:28] run करते हैं तो हमारे पास value आ जाएगी
+[38:28 - 38:30] 0 के equal, इसके अलावा हमारे पास
+[38:30 - 38:32] एक pop method भी होता है set के अंदर
+[38:32 - 38:34] which removes a random value, कोई भी random
+[38:34 - 38:35] value को यह remove करके दे देता है
+[38:35 - 38:37] जिसे अपने लिए हम एक collection
+[38:37 - 38:40] create करने वाले हैं, collection के अंदर
+[38:40 - 38:42] कुछ random strings को हम store करा लेते हैं
+[38:42 - 38:43] let's write hello
+[38:43 - 38:46] let's write अपना college
+[38:46 - 38:48] let's write world
+[38:48 - 38:50] let's write
+[38:50 - 38:52] let's suppose coding
+[38:52 - 38:54] we have
+[38:54 - 38:58] python, तो इस तरीके से कुछ random values हैं
+[38:58 - 39:00] हम क्या करने वाले हैं, we are going to
+[39:00 - 39:02] collection.pop
+[39:02 - 39:03] इस तरीके से
+[39:03 - 39:06] तो जब इसे run करेंगे, हमारे पास value आई है
+[39:06 - 39:08] अपना college, तो it's not like
+[39:08 - 39:09] अपना college first index पर stored साइया
+[39:09 - 39:11] इस तरीके से कोई order है, तो
+[39:11 - 39:13] random order में हमारे जो elements हैं
+[39:13 - 39:20] वो हमारे लिए pop हो सकते हैं, इसी तरीके से एक और value को अगर हम pop कराना चाहें, तो इस बार दो values pop हुई हैं,
+[39:20 - 39:27] Python and Hello, ऐसा नहीं है, दुबारे से पहली अपना college हमारे लिए pop होके आ रहा है, तो इस बार Python randomly उसने pick किया है,
+[39:27 - 39:29] फिर hello को randomly pick किया है
+[39:29 - 39:31] तो यह भी randomly values हमारे पास pop होकर आ रही है
+[39:31 - 39:33] अब इसका practical scenario यह हो सकता है
+[39:33 - 39:35] कि हमारे पास बहुत सारी set of unique values है
+[39:35 - 39:38] जिसमें से हम किसी random value को generate करवाना चाह रहे हो
+[39:38 - 39:41] next हमारे पास दो और काफी important methods होते है
+[39:41 - 39:42] set से related
+[39:42 - 39:45] इन में से पहला होता है union method
+[39:45 - 39:47] और दूसरा होता है intersection method
+[39:57 - 39:59] सेट्स के अंदर Union का मतलब होता है, जब हम एक सेट लेते हैं,
