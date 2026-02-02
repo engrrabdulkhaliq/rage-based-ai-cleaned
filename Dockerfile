@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["streamlit", "run", "04_rag_search_only.py", "--server.port=8080", "--server.address=0.0.0.0"]
+CMD ["sh", "-c", "streamlit run 04_rag_search_only.py --server.address=0.0.0.0 --server.port=${PORT}"]
