@@ -2,7 +2,7 @@ import os
 import sys
 import numpy as np
 import pandas as pd
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from sentence_transformers import SentenceTransformer
@@ -13,277 +13,187 @@ import uvicorn
 import logging
 import warnings
 
-# ============ LOGGING CONFIGURATION ============
+# ============ ENVIRONMENT DETECTION ============
 IS_RAILWAY = os.getenv('RAILWAY_ENVIRONMENT') is not None
-IS_PRODUCTION = os.getenv('ENVIRONMENT') == 'production'
+PORT = int(os.environ.get("PORT", 8080))  # Railway uses PORT env var
 
-# Configure logging based on environment
-if IS_PRODUCTION or IS_RAILWAY:
-    # Production: Only show errors
-    logging.basicConfig(
-        level=logging.ERROR,
-        format='%(levelname)s: %(message)s',
-        stream=sys.stdout
-    )
-else:
-    # Local: Show all info
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        stream=sys.stdout
-    )
+print(f"🌍 Environment: {'Railway' if IS_RAILWAY else 'Local'}")
+print(f"🔌 Port: {PORT}")
 
+# ============ LOGGING ============
+logging.basicConfig(
+    level=logging.INFO if not IS_RAILWAY else logging.ERROR,
+    format='%(levelname)s: %(message)s'
+)
 logger = logging.getLogger(__name__)
 
-# Suppress third-party library logs
+# Suppress unnecessary logs
 logging.getLogger('sentence_transformers').setLevel(logging.ERROR)
 logging.getLogger('transformers').setLevel(logging.ERROR)
 logging.getLogger('torch').setLevel(logging.ERROR)
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
-logging.getLogger('uvicorn').setLevel(logging.WARNING)
-logging.getLogger('uvicorn.access').setLevel(logging.WARNING)
-
-# Suppress warnings
 warnings.filterwarnings('ignore')
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-# ============ CONFIG ============
-app = FastAPI(title="Sigma RAG API")
-
-# Mount static files if folder exists
-if os.path.exists("static"):
-    app.mount("/static", StaticFiles(directory="static"), name="static")
+# ============ FASTAPI APP ============
+app = FastAPI(title="Sigma RAG API", docs_url="/docs" if not IS_RAILWAY else None)
 
 # ============ API KEY ============
 api_key = os.getenv("GROQ_API_KEY") or os.getenv("gsk")
-
 if not api_key:
-    api_key = "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"
-    if not IS_PRODUCTION:
-        logger.warning("Using hardcoded API key. Set GROQ_API_KEY environment variable.")
+    logger.error("❌ GROQ_API_KEY not set!")
+    sys.exit(1)
 
 groq_client = Groq(api_key=api_key)
 
 # ============ LOAD MODEL ============
-if not IS_PRODUCTION:
-    logger.info("Loading Model...")
+logger.info("📦 Loading model...")
+try:
+    model = SentenceTransformer("BAAI/bge-small-en-v1.5", device='cpu')
+    logger.info("✅ Model loaded")
+except Exception as e:
+    logger.error(f"❌ Model load failed: {e}")
+    sys.exit(1)
 
-model = SentenceTransformer("BAAI/bge-small-en-v1.5", device='cpu')
+# ============ LOAD EMBEDDINGS ============
+logger.info("📦 Loading embeddings...")
+df = None
 
-if not IS_PRODUCTION:
-    logger.info("Model Loaded!")
-
-# ============ LOAD DATA ============
 def load_data():
-    if not IS_PRODUCTION:
-        logger.info("Loading Embeddings...")
-    
-    possible_paths = [
+    paths = [
         "embeddings.pkl",
-        os.path.join(os.path.dirname(__file__), "embeddings.pkl"),
         "/app/embeddings.pkl",
-        "./embeddings.pkl"
+        os.path.join(os.path.dirname(__file__), "embeddings.pkl")
     ]
     
-    for path in possible_paths:
+    for path in paths:
         if os.path.exists(path):
-            if not IS_PRODUCTION:
-                logger.info(f"Found embeddings at: {path}")
-            df = pd.read_pickle(path)
-            if not IS_PRODUCTION:
-                logger.info(f"Loaded {len(df)} embeddings")
-            return df
+            logger.info(f"✅ Found at: {path}")
+            return pd.read_pickle(path)
     
-    logger.error("embeddings.pkl not found!")
-    raise FileNotFoundError("Embeddings file not found")
+    raise FileNotFoundError("❌ embeddings.pkl not found")
 
 try:
     df = load_data()
+    logger.info(f"✅ Loaded {len(df)} embeddings")
 except Exception as e:
-    logger.error(f"Error loading data: {e}")
-    df = None
+    logger.error(f"❌ Failed to load embeddings: {e}")
+    # Don't exit - let health check fail instead
 
-# ============ RAG LOGIC ============
+# ============ RAG FUNCTIONS ============
 def create_embedding(text):
-    return model.encode(
-        text,
-        show_progress_bar=False,
-        convert_to_numpy=True
-    ).tolist()
+    return model.encode(text, show_progress_bar=False, convert_to_numpy=True).tolist()
 
 def detect_language(text):
     hindi_chars = sum(1 for c in text if '\u0900' <= c <= '\u097F')
     total_chars = len([c for c in text if c.isalpha()])
-    if total_chars == 0:
-        return "english"
-    return "hindi" if hindi_chars / total_chars > 0.3 else "english"
+    return "hindi" if total_chars > 0 and hindi_chars / total_chars > 0.3 else "english"
 
-def get_rag_response(incoming_query):
+def get_rag_response(query):
     if df is None:
-        return "System not ready. Embeddings not loaded."
+        return "System not ready"
     
     try:
-        query_lang = detect_language(incoming_query)
-        filtered_df = df[df["language"] == query_lang].reset_index(drop=True)
-
-        if filtered_df.empty:
-            return "No relevant content found for this language."
-
-        query_embedding = create_embedding(incoming_query)
-        similarities = cosine_similarity(
-            np.vstack(filtered_df["embedding"].values),
-            [query_embedding]
+        lang = detect_language(query)
+        filtered = df[df["language"] == lang].reset_index(drop=True)
+        
+        if filtered.empty:
+            return "No content found"
+        
+        query_emb = create_embedding(query)
+        sims = cosine_similarity(
+            np.vstack(filtered["embedding"].values),
+            [query_emb]
         ).flatten()
-
-        top_k = 3
-        top_idx = similarities.argsort()[::-1][:top_k]
-        results = filtered_df.loc[top_idx]
-
-        chunks_context = ""
+        
+        top_idx = sims.argsort()[::-1][:3]
+        results = filtered.loc[top_idx]
+        
+        context = ""
         for i, (_, row) in enumerate(results.iterrows(), 1):
-            chunks_context += f"""
-Chunk {i}:
-- Video Number: {row.get('number', 'N/A')}
-- Title: {row.get('title', 'Unknown')}
-- Timestamp: {row['timestamp']}
-- Content: {row['text']}
-"""
-
-        prompt = f"""
-I am teaching web development in my Sigma Web Development course.
+            context += f"\nChunk {i}:\n- Video: {row.get('number', 'N/A')}\n- Title: {row.get('title', 'Unknown')}\n- Timestamp: {row['timestamp']}\n- Content: {row['text']}\n"
+        
+        prompt = f"""I am teaching web development in my Sigma Web Development course.
 
 Below are video subtitle chunks:
-{chunks_context}
+{context}
 
-User question:
-"{incoming_query}"
+User question: "{query}"
 
 Instructions:
 - Answer ONLY using the provided chunks
 - Mention exact video number & timestamp (MM:SS)
 - Be teacher-like
-- If unrelated, politely refuse
-"""
-
+- If unrelated, politely refuse"""
+        
         completion = groq_client.chat.completions.create(
             model="moonshotai/kimi-k2-instruct-0905",
             messages=[
-                {
-                    "role": "system",
-                    "content": "You are a helpful teaching assistant. Always convert timestamps to MM:SS format."
-                },
+                {"role": "system", "content": "You are a helpful teaching assistant. Always convert timestamps to MM:SS format."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.4,
             max_tokens=500
         )
-
+        
         return completion.choices[0].message.content.strip()
-    
     except Exception as e:
-        logger.error(f"RAG Error: {e}")
-        return "Error processing request. Please try again."
+        logger.error(f"RAG error: {e}")
+        return "Error processing request"
 
-# ============ MODELS ============
+# ============ ROUTES ============
 class ChatRequest(BaseModel):
     message: str
 
-# ============ ROUTES ============
-@app.get("/favicon.ico")
-async def favicon():
-    favicon_path = os.path.join("static", "favicon.ico")
-    if os.path.exists(favicon_path):
-        return FileResponse(favicon_path)
-    return JSONResponse(status_code=204, content={})
-
 @app.get("/")
 async def root():
+    """Health check endpoint"""
     return {
         "status": "running",
-        "environment": "railway" if IS_RAILWAY else "local",
-        "model_loaded": model is not None,
-        "embeddings_loaded": df is not None,
-        "embeddings_count": len(df) if df is not None else 0
+        "model": "loaded" if model else "failed",
+        "embeddings": "loaded" if df is not None else "failed",
+        "count": len(df) if df is not None else 0
     }
 
-@app.get("/ui", response_class=HTMLResponse)
-async def get_index():
-    try:
-        index_path = os.path.join(os.path.dirname(__file__), "ragebase-ui", "index.html")
-        if os.path.exists(index_path):
-            with open(index_path, "r", encoding="utf-8") as f:
-                return f.read()
-        else:
-            return HTMLResponse(
-                content="<h1>UI Not Found</h1><p>Place your HTML in ragebase-ui/index.html</p>",
-                status_code=404
-            )
-    except Exception as e:
-        return HTMLResponse(
-            content=f"<h1>Error Loading UI</h1><p>{str(e)}</p>",
-            status_code=500
-        )
+@app.get("/health")
+async def health():
+    """Railway health check"""
+    if df is None:
+        raise HTTPException(status_code=503, detail="Embeddings not loaded")
+    return {"status": "healthy"}
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
+    if not request.message.strip():
+        raise HTTPException(status_code=400, detail="Empty message")
+    
+    if df is None:
+        raise HTTPException(status_code=503, detail="System not ready")
+    
     try:
-        if not request.message.strip():
-            raise HTTPException(status_code=400, detail="Empty message")
-        
-        if df is None:
-            raise HTTPException(status_code=503, detail="System not ready")
-        
         reply = get_rag_response(request.message)
         return {"reply": reply}
-    
-    except HTTPException as he:
-        raise he
     except Exception as e:
-        logger.error(f"Chat Error: {e}")
-        return JSONResponse(
-            status_code=500,
-            content={
-                "reply": "I'm sorry, I'm having trouble. Please try again later.",
-                "error": str(e) if not IS_PRODUCTION else None
-            }
-        )
+        logger.error(f"Chat error: {e}")
+        raise HTTPException(status_code=500, detail="Internal error")
 
-@app.get("/health")
-async def health_check():
-    return {
-        "status": "healthy" if df is not None else "degraded",
-        "model": "loaded" if model is not None else "not loaded",
-        "embeddings": "loaded" if df is not None else "not loaded"
-    }
+@app.get("/favicon.ico")
+async def favicon():
+    return JSONResponse(status_code=204, content={})
 
-# ============ STARTUP & SHUTDOWN (Silent in Production) ============
+# ============ STARTUP ============
 @app.on_event("startup")
-async def startup_event():
-    if not IS_PRODUCTION:
-        logger.info("="*50)
-        logger.info("Sigma RAG API Starting...")
-        logger.info(f"Environment: {'Railway' if IS_RAILWAY else 'Local'}")
-        logger.info(f"Model: {'Loaded' if model else 'Failed'}")
-        logger.info(f"Embeddings: {'Loaded' if df is not None else 'Failed'}")
-        logger.info("="*50)
+async def startup():
+    logger.info("🚀 App started successfully")
 
-@app.on_event("shutdown")
-async def shutdown_event():
-    if not IS_PRODUCTION:
-        logger.info("Shutting down gracefully...")
-
-# ============ RUN SERVER ============
+# ============ RUN (Critical for Railway) ============
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    
-    if not IS_PRODUCTION:
-        logger.info(f"Starting server on port {port}...")
+    logger.info(f"🚀 Starting server on 0.0.0.0:{PORT}")
     
     uvicorn.run(
         app,
-        host="0.0.0.0",
-        port=port,
-        log_level="error" if IS_PRODUCTION else "info",
-        access_log=False  # Access logs completely off
+        host="0.0.0.0",  # MUST be 0.0.0.0 for Railway
+        port=PORT,       # MUST use Railway's PORT
+        log_level="error" if IS_RAILWAY else "info"
     )
