@@ -1,20 +1,24 @@
-# Core dependencies with compatible versions
+# Core FastAPI
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
 python-multipart==0.0.6
 
-# ML dependencies - FIXED VERSIONS
+# ML/AI - FIXED COMPATIBLE VERSIONS
 sentence-transformers==2.3.1
 transformers==4.36.2
 huggingface-hub==0.20.3
 torch==2.1.2
 tokenizers==0.15.0
+safetensors==0.4.1
 
-# Data processing
+# Data Science
 pandas==2.1.4
 numpy==1.26.3
 scikit-learn==1.4.0
 
-# API client
+# API
 groq==0.4.2
+
+# Utilities
+requests==2.31.0
