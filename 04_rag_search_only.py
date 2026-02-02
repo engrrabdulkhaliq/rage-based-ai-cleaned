@@ -8,7 +8,10 @@ from groq import Groq
 api_key = os.getenv("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")
 
 if not api_key:
-    raise ValueError("GROQ_API_KEY environment variable is missing!")
+    # Fallback to hardcoded key for local testing if needed, 
+    # but for Railway it should be set in env vars.
+    # The user asked to avoid local .env usage and load from Railway env.
+    pass
 
 # ---------------- CONFIG ----------------
 st.set_page_config(
@@ -28,8 +31,12 @@ def load_model():
 model = load_model()
 
 # ---------------- GROQ CLIENT ----------------
+if not api_key:
+    st.error("GROQ_API_KEY is not set in environment variables.")
+    st.stop()
+
 groq_client = Groq(
-    api_key="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"
+    api_key=api_key
 )
 
 # ---------------- LOAD EMBEDDINGS ----------------

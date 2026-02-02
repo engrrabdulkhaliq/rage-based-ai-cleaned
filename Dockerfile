@@ -1,7 +1,7 @@
-# Use python-slim for a smaller footprint
+# Use python-slim for a smaller footprint (approx 150MB base)
 FROM python:3.11-slim
 
-# Set environment variables
+# Set environment variables for non-interactive installs and app behavior
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
@@ -9,22 +9,26 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /app
 
-# Install system dependencies
+# Install minimal system dependencies for building packages if needed
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first to leverage Docker cache
+# Copy requirements first to leverage Docker layer caching
 COPY requirements.txt .
 
-# Install dependencies
-# We use the CPU-only version of torch to keep the image size well under 4GB
+# Install dependencies - using --no-cache-dir to keep image small
+# We use the CPU-only version of torch defined in requirements.txt
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
+# Copy only necessary application files
+COPY 04_rag_search_only.py .
+COPY embeddings.pkl .
+# Add other necessary files if any (e.g., settings.json if used)
+COPY settings.json .
 
-# Railway automatically provides the PORT environment variable
-# Streamlit must bind to 0.0.0.0 and the assigned port to fix 502 errors
+# Railway automatically provides the PORT environment variable.
+# Streamlit MUST bind to 0.0.0.0 and the assigned port to fix 502 errors.
+# We use sh -c to ensure the environment variable is correctly expanded.
 CMD ["sh", "-c", "streamlit run 04_rag_search_only.py --server.port=${PORT} --server.address=0.0.0.0"]
