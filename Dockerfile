@@ -15,4 +15,5 @@ COPY . .
 
 EXPOSE 8080
 
+# Streamlit command, binds Railway PORT environment variable
 CMD ["sh", "-c", "streamlit run 04_rag_search_only.py --server.address=0.0.0.0 --server.port=${PORT}"]
