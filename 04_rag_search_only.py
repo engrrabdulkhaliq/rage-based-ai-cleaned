@@ -5,6 +5,10 @@ import os
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from groq import Groq
+api_key = os.getenv("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")
+
+if not api_key:
+    raise ValueError("API_KEY environment variable is missing!")
 
 # ---------------- CONFIG ----------------
 st.set_page_config(
