@@ -26,12 +26,11 @@ RUN pip install --upgrade pip && \
 RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('BAAI/bge-small-en-v1.5')"
 
 # Copy only necessary application files
-COPY 04_rag_search_only.py .
+COPY main.py .
 COPY embeddings.pkl .
-# Add other necessary files if any (e.g., settings.json if used)
 COPY settings.json .
+COPY ragebase-ui/ ./ragebase-ui/
 
 # Railway automatically provides the PORT environment variable.
-# Streamlit MUST bind to 0.0.0.0 and the assigned port to fix 502 errors.
-# We use sh -c to ensure the environment variable is correctly expanded.
-CMD ["sh", "-c", "streamlit run 04_rag_search_only.py --server.port=${PORT} --server.address=0.0.0.0"]
+# We use uvicorn to serve the FastAPI app.
+CMD ["sh", "-c", "python main.py"]
