@@ -8,8 +8,6 @@ from groq import Groq
 api_key = os.getenv("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")
 
 if not api_key:
-    # Use the hardcoded key as fallback if the environment variable is not set
-    # Note: It's better to use environment variables in production
     api_key = "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"
 
 # ---------------- CONFIG ----------------
@@ -101,7 +99,7 @@ Instructions:
 """
 
     completion = groq_client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="moonshotai/kimi-k2-instruct-0905",
         messages=[
             {
                 "role": "system",
