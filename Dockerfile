@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "--workers", "1", "--timeout", "300", "04_rag_search_only:app"]
+CMD gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 300 04_rag_search_only:app
