@@ -8,7 +8,7 @@ from groq import Groq
 api_key = os.getenv("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")
 
 if not api_key:
-    raise ValueError("API_KEY environment variable is missing!")
+    raise ValueError("GROQ_API_KEY environment variable is missing!")
 
 # ---------------- CONFIG ----------------
 st.set_page_config(
@@ -29,7 +29,7 @@ model = load_model()
 
 # ---------------- GROQ CLIENT ----------------
 groq_client = Groq(
-    api_key="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"  
+    api_key="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"
 )
 
 # ---------------- LOAD EMBEDDINGS ----------------
