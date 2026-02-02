@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+import streamlit as st
 import numpy as np
 import pandas as pd
 import os
@@ -7,19 +6,37 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from groq import Groq
 
-app = Flask(__name__)
-CORS(app)
-
-model = SentenceTransformer("BAAI/bge-small-en-v1.5")
-
-groq_client = Groq(
-    api_key="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"
-
+# ---------------- CONFIG ----------------
+st.set_page_config(
+    page_title="Sigma RAG Chatbot",
+    page_icon="🤖",
+    layout="centered"
 )
 
-file_path = os.path.join(os.path.dirname(__file__), "embeddings.pkl")
-df = pd.read_pickle(file_path)
+st.title("🤖 Sigma Web Dev RAG Chatbot")
+st.write("Ask questions related to **Sigma Web Development Course**")
 
+# ---------------- LOAD MODEL ----------------
+@st.cache_resource
+def load_model():
+    return SentenceTransformer("BAAI/bge-small-en-v1.5")
+
+model = load_model()
+
+# ---------------- GROQ CLIENT ----------------
+groq_client = Groq(
+    api_key="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"  
+)
+
+# ---------------- LOAD EMBEDDINGS ----------------
+@st.cache_data
+def load_data():
+    file_path = os.path.join(os.path.dirname(__file__), "embeddings.pkl")
+    return pd.read_pickle(file_path)
+
+df = load_data()
+
+# ---------------- UTILS ----------------
 def create_embedding(text):
     return model.encode(text).tolist()
 
@@ -33,20 +50,20 @@ def detect_language(text):
 def get_rag_response(incoming_query):
     query_lang = detect_language(incoming_query)
     filtered_df = df[df["language"] == query_lang].reset_index(drop=True)
-    
+
     if filtered_df.empty:
         return "No relevant content found for this language."
-    
+
     query_embedding = create_embedding(incoming_query)
     similarities = cosine_similarity(
         np.vstack(filtered_df["embedding"].values),
         [query_embedding]
     ).flatten()
-    
+
     top_k = 3
     top_idx = similarities.argsort()[::-1][:top_k]
     results = filtered_df.loc[top_idx]
-    
+
     chunks_context = ""
     for i, (_, row) in enumerate(results.iterrows(), 1):
         chunks_context += f"""
@@ -56,10 +73,11 @@ Chunk {i}:
 - Timestamp: {row['timestamp']}
 - Content: {row['text']}
 """
-    
+
     prompt = f"""
 I am teaching web development in my Sigma Web Development course.
-Below are video subtitle chunks with video number, title, and timestamp:
+
+Below are video subtitle chunks:
 {chunks_context}
 
 User question:
@@ -67,20 +85,19 @@ User question:
 
 Instructions:
 - Answer ONLY using the provided chunks
-- Tell clearly WHICH video and WHICH timestamp (MM:SS format)
-- Be human and teacher-like
-- If question is unrelated, politely say you can only answer course-related questions
+- Mention exact video number & timestamp (MM:SS)
+- Be teacher-like
+- If unrelated, politely refuse
 """
-    
+
     completion = groq_client.chat.completions.create(
         model="moonshotai/kimi-k2-instruct-0905",
         messages=[
             {
                 "role": "system",
                 "content": (
-                    "You are a helpful teaching assistant for the Sigma Web Development course. "
-                    "Always convert timestamps to MM:SS format. "
-                    "Never mention raw seconds."
+                    "You are a helpful teaching assistant. "
+                    "Always convert timestamps to MM:SS format."
                 )
             },
             {"role": "user", "content": prompt}
@@ -88,40 +105,21 @@ Instructions:
         temperature=0.4,
         max_tokens=500
     )
-    
+
     return completion.choices[0].message.content.strip()
 
-@app.route("/", methods=["GET"])
-def home():
-    return jsonify({
-        "status": "running",
-        "message": "RAG-based AI Chatbot API",
-        "endpoints": {
-            "chat": "/chat (POST)"
-        }
-    })
+# ---------------- UI ----------------
+user_question = st.text_input("Ask your question:")
 
-@app.route("/chat", methods=["POST", "OPTIONS"])
-def chat():
-    if request.method == "OPTIONS":
-        return "", 200
-    
-    try:
-        data = request.get_json()
-        user_message = data.get("message", "")
-        print("Received message:", user_message)
-        
-        answer = get_rag_response(user_message)
-        return jsonify({"reply": answer})
-        
-    except Exception as e:
-        import traceback
-        print(traceback.format_exc())
-        return jsonify({"error": str(e)}), 500
-
-if __name__ == "__main__":
-
-    app.run(debug=True, host="0.0.0.0", port=5000)
-
-    app.run(debug=True, host="0.0.0.0", port=5000)
-
+if st.button("Ask"):
+    if not user_question.strip():
+        st.warning("Please enter a question.")
+    else:
+        with st.spinner("Thinking..."):
+            try:
+                answer = get_rag_response(user_question)
+                st.success("Answer:")
+                st.write(answer)
+            except Exception as e:
+                st.error("Something went wrong")
+                st.code(str(e))
