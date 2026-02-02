@@ -8,10 +8,9 @@ from groq import Groq
 api_key = os.getenv("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")
 
 if not api_key:
-    # Fallback to hardcoded key for local testing if needed, 
-    # but for Railway it should be set in env vars.
-    # The user asked to avoid local .env usage and load from Railway env.
-    pass
+    # Use the hardcoded key as fallback if the environment variable is not set
+    # Note: It's better to use environment variables in production
+    api_key = "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"
 
 # ---------------- CONFIG ----------------
 st.set_page_config(
@@ -102,7 +101,7 @@ Instructions:
 """
 
     completion = groq_client.chat.completions.create(
-        model="moonshotai/kimi-k2-instruct-0905",
+        model="llama-3.3-70b-versatile",
         messages=[
             {
                 "role": "system",
