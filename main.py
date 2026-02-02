@@ -14,7 +14,7 @@ import uvicorn
 app = FastAPI()
 
 # API Key from environment variable
-api_key = os.getenv("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") or os.getenv("gsk")
+api_key = os.getenv("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") 
 if not api_key:
     # Fallback for testing if allowed, but normally we'd want this in env
     api_key = "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"
