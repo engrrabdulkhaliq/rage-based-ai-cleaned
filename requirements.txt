@@ -1,4 +1,7 @@
-# Core FastAPI
+# Web Framework
+streamlit>=1.32.0
+
+# Core FastAPI (Optional - if you need API)
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
@@ -22,3 +25,11 @@ groq==0.4.2
 
 # Utilities
 requests==2.31.0
+python-dotenv>=1.0.0
+
+# Additional helpful packages
+tqdm>=4.65.0
+filelock>=3.12.0
+regex>=2023.12.25
+packaging>=23.2
+typing-extensions>=4.9.0
