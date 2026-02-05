@@ -97,60 +97,44 @@ st.markdown("""
     footer {visibility: hidden;}
     .stDeployButton {display:none;}
 
-    /* Header */
-    .chat-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 68px;
-        background: var(--header-bg);
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 24px;
-        z-index: 1000;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-    }
-
-    .chat-header h1 {
+    /* Header Styling */
+    .header-title {
         font-size: 1.2rem;
         font-weight: 600;
-        margin: 0;
         color: var(--text-primary);
         letter-spacing: -0.02em;
         background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-secondary) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        margin: 0;
+        padding: 20px 0;
     }
 
-    /* Clear Button */
-    .clear-btn {
-        background: rgba(124, 58, 237, 0.1);
-        border: 1px solid var(--border-color);
-        color: var(--text-primary);
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-family: 'Inter', sans-serif;
+    /* Clear Button Styling */
+    .stButton > button {
+        background: rgba(124, 58, 237, 0.1) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-primary) !important;
+        padding: 8px 16px !important;
+        border-radius: 8px !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        transition: all 0.2s ease !important;
+        font-family: 'Inter', sans-serif !important;
+        margin-top: 20px !important;
     }
 
-    .clear-btn:hover {
-        background: rgba(124, 58, 237, 0.2);
-        border-color: var(--accent-primary);
+    .stButton > button:hover {
+        background: rgba(124, 58, 237, 0.2) !important;
+        border-color: var(--accent-primary) !important;
     }
 
     /* Chat Container */
     .chat-wrapper {
         max-width: 820px;
         margin: 0 auto;
-        padding: 90px 24px 160px 24px;
+        padding: 20px 24px 160px 24px;
         position: relative;
         z-index: 1;
     }
@@ -359,16 +343,21 @@ st.markdown("""
     .stSpinner > div {
         border-top-color: var(--accent-primary) !important;
     }
-
-    /* Hide Streamlit elements */
-    .stButton {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    
 </style>
 """, unsafe_allow_html=True)
+
+# ---------------- HELPER FUNCTION ----------------
+def seconds_to_mmss(seconds):
+    """Convert seconds to MM:SS format"""
+    try:
+        if isinstance(seconds, str):
+            seconds = float(seconds)
+        total_seconds = int(float(seconds))
+        minutes = total_seconds // 60
+        secs = total_seconds % 60
+        return f"{minutes:02d}:{secs:02d}"
+    except:
+        return str(seconds)
 
 # ---------------- BACKEND LOGIC ----------------
 def get_rag_response(query):
@@ -408,7 +397,10 @@ def get_rag_response(query):
 
             context_str = ""
             for _, row in top_results.iterrows():
-                context_str += f"Video {row.get('number', 'N/A')} [{row['timestamp']}]: {row['text']}\n"
+                timestamp = row.get('timestamp', 'N/A')
+                if timestamp != 'N/A':
+                    timestamp = seconds_to_mmss(timestamp)
+                context_str += f"Video {row.get('number', 'N/A')} [{timestamp}]: {row['text']}\n"
         else:
             context_str = "No course context available."
 
@@ -417,7 +409,10 @@ def get_rag_response(query):
             "You are a friendly and professional AI teaching assistant for the Sigma Web Development course. "
             "Your responses should feel natural, intelligent, and human-like, similar to Claude or ChatGPT. "
             "NEVER mention 'datasets', 'chunks', 'subtitles', or 'internal indexing'. "
-            "Use the context provided to answer accurately. Always credit specific video numbers and timestamps (MM:SS) "
+            "Use the context provided to answer accurately. "
+            "CRITICAL: When mentioning timestamps, ALWAYS convert them to MM:SS format (minutes:seconds). "
+            "For example: 475.60 seconds should be written as 07:55, not 475:60. "
+            "Always credit specific video numbers with timestamps in MM:SS format "
             "when providing information from the course. If a question is unrelated to the course, answer politely using "
             "your general knowledge while maintaining your identity as the Sigma assistant."
         )
@@ -437,23 +432,15 @@ def get_rag_response(query):
 
 # ---------------- UI RENDERING ----------------
 
-# Header
-st.markdown("""
-<div class="chat-header">
-    <h1>Sigma Web Development Course</h1>
-    <form method="post">
-        <button class="clear-btn" name="clear_chat">Clear</button>
-    </form>
-</div>
-""", unsafe_allow_html=True)
-
-# Clear button logic (NO UI CHANGE)
-if "clear_chat" in st.session_state:
-    st.session_state.messages = []
-    st.session_state.query_counter = 0
-    del st.session_state["clear_chat"]
-    st.rerun()
-
+# Header with Clear Button
+col1, col2 = st.columns([6, 1])
+with col1:
+    st.markdown('<h1 class="header-title">Sigma Web Development Course</h1>', unsafe_allow_html=True)
+with col2:
+    if st.button("Clear", key="clear_btn"):
+        st.session_state.messages = []
+        st.session_state.query_counter = 0
+        st.rerun()
 
 # Chat Content Container
 st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)
